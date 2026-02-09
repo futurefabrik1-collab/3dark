@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import heroBg from "@/assets/hero-bg.jpg";
-import logo3dark from "@/assets/3dark-logo.png";
 import { getRandomEntranceAnimation } from "@/utils/animations";
 
 const HeroSection = () => {
@@ -32,18 +31,14 @@ const HeroSection = () => {
             Gaussian Splatting · Digital Twins · Echtzeit & Web
           </motion.p>
 
-          <motion.div
+          <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.4 }}
-            className="mb-8"
+            className="text-5xl md:text-6xl lg:text-7xl font-serif leading-[1.1] mb-8 text-foreground"
           >
-            <img 
-              src={logo3dark} 
-              alt="3D-ARK Logo" 
-              className="h-16 md:h-20 lg:h-24 w-auto"
-            />
-          </motion.div>
+            <span className="gradient-text">3D</span>-ARK
+          </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
