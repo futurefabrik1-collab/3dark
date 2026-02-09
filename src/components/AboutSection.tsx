@@ -1,6 +1,5 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import illustrationScan from "@/assets/illustration-scan.jpg";
 
 const benefits = [
   { title: 'Fotorealismus statt \u201eCG-Look\u201c', desc: "Feine Lichtstimmungen, Materialdetails und echten Fotografie-Charakter – kein steriler 3D-Render." },
@@ -108,19 +107,6 @@ const AboutSection = () => {
           </div>
         </motion.div>
 
-        {/* Illustration */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-20"
-        >
-          <img
-            src={illustrationScan}
-            alt="Technical illustration of Gaussian Splatting scan process"
-            className="w-full max-w-2xl mx-auto rounded-sm opacity-80"
-          />
-        </motion.div>
       </div>
     </section>
   );

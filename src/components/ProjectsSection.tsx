@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import illustrationScan from "@/assets/illustration-scan.jpg";
 
 const projects = [
   {
@@ -105,8 +106,18 @@ const ProjectsSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="projects" className="py-32 px-6">
-      <div ref={ref} className="max-w-6xl mx-auto">
+    <section id="projects" className="py-32 px-6 relative overflow-hidden">
+      {/* Background illustration */}
+      <div 
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `url(${illustrationScan})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
+      <div ref={ref} className="max-w-6xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
