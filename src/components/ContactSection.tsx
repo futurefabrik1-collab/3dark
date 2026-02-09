@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import ContactForm from "./ContactForm";
 
 const ContactSection = () => {
   const ref = useRef(null);
@@ -49,27 +50,14 @@ const ContactSection = () => {
             </div>
           </motion.div>
 
-          {/* Right: Placeholder for contact form or iframe */}
+          {/* Right: Contact Form */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <div className="aspect-square media-placeholder rounded-sm flex items-center justify-center">
-              <div className="relative z-10 text-center p-8">
-                <div className="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center mx-auto mb-4">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-primary">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="1.5" />
-                    <path d="M22 6l-10 7L2 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                  </svg>
-                </div>
-                <p className="font-mono text-xs tracking-wider text-muted-foreground uppercase">
-                  Kontaktformular
-                </p>
-                <p className="text-xs text-muted-foreground/50 mt-1">
-                  Platzhalter
-                </p>
-              </div>
+            <div className="bg-card border border-border rounded-sm p-8">
+              <ContactForm />
             </div>
           </motion.div>
         </div>
