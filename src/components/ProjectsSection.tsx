@@ -1,6 +1,5 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import illustrationTwin from "@/assets/illustration-twin.jpg";
 
 const projects = [
   {
@@ -188,19 +187,6 @@ const ProjectsSection = () => {
           </div>
         </div>
 
-        {/* Bottom illustration */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-20 relative"
-        >
-          <img
-            src={illustrationTwin}
-            alt="Digital twin concept illustration"
-            className="w-full max-w-2xl mx-auto rounded-sm opacity-80"
-          />
-        </motion.div>
       </div>
     </section>
   );
