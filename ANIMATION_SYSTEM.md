@@ -2,14 +2,15 @@
 
 ## Overview
 
-This project uses a custom animation utility that provides gentle, randomized entrance animations for images, cards, iframes, and media blocks. Each element eases into position from a randomly different direction with smooth easing.
+This project uses a custom animation utility that provides gentle, randomized entrance animations for images, cards, iframes, and media blocks. Each element eases into position from a randomly different direction with smooth easing. Additionally, a scroll ripple effect creates a wave-like motion when elements cross the screen center.
 
 ## Features
 
 - ✅ **Random Directional Animations**: Elements enter from 8 possible directions (top, bottom, left, right, and diagonals)
 - ✅ **Gentle Movement**: Only 5% movement for subtle, professional effect
 - ✅ **Smooth Easing**: `easeInOut` for natural acceleration and deceleration
-- ✅ **Easily Reversible**: Single toggle to enable/disable all random animations
+- ✅ **Scroll Ripple Effect**: Elements shift horizontally when crossing screen center (creates wave effect)
+- ✅ **Easily Reversible**: Single toggle to enable/disable all random animations or ripple effect
 - ✅ **Staggered Delays**: Support for custom delays to create sequential animations
 
 ## How to Use
@@ -90,7 +91,7 @@ Use `getRandomEntranceAnimation` for elements that animate on page load:
 
 ## Toggling Animations On/Off
 
-### To Disable Random Animations
+### To Disable Random Entrance Animations
 
 Open `src/utils/animations.ts` and change:
 
@@ -100,13 +101,31 @@ export const ENABLE_RANDOM_ANIMATIONS = false;
 
 When disabled, all animations fall back to simple fade-in effects (no directional movement).
 
-### To Re-enable Random Animations
+### To Disable Scroll Ripple Effect
 
 ```typescript
-export const ENABLE_RANDOM_ANIMATIONS = true;
+export const ENABLE_SCROLL_RIPPLE = false;
+```
+
+When disabled, elements will only play their entrance animation without the scroll ripple.
+
+### To Change Ripple Direction
+
+```typescript
+export const RIPPLE_DIRECTION = 'left'; // or 'right'
+```
+
+All elements ripple in the same direction to create a unified wave effect.
+
+### To Adjust Ripple Shift Amount
+
+```typescript
+export const RIPPLE_SHIFT_AMOUNT = 5; // Percentage (default: 5%)
 ```
 
 ## Animation Specifications
+
+### Entrance Animations
 
 | Property | Value | Description |
 |----------|-------|-------------|
@@ -115,6 +134,17 @@ export const ENABLE_RANDOM_ANIMATIONS = true;
 | **Easing** | easeInOut | Smooth acceleration and deceleration |
 | **Directions** | 8 total | top, bottom, left, right, top-left, top-right, bottom-left, bottom-right |
 | **Opacity** | 0 → 1 | Fade in effect |
+
+### Scroll Ripple Effect
+
+| Property | Value | Description |
+|----------|-------|-------------|
+| **Trigger** | 50% viewport | When element crosses horizontal center |
+| **Movement** | 5% | Horizontal shift amount (configurable) |
+| **Direction** | Unified | All elements move in same direction (left or right) |
+| **Pattern** | [0, 5%, 0] | Shift out and back to original position |
+| **Easing** | easeInOut | Smooth wave motion |
+| **Repeat** | Every scroll | Effect triggers each time element crosses center |
 
 ## Components Using Random Animations
 
