@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import heroBg from "@/assets/hero-bg.jpg";
+import { getRandomEntranceAnimation } from "@/utils/animations";
 
 const HeroSection = () => {
   return (
@@ -85,12 +86,12 @@ const HeroSection = () => {
 
         {/* Right: Video/iframe placeholder */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95, rotate: -1 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 1, delay: 0.6 }}
+          {...getRandomEntranceAnimation(0.6)}
           className="relative"
         >
-          <div className="aspect-[4/3] media-placeholder rounded-sm flex items-center justify-center">
+          <motion.div 
+            className="aspect-[4/3] media-placeholder rounded-sm flex items-center justify-center"
+          >
             <div className="relative z-10 text-center p-8">
               <div className="w-16 h-16 rounded-full border-2 border-primary/40 flex items-center justify-center mx-auto mb-4">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-primary ml-1">
@@ -104,7 +105,7 @@ const HeroSection = () => {
                 Interaktiver 3D-Viewer · Platzhalter
               </p>
             </div>
-          </div>
+          </motion.div>
           {/* Decorative sketch marks */}
           <div className="absolute -top-3 -left-3 w-6 h-6 border-t-2 border-l-2 border-primary/30" />
           <div className="absolute -bottom-3 -right-3 w-6 h-6 border-b-2 border-r-2 border-primary/30" />

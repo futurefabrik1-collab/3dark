@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { getRandomInViewAnimation } from "@/utils/animations";
 
 const steps = [
   { step: "01", title: "Erfassung", desc: "Vor-Ort-Scan mit spezialisierten Kameras. Hunderte bis Tausende Fotos aus allen Blickwinkeln." },
@@ -54,9 +55,7 @@ const ProcessSection = () => {
 
         {/* Full-width video placeholder */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          {...getRandomInViewAnimation(isInView, 0.6)}
           className="mt-20"
         >
           <div className="aspect-[21/9] media-placeholder rounded-sm flex items-center justify-center">

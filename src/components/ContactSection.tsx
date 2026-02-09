@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import ContactForm from "./ContactForm";
+import { getRandomInViewAnimation } from "@/utils/animations";
 
 const ContactSection = () => {
   const ref = useRef(null);
@@ -52,9 +53,7 @@ const ContactSection = () => {
 
           {/* Right: Contact Form */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            {...getRandomInViewAnimation(isInView, 0.2)}
           >
             <div className="bg-card border border-border rounded-sm p-8">
               <ContactForm />

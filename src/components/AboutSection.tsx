@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { getRandomInViewAnimation } from "@/utils/animations";
 
 const benefits = [
   { title: 'Fotorealismus statt \u201eCG-Look\u201c', desc: "Feine Lichtstimmungen, Materialdetails und echten Fotografie-Charakter – kein steriler 3D-Render." },
@@ -57,7 +58,10 @@ const AboutSection = () => {
               nachvollziehbare Pipelines.
             </p>
           </div>
-          <div className="media-placeholder aspect-video rounded-sm flex items-center justify-center">
+          <motion.div 
+            {...getRandomInViewAnimation(isInView, 0.3)}
+            className="media-placeholder aspect-video rounded-sm flex items-center justify-center"
+          >
             <div className="relative z-10 text-center p-6">
               <div className="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center mx-auto mb-3">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-primary">
@@ -70,7 +74,7 @@ const AboutSection = () => {
                 Showreel · Platzhalter
               </p>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* Why Gaussian Splatting */}
@@ -95,9 +99,7 @@ const AboutSection = () => {
             {benefits.map((b, i) => (
               <motion.div
                 key={b.title}
-                initial={{ opacity: 0, y: 15 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.5 + 0.1 * i }}
+                {...getRandomInViewAnimation(isInView, 0.5 + 0.1 * i)}
                 className="p-6 border border-border hover:border-primary/30 transition-all duration-500"
               >
                 <h3 className="text-sm font-medium text-foreground mb-2">{b.title}</h3>

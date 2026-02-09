@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import illustrationScan from "@/assets/illustration-scan.jpg";
+import { getRandomInViewAnimation } from "@/utils/animations";
 
 const projects = [
   {
@@ -174,7 +175,10 @@ const ProjectsSection = () => {
 
                   {/* Media placeholder */}
                   {project.showMedia && (
-                    <div className="aspect-video media-placeholder rounded-sm flex items-center justify-center">
+                    <motion.div 
+                      {...getRandomInViewAnimation(isInView, 0.1 * Math.min(i, 6) + 0.2)}
+                      className="aspect-video media-placeholder rounded-sm flex items-center justify-center"
+                    >
                       <div className="relative z-10 text-center p-4">
                         <div className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center mx-auto mb-2">
                           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-primary">
@@ -190,7 +194,7 @@ const ProjectsSection = () => {
                           Iframe / Video Platzhalter
                         </p>
                       </div>
-                    </div>
+                    </motion.div>
                   )}
                 </div>
               </motion.div>
