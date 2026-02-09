@@ -9,28 +9,29 @@ const services = [
         <path d="M10 16h12M16 10v12" stroke="currentColor" strokeWidth="1.5" />
       </svg>
     ),
-    label: "Interaktive Web-Viewer",
-    detail: "Browserbasierte 3D-Viewer mit QR-Code-Zugang. Kein Download, keine App – Ihr Digital Twin direkt im Browser. Optimiert für Desktop und Mobile.",
+    label: "3D Assets",
+    detail: "Realtime-optimierte 3D-Modelle in verschiedenen LOD-Stufen. Von browserf\u00e4hig bis filmtauglich \u2013 ein Scan, alle Formate. High-Fidelity oder Realtime/Compressed je nach Einsatz.",
   },
   {
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="text-primary">
-        <rect x="4" y="8" width="24" height="16" rx="1" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M13 14l4 2.5L13 19V14z" fill="currentColor" />
+        <rect x="4" y="4" width="24" height="24" rx="2" stroke="currentColor" strokeWidth="1.5" />
+        <path d="M4 16h24M16 4v24" stroke="currentColor" strokeWidth="1" strokeDasharray="3 2" />
+        <circle cx="16" cy="16" r="4" stroke="currentColor" strokeWidth="1.5" />
       </svg>
     ),
-    label: "Cinematic Renderings",
-    detail: "Filmreife Videos und Stills aus Ihren 3D-Scans. Kamerapfade, Lichtsteuerung und professionelle Post-Produktion für Marketing und Dokumentation.",
+    label: "Digital Twins",
+    detail: "Vollständige digitale Zwillinge von Gebäuden, Anlagen und Geländen. Kombinierbar mit CAD, BIM und Planungsständen für Industrie, Architektur und Dokumentation.",
   },
   {
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="text-primary">
         <path d="M6 26L16 6l10 20H6z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-        <path d="M16 14v6M16 22v1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        <circle cx="16" cy="18" r="3" stroke="currentColor" strokeWidth="1" />
       </svg>
     ),
-    label: "Unity & Unreal Engine",
-    detail: "Native Integration in Echtzeit-Engines. Optimierte Assets für Games, Simulationen, VR/AR-Anwendungen und interaktive Erlebnisse.",
+    label: "Virtual Environments",
+    detail: "Begehbare virtuelle Welten für Web, VR und Echtzeit-Engines. Interaktive Erlebnisse, die über reine 3D-Ansichten hinausgehen – Zeitreisen, Orientierungssysteme, spielerische Navigation.",
   },
   {
     icon: (
@@ -40,9 +41,36 @@ const services = [
         <circle cx="16" cy="16" r="2" fill="currentColor" />
       </svg>
     ),
-    label: "High-Fidelity Assets",
-    detail: "Realtime-optimierte 3D-Modelle in verschiedenen LOD-Stufen. Von browserfähig bis filmtauglich – ein Scan, alle Formate.",
+    label: "Digital Archiving",
+    detail: "Dauerhaft zugängliche 3D-Dokumentation von Gebäuden, Denkmälern, Kulturerbe und bedrohten Orten. Hochdetaillierte Zeitzeugnisse für Forschung, Ausstellungen und VR.",
   },
+  {
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="text-primary">
+        <rect x="4" y="8" width="24" height="16" rx="1" stroke="currentColor" strokeWidth="1.5" />
+        <path d="M13 14l4 2.5L13 19V14z" fill="currentColor" />
+      </svg>
+    ),
+    label: "Cinematic Renderings",
+    detail: "Camera-Paths, Kamerafahrten und filmreife Stills aus 3D-Scans. Lichtsteuerung und Post-Produktion für Social-Media-Clips, Ads und Präsentationen.",
+  },
+  {
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="text-primary">
+        <path d="M16 4l12 7v10l-12 7L4 21V11l12-7z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+        <path d="M16 11v10M10 15h12" stroke="currentColor" strokeWidth="1" />
+      </svg>
+    ),
+    label: "XR Experiences",
+    detail: "Native Integration in Unreal & Unity für Games, Simulationen, VR/AR-Anwendungen und immersive Installationen. Optimierte Assets und Engine-spezifische Workflows.",
+  },
+];
+
+const deliverables = [
+  "Interaktiver Web-Viewer + QR-Workflow",
+  "Camera-Paths / Cinematic Renderings",
+  "Engine-Integration (Unreal/Unity)",
+  "High-Fidelity & Realtime-Varianten",
 ];
 
 const ServicesSection = () => {
@@ -66,13 +94,13 @@ const ServicesSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, i) => (
             <motion.div
               key={service.label}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.15 * i }}
+              transition={{ duration: 0.6, delay: 0.1 * i }}
               className="group p-8 border border-border bg-background hover:bg-surface-elevated transition-all duration-500 hover:border-primary/30"
             >
               <div className="mb-5 opacity-70 group-hover:opacity-100 transition-opacity">
@@ -87,6 +115,26 @@ const ServicesSection = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Typical deliverables */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.7 }}
+          className="mt-16 border-t border-border pt-10"
+        >
+          <p className="font-mono text-xs tracking-[0.3em] uppercase text-primary/60 mb-6">
+            Typische Deliverables
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {deliverables.map((d) => (
+              <div key={d} className="flex items-start gap-3">
+                <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary/50 flex-shrink-0" />
+                <p className="text-sm text-muted-foreground font-light">{d}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
