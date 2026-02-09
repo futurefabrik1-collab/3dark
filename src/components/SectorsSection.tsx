@@ -3,34 +3,40 @@ import { useRef } from "react";
 
 const sectors = [
   {
-    name: "Industrie & Infrastruktur",
-    description: "Digitale Zwillinge für Fabriken, Kraftwerke und Infrastrukturprojekte. Perfekt für Planung, Wartung und Dokumentation.",
-    icon: "⚙️",
+    name: "Film, TV & Games",
+    description: "Fotorealistische Sets, Location Scouting, Set Extensions und virtuelle Produktion. 3D-Scans als VFX-Assets direkt in Post-Production-Pipelines.",
+    icon: "🎬",
+    roles: "Producers · VFX Supervisors",
   },
   {
-    name: "Film, TV & Games",
-    description: "Fotorealistische Sets und Environments. Location Scouting und virtuelle Produktion auf höchstem Niveau.",
-    icon: "🎬",
+    name: "Industrie & Infrastruktur",
+    description: "Digitale Zwillinge für Fabriken, Kraftwerke und Infrastruktur. Kombination mit CAD/BIM für Planung, Wartung und Kommunikation.",
+    icon: "⚙️",
+    roles: "Project Managers · Planer",
+  },
+  {
+    name: "Marketing & Kommunikation",
+    description: "Interaktive 3D-Erlebnisse, QR-zugängliche Web-Viewer und cinematic Renderings für Kampagnen, Messen und Social Media.",
+    icon: "📣",
+    roles: "Marketing Manager · Creative Directors",
   },
   {
     name: "Kultur & Events",
-    description: "Festivals, Ausstellungen und historische Stätten digital bewahren und weltweit zugänglich machen.",
+    description: "Festivals, Ausstellungen und historische Stätten digital bewahren. Interaktive Archive und immersive Installationen.",
     icon: "🏛️",
-  },
-  {
-    name: "Bildung & Training",
-    description: "Interaktive Lernumgebungen und Trainingsszenarien in fotorealistischer 3D-Qualität.",
-    icon: "📚",
+    roles: "Curators · Festival-Organisatoren",
   },
   {
     name: "Architektur & Immobilien",
     description: "Bestandsgebäude, Baustellen und Neubauprojekte als navigierbare 3D-Erfahrung für Kunden und Partner.",
     icon: "🏗️",
+    roles: "Architekten · Developer",
   },
   {
-    name: "Digitale Archivierung",
-    description: "Dauerhaft zugängliche 3D-Dokumentation von Gebäuden, Denkmälern und kulturellem Erbe.",
-    icon: "🗄️",
+    name: "Bildung & Forschung",
+    description: "Interaktive Lernumgebungen, Trainingsszenarien und Forschungsprojekte in fotorealistischer 3D-Qualität.",
+    icon: "📚",
+    roles: "Hochschulen · Trainer",
   },
 ];
 
@@ -72,8 +78,11 @@ const SectorsSection = () => {
               <h3 className="text-sm font-medium text-foreground mb-2 group-hover:text-primary transition-colors">
                 {sector.name}
               </h3>
-              <p className="text-xs text-muted-foreground font-light leading-relaxed">
+              <p className="text-xs text-muted-foreground font-light leading-relaxed mb-3">
                 {sector.description}
+              </p>
+              <p className="font-mono text-[10px] tracking-wider text-primary/50 uppercase">
+                {sector.roles}
               </p>
             </motion.div>
           ))}

@@ -27,7 +27,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="font-mono text-xs tracking-[0.3em] uppercase text-primary mb-6"
           >
-            Gaussian Splatting · Digital Twins
+            Gaussian Splatting · Digital Twins · Echtzeit & Web
           </motion.p>
 
           <motion.h1
@@ -45,8 +45,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="text-lg md:text-xl text-muted-foreground font-light max-w-lg leading-relaxed mb-6"
           >
-            Fotorealistische 3D-Digital-Twins aus realen Orten – 
-            produktionsreif für Web, Echtzeit-Engines und Film.
+            Gaussian Splatting Scans für Digital Twins, Echtzeit & Web.
           </motion.p>
 
           <motion.p
@@ -55,8 +54,9 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.9 }}
             className="text-sm text-muted-foreground/80 font-light leading-relaxed mb-10 max-w-md"
           >
-            Wir nutzen Gaussian Splatting, um aus Hunderten von Fotos fotorealistische, 
-            interaktive 3D-Welten zu erzeugen – schneller und detailreicher als je zuvor.
+            Wir scannen Orte, Anlagen, Ausstellungen und Kulturräume als fotorealistische
+            3D Gaussian Splats – schnell erfassbar, beeindruckend in der Darstellung und
+            ideal für Marketing, Planung, Archivierung und interaktive Erlebnisse.
           </motion.p>
 
           <motion.div
@@ -66,10 +66,10 @@ const HeroSection = () => {
             className="flex items-center gap-6"
           >
             <a
-              href="#services"
+              href="#projects"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 text-sm font-medium tracking-wide hover:bg-primary/90 transition-colors"
             >
-              Leistungen entdecken
+              Projekte entdecken
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="mt-px">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
