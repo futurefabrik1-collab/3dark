@@ -14,7 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Space Grotesk", "system-ui", "sans-serif"],
+        sans: ["DM Sans", "system-ui", "sans-serif"],
+        serif: ["DM Serif Display", "Georgia", "serif"],
         mono: ["Space Mono", "monospace"],
       },
       colors: {
@@ -55,6 +56,10 @@ export default {
         "glow-muted": "hsl(var(--glow-muted))",
         surface: "hsl(var(--surface))",
         "surface-elevated": "hsl(var(--surface-elevated))",
+        parchment: "hsl(var(--parchment))",
+        ink: "hsl(var(--ink))",
+        "ink-light": "hsl(var(--ink-light))",
+        sketch: "hsl(var(--sketch))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -88,17 +93,21 @@ export default {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
-        "pulse-glow": {
-          "0%, 100%": { opacity: "0.4" },
+        "draw-line": {
+          "0%": { strokeDashoffset: "1000" },
+          "100%": { strokeDashoffset: "0" },
+        },
+        "pulse-gentle": {
+          "0%, 100%": { opacity: "0.5" },
           "50%": { opacity: "1" },
         },
         float: {
           "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-10px)" },
+          "50%": { transform: "translateY(-8px)" },
         },
-        "scan-line": {
-          "0%": { transform: "translateY(-100%)" },
-          "100%": { transform: "translateY(100vh)" },
+        "sketch-in": {
+          "0%": { opacity: "0", transform: "scale(0.95) rotate(-1deg)" },
+          "100%": { opacity: "1", transform: "scale(1) rotate(0deg)" },
         },
       },
       animation: {
@@ -106,9 +115,10 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-up": "fade-up 0.8s ease-out forwards",
         "fade-in": "fade-in 1s ease-out forwards",
-        "pulse-glow": "pulse-glow 3s ease-in-out infinite",
+        "draw-line": "draw-line 2s ease-out forwards",
+        "pulse-gentle": "pulse-gentle 4s ease-in-out infinite",
         float: "float 6s ease-in-out infinite",
-        "scan-line": "scan-line 8s linear infinite",
+        "sketch-in": "sketch-in 0.8s ease-out forwards",
       },
     },
   },
