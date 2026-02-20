@@ -22,40 +22,22 @@ const HeroSection = () => {
       <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-12 py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left: Text */}
         <div>
-          <motion.p
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-mono text-xs tracking-[0.3em] uppercase text-primary mb-6"
-          >
-            Real-World Capture · Digital Twins · Production Ready
-          </motion.p>
-
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.4 }}
+            transition={{ duration: 0.9, delay: 0.2 }}
             className="text-5xl md:text-6xl lg:text-7xl font-serif leading-[1.1] mb-8 text-foreground"
           >
-            <span className="gradient-text">3</span>DARK
+            We Turn Real Spaces into <span className="gradient-text">Strategic Digital Assets</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="text-lg md:text-xl text-muted-foreground font-light max-w-lg leading-relaxed mb-6"
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="text-lg md:text-xl text-muted-foreground font-light max-w-2xl leading-relaxed mb-10"
           >
-            High-Fidelity Digital Environments from Real-World Capture
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-            className="text-sm text-muted-foreground/80 font-light leading-relaxed mb-10 max-w-md"
-          >
-            We build photorealistic digital twins and interactive 3D environments from real spaces — for industry, culture, media and immersive platforms.
+            For industrial teams, cultural institutions, producers and marketing leaders who need clarity, immersion and impact from real-world environments.
           </motion.p>
 
           <motion.div
@@ -65,19 +47,19 @@ const HeroSection = () => {
             className="flex items-center gap-6"
           >
             <a
-              href="#contact"
+              href="#who-its-for"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 text-sm font-medium tracking-wide hover:bg-primary/90 transition-colors"
             >
-              Start a Project
+              Identify Your Project Type
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="mt-px">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </a>
             <a
-              href="#solutions"
+              href="#projects"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors font-light border-b border-border pb-0.5 hover:border-foreground"
             >
-              Explore Solutions
+              View Selected Projects
             </a>
           </motion.div>
         </div>
