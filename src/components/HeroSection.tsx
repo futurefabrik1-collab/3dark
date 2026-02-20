@@ -28,7 +28,7 @@ const HeroSection = () => {
             transition={{ duration: 0.9, delay: 0.2 }}
             className="text-5xl md:text-6xl lg:text-7xl font-serif leading-[1.1] mb-8 text-foreground"
           >
-            We Turn Real Spaces into <span className="gradient-text">Strategic Digital Assets</span>
+            We Turn Real Spaces into <span className="gradient-text">Digital Assets</span>
           </motion.h1>
 
           <motion.p
@@ -72,19 +72,11 @@ const HeroSection = () => {
           <motion.div 
             className="aspect-[4/3] media-placeholder rounded-sm flex items-center justify-center"
           >
-            <div className="relative z-10 text-center p-8">
-              <div className="w-16 h-16 rounded-full border-2 border-primary/40 flex items-center justify-center mx-auto mb-4">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-primary ml-1">
-                  <path d="M8 5v14l11-7L8 5z" fill="currentColor" />
-                </svg>
-              </div>
-              <p className="font-mono text-xs tracking-wider text-muted-foreground uppercase">
-                Gaussian Splatting Demo
-              </p>
-              <p className="text-xs text-muted-foreground/60 mt-1">
-                Interaktiver 3D-Viewer · Platzhalter
-              </p>
-            </div>
+            <img 
+              src="/logo-3dark.png" 
+              alt="3DARK Logo" 
+              className="w-full h-full object-contain p-8"
+            />
           </motion.div>
           {/* Decorative sketch marks */}
           <div className="absolute -top-3 -left-3 w-6 h-6 border-t-2 border-l-2 border-primary/30" />

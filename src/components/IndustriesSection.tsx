@@ -73,7 +73,7 @@ const IndustriesSection = () => {
             Trusted Across Sectors
           </h2>
           <p className="text-muted-foreground font-light leading-relaxed">
-            From heavy industry to cultural heritage, we deliver spatial intelligence that drives real-world decisions.
+            From heavy industry to cultural heritage, we deliver bespoke, cutting-edge solutions.
           </p>
         </motion.div>
 
