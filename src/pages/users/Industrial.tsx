@@ -3,25 +3,25 @@ import UserLandingPage from "@/components/UserLandingPage";
 const Industrial = () => {
   return (
     <UserLandingPage
-      title="For Industrial & Infrastructure Teams"
-      subtitle="Digital Twin Solutions"
+      title="Für Industrie & Infrastruktur-Teams"
+      subtitle="Digital Twin Lösungen"
       challenge={{
-        title: "The Challenge",
-        description: "Industrial environments are complex and difficult to communicate across teams, stakeholders and public audiences.",
+        title: "Die Herausforderung",
+        description: "Industrielle Umgebungen sind komplex und schwer über Teams, Stakeholder und öffentliche Zielgruppen hinweg zu kommunizieren.",
       }}
       approach={{
-        title: "Our Approach",
-        description: "We create photorealistic digital twins of real sites and integrate planning data where required.",
+        title: "Unser Ansatz",
+        description: "Wir erstellen fotorealistische Digital Twins realer Standorte und integrieren bei Bedarf Planungsdaten.",
       }}
       benefits={{
-        title: "What This Enables",
+        title: "Was dies ermöglicht",
         items: [
-          "Clear stakeholder alignment",
-          "Better planning communication",
-          "Improved presentations",
-          "Reduced ambiguity",
-          "Seamless integration with CAD/BIM systems",
-          "Real-time site documentation",
+          "Klare Stakeholder-Abstimmung",
+          "Bessere Planungskommunikation",
+          "Verbesserte Präsentationen",
+          "Reduzierte Mehrdeutigkeit",
+          "Nahtlose Integration mit CAD/BIM-Systemen",
+          "Echtzeit-Standortdokumentation",
         ],
       }}
       icon={

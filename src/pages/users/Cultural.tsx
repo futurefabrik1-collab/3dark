@@ -3,25 +3,25 @@ import UserLandingPage from "@/components/UserLandingPage";
 const Cultural = () => {
   return (
     <UserLandingPage
-      title="For Cultural Institutions & Festivals"
-      subtitle="Preservation & Interactive Archives"
+      title="Für Kulturinstitutionen & Festivals"
+      subtitle="Bewahrung & Interaktive Archive"
       challenge={{
-        title: "The Challenge",
-        description: "Temporary or endangered spaces require preservation and audience engagement beyond the physical event.",
+        title: "Die Herausforderung",
+        description: "Temporäre oder gefährdete Räume erfordern Bewahrung und Publikumsengagement über das physische Event hinaus.",
       }}
       approach={{
-        title: "Our Approach",
-        description: "We build interactive digital twins and archival environments that extend the lifespan of cultural spaces.",
+        title: "Unser Ansatz",
+        description: "Wir erstellen interaktive Digital Twins und Archivumgebungen, die die Lebensdauer kultureller Räume verlängern.",
       }}
       benefits={{
-        title: "What This Enables",
+        title: "Was dies ermöglicht",
         items: [
-          "Long-term preservation",
-          "Interactive archives",
-          "Immersive audience experiences",
-          "Virtual tours and time-travel",
-          "Educational access worldwide",
-          "Heritage documentation",
+          "Langfristige Bewahrung",
+          "Interaktive Archive",
+          "Immersive Publikumserlebnisse",
+          "Virtuelle Touren und Zeitreisen",
+          "Weltweiter Bildungszugang",
+          "Kulturerbe-Dokumentation",
         ],
       }}
       icon={

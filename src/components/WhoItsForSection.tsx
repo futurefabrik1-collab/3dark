@@ -3,48 +3,48 @@ import { useRef } from "react";
 
 const userTypes = [
   {
-    title: "For Industrial & Infrastructure Teams",
-    description: "Communicate complex sites clearly.",
+    title: "Für Industrie & Infrastruktur-Teams",
+    description: "Kommunizieren Sie komplexe Anlagen verständlich.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="text-primary">
         <rect x="4" y="12" width="24" height="16" stroke="currentColor" strokeWidth="1.5" />
         <path d="M8 12V6h4v6M16 12V8h4v4M24 12V10" stroke="currentColor" strokeWidth="1.5" />
       </svg>
     ),
-    link: "/industrial",
+    link: "/who-its-for/industrial",
   },
   {
-    title: "For Producers & Creative Directors",
-    description: "Capture real environments for immersive storytelling.",
+    title: "Für Produzenten & Creative Directors",
+    description: "Erfassen Sie reale Umgebungen für immersives Storytelling.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="text-primary">
         <rect x="4" y="10" width="24" height="14" rx="1" stroke="currentColor" strokeWidth="1.5" />
         <path d="M12 16l6 4V12l-6 4z" fill="currentColor" />
       </svg>
     ),
-    link: "/producers",
+    link: "/who-its-for/producers",
   },
   {
-    title: "For Cultural Institutions & Festivals",
-    description: "Preserve spaces and create interactive archives.",
+    title: "Für Kulturinstitutionen & Festivals",
+    description: "Bewahren Sie Räume und schaffen Sie interaktive Archive.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="text-primary">
         <rect x="6" y="8" width="20" height="18" stroke="currentColor" strokeWidth="1.5" />
         <path d="M6 8L16 4l10 4M12 14h8M12 18h8M12 22h4" stroke="currentColor" strokeWidth="1.5" />
       </svg>
     ),
-    link: "/cultural",
+    link: "/who-its-for/cultural",
   },
   {
-    title: "For Marketing & Communication Leaders",
-    description: "Turn real sites into high-impact digital assets.",
+    title: "Für Marketing & Kommunikations-Verantwortliche",
+    description: "Verwandeln Sie reale Standorte in wirkungsvolle digitale Assets.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="text-primary">
         <circle cx="16" cy="16" r="10" stroke="currentColor" strokeWidth="1.5" />
         <path d="M16 8v8l4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
       </svg>
     ),
-    link: "/marketing",
+    link: "/who-its-for/marketing",
   },
 ];
 
@@ -62,15 +62,15 @@ const WhoItsForSection = () => {
           className="mb-16 text-center max-w-3xl mx-auto"
         >
           <p className="font-mono text-xs tracking-[0.3em] uppercase text-primary mb-4">
-            Who It's For
+            Für wen
           </p>
           <h2 className="text-3xl md:text-4xl font-serif text-foreground mb-6">
-            Built for Teams That Need More Than Photos
+            Entwickelt für Teams, die mehr als Fotos benötigen
           </h2>
           <p className="text-muted-foreground font-light leading-relaxed">
-            Whether you're communicating complex industrial sites, capturing environments for production, 
-            preserving cultural spaces, or creating compelling marketing assets — we deliver spatial intelligence 
-            that drives real decisions.
+            Ob Sie komplexe Industrieanlagen kommunizieren, Umgebungen für die Produktion erfassen, 
+            kulturelle Räume bewahren oder überzeugende Marketing-Assets erstellen — wir liefern maßgeschneiderte, 
+            modernste Lösungen.
           </p>
         </motion.div>
 
@@ -96,7 +96,7 @@ const WhoItsForSection = () => {
                 href={user.link}
                 className="inline-flex items-center gap-2 text-xs text-primary hover:text-primary/80 transition-colors font-medium"
               >
-                Learn More
+                Mehr erfahren
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                   <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>

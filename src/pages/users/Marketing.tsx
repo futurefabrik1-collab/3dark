@@ -3,25 +3,25 @@ import UserLandingPage from "@/components/UserLandingPage";
 const Marketing = () => {
   return (
     <UserLandingPage
-      title="For Marketing & Communication Leaders"
-      subtitle="High-Impact Digital Assets"
+      title="Für Marketing & Kommunikations-Verantwortliche"
+      subtitle="Wirkungsvolle Digitale Assets"
       challenge={{
-        title: "The Challenge",
-        description: "Communicating physical environments through photos and static visuals limits engagement.",
+        title: "Die Herausforderung",
+        description: "Die Kommunikation physischer Umgebungen durch Fotos und statische Visuals begrenzt das Engagement.",
       }}
       approach={{
-        title: "Our Approach",
-        description: "We transform real spaces into interactive, shareable digital assets for campaigns and stakeholder communication.",
+        title: "Unser Ansatz",
+        description: "Wir verwandeln reale Räume in interaktive, teilbare digitale Assets für Kampagnen und Stakeholder-Kommunikation.",
       }}
       benefits={{
-        title: "What This Enables",
+        title: "Was dies ermöglicht",
         items: [
-          "Stronger engagement",
-          "Differentiated presentations",
-          "Interactive storytelling tools",
-          "Social media ready assets",
-          "Shareable web experiences",
-          "Compelling stakeholder communication",
+          "Stärkeres Engagement",
+          "Differenzierte Präsentationen",
+          "Interaktive Storytelling-Tools",
+          "Social-Media-bereite Assets",
+          "Teilbare Web-Erlebnisse",
+          "Überzeugende Stakeholder-Kommunikation",
         ],
       }}
       icon={

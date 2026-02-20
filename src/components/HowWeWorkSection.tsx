@@ -15,11 +15,11 @@ const HowWeWorkSection = () => {
           className="text-center"
         >
           <p className="font-mono text-xs tracking-[0.3em] uppercase text-primary mb-6">
-            How We Work
+            Wie wir arbeiten
           </p>
           <p className="text-lg md:text-xl text-muted-foreground font-light leading-relaxed max-w-3xl mx-auto">
-            We capture real-world environments using advanced reconstruction pipelines and transform them into 
-            production-ready digital twins optimized for web, real-time engines and presentation environments.
+            Wir erfassen reale Umgebungen mit fortschrittlichen Rekonstruktions-Pipelines und verwandeln sie in 
+            produktionsreife Digital Twins, optimiert für Web, Echtzeit-Engines und Präsentationsumgebungen.
           </p>
         </motion.div>
       </div>

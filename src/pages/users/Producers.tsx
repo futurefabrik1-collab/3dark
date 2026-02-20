@@ -3,25 +3,25 @@ import UserLandingPage from "@/components/UserLandingPage";
 const Producers = () => {
   return (
     <UserLandingPage
-      title="For Producers & Creative Directors"
-      subtitle="Production-Ready Environments"
+      title="Für Produzenten & Creative Directors"
+      subtitle="Produktionsreife Umgebungen"
       challenge={{
-        title: "The Challenge",
-        description: "Capturing real-world environments for storytelling, VFX and immersive projects is time-intensive and costly.",
+        title: "Die Herausforderung",
+        description: "Die Erfassung realer Umgebungen für Storytelling, VFX und immersive Projekte ist zeitintensiv und kostspielig.",
       }}
       approach={{
-        title: "Our Approach",
-        description: "We deliver volumetric 3D environments ready for Unreal, Unity and cinematic pipelines.",
+        title: "Unser Ansatz",
+        description: "Wir liefern volumetrische 3D-Umgebungen, bereit für Unreal, Unity und filmische Pipelines.",
       }}
       benefits={{
-        title: "What This Enables",
+        title: "Was dies ermöglicht",
         items: [
-          "Faster production workflows",
-          "High visual realism",
-          "Flexible camera and scene control",
-          "Virtual production ready",
-          "No location scouting required",
-          "Repeatable environment capture",
+          "Schnellere Produktions-Workflows",
+          "Hoher visueller Realismus",
+          "Flexible Kamera- und Szenenkontrolle",
+          "Virtual Production bereit",
+          "Keine Standortsuche erforderlich",
+          "Wiederholbare Umgebungserfassung",
         ],
       }}
       icon={

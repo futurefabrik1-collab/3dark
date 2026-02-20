@@ -28,7 +28,7 @@ const HeroSection = () => {
             transition={{ duration: 0.9, delay: 0.2 }}
             className="text-5xl md:text-6xl lg:text-7xl font-serif leading-[1.1] mb-8 text-foreground"
           >
-            We Turn Real Spaces into <span className="gradient-text">Digital Assets</span>
+            Wir verwandeln reale Räume in <span className="gradient-text">digitale Assets</span>
           </motion.h1>
 
           <motion.p
@@ -37,7 +37,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-lg md:text-xl text-muted-foreground font-light max-w-2xl leading-relaxed mb-10"
           >
-            For industrial teams, cultural institutions, producers and marketing leaders who need clarity, immersion and impact from real-world environments.
+            Für Industrie-Teams, Kulturinstitutionen, Produzenten und Marketing-Verantwortliche, die Klarheit, Immersion und Impact aus realen Umgebungen benötigen.
           </motion.p>
 
           <motion.div
@@ -50,7 +50,7 @@ const HeroSection = () => {
               href="#who-its-for"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 text-sm font-medium tracking-wide hover:bg-primary/90 transition-colors"
             >
-              Identify Your Project Type
+              Projekttyp identifizieren
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="mt-px">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -59,7 +59,7 @@ const HeroSection = () => {
               href="#projects"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors font-light border-b border-border pb-0.5 hover:border-foreground"
             >
-              View Selected Projects
+              Ausgewählte Projekte ansehen
             </a>
           </motion.div>
         </div>
