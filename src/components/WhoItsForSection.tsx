@@ -53,8 +53,18 @@ const WhoItsForSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="who-its-for" className="py-32 px-6 bg-background">
-      <div ref={ref} className="max-w-6xl mx-auto">
+    <section id="who-its-for" className="py-32 px-6 relative overflow-hidden bg-background">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img 
+          src="/images/warehouse-ruins.png" 
+          alt="" 
+          className="w-full h-full object-cover opacity-10 mix-blend-overlay"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/98 to-background" />
+      </div>
+      
+      <div ref={ref} className="max-w-6xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}

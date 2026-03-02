@@ -4,18 +4,22 @@ import { getRandomEntranceAnimation } from "@/utils/animations";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Blueprint grid background */}
-      <div className="absolute inset-0 blueprint-grid opacity-40" />
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-background scanlines">
+      {/* Industrial grid background */}
+      <div className="absolute inset-0 industrial-grid opacity-20" />
       
-      {/* Background illustration */}
+      {/* Neon glow accents */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      
+      {/* Background illustration - 3D Gaussian Splatting Visualization */}
       <div className="absolute inset-0">
         <img
-          src={heroBg}
-          alt="Technical blueprint illustration of Gaussian Splatting"
-          className="w-full h-full object-cover opacity-30"
+          src="/images/hero-bg.png"
+          alt="3D Gaussian Splatting point cloud visualization"
+          className="w-full h-full object-cover opacity-20 mix-blend-screen"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/70" />
       </div>
 
       {/* Content */}
@@ -27,15 +31,15 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-mono text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-[0.15em] uppercase text-primary mb-8 relative inline-block"
+            className="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-[0.1em] uppercase text-primary text-glow mb-8 relative inline-block font-semibold"
           >
             3D-ARK
-            {/* Decorative underline */}
+            {/* Neon underline */}
             <motion.div
               initial={{ width: 0 }}
               animate={{ width: "100%" }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="absolute -bottom-3 left-0 h-0.5 bg-primary/40"
+              className="absolute -bottom-3 left-0 h-px bg-primary shadow-[0_0_10px_rgba(var(--glow),0.6)]"
             />
           </motion.h1>
 
@@ -65,7 +69,7 @@ const HeroSection = () => {
           >
             <a
               href="#who-its-for"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 text-sm font-medium tracking-wide hover:bg-primary/90 transition-colors"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 text-sm font-mono uppercase tracking-wider hover:bg-primary/90 transition-all neon-glow hover:shadow-[0_0_20px_rgba(var(--glow),0.5)]"
             >
               Projekttyp identifizieren
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="mt-px">
@@ -74,9 +78,9 @@ const HeroSection = () => {
             </a>
             <a
               href="#projects"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors font-light border-b border-border pb-0.5 hover:border-foreground"
+              className="text-sm text-muted-foreground hover:text-primary transition-colors font-mono uppercase tracking-wider border-b border-border pb-0.5 hover:border-primary"
             >
-              Ausgewählte Projekte ansehen
+              Projekte ansehen
             </a>
           </motion.div>
         </div>
@@ -87,17 +91,18 @@ const HeroSection = () => {
           className="relative"
         >
           <motion.div 
-            className="aspect-[4/3] media-placeholder rounded-sm flex items-center justify-center"
+            className="aspect-[4/3] overflow-hidden neon-border bg-surface/50 backdrop-blur-sm relative group"
           >
             <img 
-              src="/logo-3dark.png" 
-              alt="3DARK Logo" 
-              className="w-full h-full object-contain p-8"
+              src="/images/berlin-street.png" 
+              alt="Berlin Underground Culture" 
+              className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
           </motion.div>
-          {/* Decorative sketch marks */}
-          <div className="absolute -top-3 -left-3 w-6 h-6 border-t-2 border-l-2 border-primary/30" />
-          <div className="absolute -bottom-3 -right-3 w-6 h-6 border-b-2 border-r-2 border-primary/30" />
+          {/* Neon corner accents */}
+          <div className="absolute -top-3 -left-3 w-6 h-6 border-t border-l border-primary shadow-[0_0_5px_rgba(var(--glow),0.4)]" />
+          <div className="absolute -bottom-3 -right-3 w-6 h-6 border-b border-r border-primary shadow-[0_0_5px_rgba(var(--glow),0.4)]" />
         </motion.div>
       </div>
 

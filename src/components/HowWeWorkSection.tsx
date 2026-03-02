@@ -6,8 +6,17 @@ const HowWeWorkSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-32 px-6 parchment-bg">
-      <div ref={ref} className="max-w-4xl mx-auto">
+    <section className="py-32 px-6 parchment-bg relative overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img 
+          src="/images/urban-tunnel.png" 
+          alt="" 
+          className="w-full h-full object-cover opacity-5 mix-blend-screen"
+        />
+      </div>
+      
+      <div ref={ref} className="max-w-4xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}

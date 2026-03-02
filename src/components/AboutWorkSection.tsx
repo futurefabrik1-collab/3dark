@@ -10,37 +10,51 @@ const benefits = [
   { title: "Subkulturen und verborgene Räume", desc: "Was keine Institution jemals dokumentieren würde." },
 ];
 
-const AboutSection = () => {
+const AboutWorkSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="about" className="py-32 px-6 relative overflow-hidden">
-      {/* Background pattern */}
+    <section id="about" className="py-32 px-6 relative overflow-hidden parchment-bg">
+      {/* Background image with increased opacity */}
+      <div className="absolute inset-0">
+        <img 
+          src="/images/urban-tunnel.png" 
+          alt="" 
+          className="w-full h-full object-cover opacity-10 mix-blend-screen"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/95 to-background" />
+      </div>
+      
+      {/* Background pattern overlay */}
       <div className="absolute inset-0 opacity-5">
         <img src="/images/pattern-grid.png" alt="" className="w-full h-full object-cover mix-blend-overlay" />
       </div>
+      
       <div ref={ref} className="max-w-6xl mx-auto relative z-10">
-        {/* Intro */}
+        {/* Combined Intro Section */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="max-w-3xl mb-16"
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-20"
         >
-          <p className="font-mono text-xs tracking-[0.3em] uppercase text-primary/60 mb-6">
+          <p className="font-mono text-xs tracking-[0.3em] uppercase text-primary mb-6">
             Was Wir Tun
           </p>
-          <p className="text-lg md:text-xl text-muted-foreground font-light leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground font-light leading-relaxed max-w-3xl mx-auto mb-6">
             3DARK erfasst das Unsichtbare. Wir archivieren Orte, die dem Vergessen geweiht sind – unterirdische Clubs, verwaiste Industrieruinen, ephemere Installationen, verbotene Räume. Mit Gaussian Splatting und volumetrischer Erfassung schaffen wir digitale Ewigkeit für das, was morgen schon Geschichte ist.
+          </p>
+          <p className="text-lg md:text-xl text-muted-foreground font-light leading-relaxed max-w-3xl mx-auto">
+            Wir erfassen reale Umgebungen mit fortschrittlichen Rekonstruktions-Pipelines und verwandeln sie in produktionsreife Digital Twins, optimiert für Web, Echtzeit-Engines und Präsentationsumgebungen.
           </p>
         </motion.div>
 
-        {/* What you get */}
+        {/* Who We Are */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.2 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
           className="border-t border-border pt-10 mb-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
         >
           <div>
@@ -55,12 +69,12 @@ const AboutSection = () => {
             </p>
           </div>
           <motion.div 
-            {...getRandomInViewAnimation(isInView, 0.3)}
+            {...getRandomInViewAnimation(isInView, 0.4)}
             className="relative aspect-video overflow-hidden neon-border group"
           >
             <img 
-              src="/images/berlin-street.png" 
-              alt="Berlin Underground Culture" 
+              src="/images/art-installation.png" 
+              alt="3DARK Art Installation" 
               className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
@@ -71,7 +85,7 @@ const AboutSection = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
         >
           <p className="font-mono text-xs tracking-[0.3em] uppercase text-primary mb-4">
             Warum Gaussian Splatting?
@@ -87,7 +101,7 @@ const AboutSection = () => {
             {benefits.map((b, i) => (
               <motion.div
                 key={b.title}
-                {...getRandomInViewAnimation(isInView, 0.5 + 0.1 * i)}
+                {...getRandomInViewAnimation(isInView, 0.6 + 0.1 * i)}
                 className="p-6 border border-border hover:border-primary/30 transition-all duration-500"
               >
                 <h3 className="text-sm font-medium text-foreground mb-2">{b.title}</h3>
@@ -102,4 +116,4 @@ const AboutSection = () => {
   );
 };
 
-export default AboutSection;
+export default AboutWorkSection;

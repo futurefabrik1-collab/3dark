@@ -1,7 +1,7 @@
 import HeroSection from "@/components/HeroSection";
+import ShowreelSection from "@/components/ShowreelSection";
 import WhoItsForSection from "@/components/WhoItsForSection";
-import HowWeWorkSection from "@/components/HowWeWorkSection";
-import AboutSection from "@/components/AboutSection";
+import AboutWorkSection from "@/components/AboutWorkSection";
 import ServicesSection from "@/components/ServicesSection";
 import IndustriesSection from "@/components/IndustriesSection";
 import ProjectsSection from "@/components/ProjectsSection";
@@ -13,11 +13,11 @@ const Index = () => {
   return (
     <main className="bg-background min-h-screen">
       <HeroSection />
+      <ShowreelSection />
       <WhoItsForSection />
-      <HowWeWorkSection />
+      <AboutWorkSection />
       
       {/* OLD SECTIONS - PLACEHOLDERS */}
-      <AboutSection />
       <ServicesSection />
       <IndustriesSection />
       

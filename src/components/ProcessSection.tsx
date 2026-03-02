@@ -14,8 +14,17 @@ const ProcessSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-32 px-6">
-      <div ref={ref} className="max-w-6xl mx-auto">
+    <section className="py-32 px-6 relative overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img 
+          src="/images/virtual-production.png" 
+          alt="" 
+          className="w-full h-full object-cover opacity-10 mix-blend-screen"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/98 to-background" />
+      </div>
+      <div ref={ref} className="max-w-6xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
@@ -56,27 +65,6 @@ const ProcessSection = () => {
           ))}
         </div>
 
-        {/* Full-width video placeholder */}
-        <motion.div
-          {...getRandomInViewAnimation(isInView, 0.6)}
-          className="mt-20"
-        >
-          <div className="aspect-[21/9] media-placeholder rounded-sm flex items-center justify-center">
-            <div className="relative z-10 text-center">
-              <div className="w-20 h-20 rounded-full border-2 border-primary/30 flex items-center justify-center mx-auto mb-4">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="text-primary ml-1">
-                  <path d="M8 5v14l11-7L8 5z" fill="currentColor" />
-                </svg>
-              </div>
-              <p className="font-mono text-xs tracking-wider text-muted-foreground uppercase">
-                Showreel · Gaussian Splatting in Aktion
-              </p>
-              <p className="text-xs text-muted-foreground/50 mt-1">
-                Video Platzhalter · 21:9
-              </p>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

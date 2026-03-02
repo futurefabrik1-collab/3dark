@@ -15,8 +15,31 @@ export default {
     extend: {
       fontFamily: {
         sans: ["DM Sans", "system-ui", "sans-serif"],
-        serif: ["DM Serif Display", "Georgia", "serif"],
+        serif: ["Rajdhani", "Tahoma", "sans-serif"], // Changed to Rajdhani for headers
         mono: ["Space Mono", "monospace"],
+        
+        // Urban font variations for testing - color coded
+        'urban-1': ["Anton", "Impact", "sans-serif"],           // Red accent - Bold Impact
+        'urban-2': ["Bebas Neue", "Arial Black", "sans-serif"], // Blue accent - Tall & Condensed
+        'urban-3': ["Oswald", "Arial Narrow", "sans-serif"],    // Green accent - Modern Street
+        'urban-4': ["Rajdhani", "Tahoma", "sans-serif"],        // Purple accent - Tech/Cyberpunk
+        'urban-5': ["Barlow Condensed", "Arial", "sans-serif"], // Orange accent - Industrial
+      },
+      fontSize: {
+        // Base sizes increased by 2 points (from default Tailwind)
+        xs: ['0.875rem', { lineHeight: '1.25rem' }],      // was 0.75rem
+        sm: ['1rem', { lineHeight: '1.5rem' }],           // was 0.875rem
+        base: ['1.125rem', { lineHeight: '1.75rem' }],    // was 1rem
+        lg: ['1.25rem', { lineHeight: '1.875rem' }],      // was 1.125rem
+        xl: ['1.375rem', { lineHeight: '2rem' }],         // was 1.25rem
+        '2xl': ['1.625rem', { lineHeight: '2.25rem' }],   // was 1.5rem
+        '3xl': ['2rem', { lineHeight: '2.5rem' }],        // was 1.875rem
+        '4xl': ['2.5rem', { lineHeight: '2.75rem' }],     // was 2.25rem
+        '5xl': ['3.125rem', { lineHeight: '1.1' }],       // was 3rem
+        '6xl': ['3.875rem', { lineHeight: '1.1' }],       // was 3.75rem
+        '7xl': ['5rem', { lineHeight: '1.05' }],          // was 4.5rem
+        '8xl': ['6.25rem', { lineHeight: '1' }],          // was 6rem
+        '9xl': ['8.25rem', { lineHeight: '1' }],          // was 8rem
       },
       colors: {
         border: "hsl(var(--border))",
