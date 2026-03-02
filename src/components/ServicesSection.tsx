@@ -10,8 +10,8 @@ const solutions = [
         <circle cx="16" cy="16" r="4" stroke="currentColor" strokeWidth="1.5" />
       </svg>
     ),
-    label: "Digital Twins",
-    detail: "Real-world environments captured with extreme fidelity. Accurate spatial data for industrial planning, infrastructure monitoring, and architectural documentation.",
+    label: "Digitale Schatten Realer Orte",
+    detail: "Wir erschaffen nicht nur 3D-Modelle – wir klonen Atmosphäre. Jede Fuge, jeder Riss, jede Lichtreflexion. Perfekt für Räume, die zu komplex, zu dunkel oder zu flüchtig für konventionelle Dokumentation sind.",
   },
   {
     icon: (
@@ -20,8 +20,8 @@ const solutions = [
         <circle cx="16" cy="18" r="3" stroke="currentColor" strokeWidth="1" />
       </svg>
     ),
-    label: "Interactive Web & Realtime Environments",
-    detail: "Browser-based and engine-integrated experiences. Explore complex spaces in real-time, from desktop to VR, without downloads or plugins.",
+    label: "Begehbare Erinnerungen",
+    detail: "Keine Downloads. Kein VR-Headset. Nur ein QR-Code – und der Club, den sie abgerissen haben, lebt wieder. Im Browser. In Echtzeit. Für immer.",
   },
   {
     icon: (
@@ -30,8 +30,8 @@ const solutions = [
         <path d="M13 14l4 2.5L13 19V14z" fill="currentColor" />
       </svg>
     ),
-    label: "3D Capture for Media & VFX",
-    detail: "High-detail volumetric environments for production pipelines. Camera-ready assets for film, TV, advertising, and virtual production workflows.",
+    label: "Film-Ready Dystopie",
+    detail: "Location-Scouting für Orte, die nicht mehr existieren. Oder nie hätten existieren dürfen. Gaussian-Splatting-Assets für Virtual Production, VFX-Plates und Game-Environments. Kein Green Screen. Nur rohe, digitalisierte Realität.",
   },
   {
     icon: (
@@ -41,8 +41,8 @@ const solutions = [
         <circle cx="16" cy="16" r="2" fill="currentColor" />
       </svg>
     ),
-    label: "Cultural & Industrial Archiving",
-    detail: "Long-term digital preservation of complex spaces. Heritage sites, industrial facilities, and cultural events captured for research, education, and posterity.",
+    label: "Archive des Vergessens",
+    detail: "Industrieruinen. Besetzte Häuser. Illegale Raves. Guerrilla-Ausstellungen. Wir archivieren, was keine Institution jemals dokumentieren würde – und geben es der Ewigkeit zurück.",
   },
 ];
 
@@ -60,10 +60,10 @@ const SolutionsSection = () => {
           className="mb-16"
         >
           <p className="font-mono text-xs tracking-[0.3em] uppercase text-primary mb-4">
-            Solutions
+            Lösungen
           </p>
           <h2 className="text-3xl md:text-4xl font-serif text-foreground max-w-xl">
-            Production-Ready Digital Environments
+            Digitale Umgebungen für das Unmögliche
           </h2>
         </motion.div>
 

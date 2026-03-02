@@ -54,7 +54,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-lg md:text-xl text-muted-foreground font-light max-w-2xl leading-relaxed mb-10"
           >
-            Für Industrie-Teams, Kulturinstitutionen, Produzenten und Marketing-Verantwortliche, die Klarheit, Immersion und Impact aus realen Umgebungen benötigen.
+            Für alle, die Räume festhalten, die nicht in Hochglanzbroschüren passen. Underground-Locations, verlassene Industrie, flüchtige Events, subversive Kulturen – bevor sie verschwinden.
           </motion.p>
 
           <motion.div

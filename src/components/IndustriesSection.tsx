@@ -3,28 +3,8 @@ import { useRef } from "react";
 
 const industries = [
   {
-    title: "Industrial & Infrastructure",
-    description: "Digital twins for manufacturing facilities, power plants, and critical infrastructure. Real-time monitoring, planning, and documentation.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="text-primary">
-        <rect x="4" y="12" width="24" height="16" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M8 12V6h4v6M16 12V8h4v4M24 12V10" stroke="currentColor" strokeWidth="1.5" />
-      </svg>
-    ),
-  },
-  {
-    title: "Cultural Institutions & Festivals",
-    description: "Immersive documentation of exhibitions, festivals, and cultural events. Virtual tours, archival preservation, and interactive experiences.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="text-primary">
-        <rect x="6" y="8" width="20" height="18" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M6 8L16 4l10 4M12 14h8M12 18h8M12 22h4" stroke="currentColor" strokeWidth="1.5" />
-      </svg>
-    ),
-  },
-  {
-    title: "Film, TV & Games",
-    description: "Production-ready environments for virtual production, VFX plates, and game development. Photorealistic locations without location scouting.",
+    title: "Für Regisseure, die echte Orte brauchen, keine CGI-Sterilität",
+    description: "Cyberpunk-Unterführungen. Verlassene Sowjet-Architektur. Industrieruinen mit Charakter. Wir scannen, was Ihr Set-Designer nie bauen könnte – und liefern es production-ready für Unreal, Unity oder Houdini.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="text-primary">
         <rect x="4" y="10" width="24" height="14" rx="1" stroke="currentColor" strokeWidth="1.5" />
@@ -33,18 +13,28 @@ const industries = [
     ),
   },
   {
-    title: "Architecture & Planning",
-    description: "As-built documentation, construction monitoring, and design visualization. Integrate with BIM workflows and CAD systems.",
+    title: "Für Clubs, Kollektive & Kulturkämpfer",
+    description: "Eure Location wird abgerissen? Euer Festival war einmalig? Eure Installation ist ephemer? Wir geben euch digitale Unsterblichkeit. QR-Code aufs Plakat – und jeder kann nacherleben, was ihr geschaffen habt. Für immer.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="text-primary">
-        <path d="M4 28h24M8 28V8l8-4l8 4v20" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M12 14h8M12 18h8M12 22h8" stroke="currentColor" strokeWidth="1" />
+        <rect x="6" y="8" width="20" height="18" stroke="currentColor" strokeWidth="1.5" />
+        <path d="M6 8L16 4l10 4M12 14h8M12 18h8M12 22h4" stroke="currentColor" strokeWidth="1.5" />
       </svg>
     ),
   },
   {
-    title: "Education & Training",
-    description: "Virtual field trips, historical reconstructions, and training simulations. Safe, repeatable environments for hands-on learning.",
+    title: "Für Ingenieure, die keine Angst vor Komplexität haben",
+    description: "Kraftwerke. U-Bahn-Tunnel. Offshore-Plattformen. Die Art von Infrastruktur, die zu groß, zu gefährlich oder zu komplex für klassische Vermessung ist. Wir digitalisieren, was andere fürchten.",
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="text-primary">
+        <rect x="4" y="12" width="24" height="16" stroke="currentColor" strokeWidth="1.5" />
+        <path d="M8 12V6h4v6M16 12V8h4v4M24 12V10" stroke="currentColor" strokeWidth="1.5" />
+      </svg>
+    ),
+  },
+  {
+    title: "Für Creators, die Realismus ohne Bullshit wollen",
+    description: "Photogrammetrie-Assets. Gaussian Splatting Environments. Volumetrische Scans. Direkt in eure Engine. Keine Stock-Library. Nur rohe, ungefilterte Wirklichkeit.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="text-primary">
         <path d="M16 4L4 10l12 6l12-6-12-6zM4 22l12 6l12-6M4 16l12 6l12-6" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
@@ -67,13 +57,13 @@ const IndustriesSection = () => {
           className="mb-16 text-center max-w-3xl mx-auto"
         >
           <p className="font-mono text-xs tracking-[0.3em] uppercase text-primary mb-4">
-            Industries
+            Für Wen
           </p>
           <h2 className="text-3xl md:text-4xl font-serif text-foreground mb-6">
-            Trusted Across Sectors
+            Für die, die mehr wollen als Stockfotos
           </h2>
           <p className="text-muted-foreground font-light leading-relaxed">
-            From heavy industry to cultural heritage, we deliver bespoke, cutting-edge solutions.
+            Von Underground-Kultur bis komplexe Infrastruktur – wir liefern, was andere nicht können.
           </p>
         </motion.div>
 

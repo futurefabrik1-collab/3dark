@@ -3,11 +3,11 @@ import { useRef } from "react";
 import { getRandomInViewAnimation } from "@/utils/animations";
 
 const benefits = [
-  { title: 'Fotorealismus statt \u201eCG-Look\u201c', desc: "Feine Lichtstimmungen, Materialdetails und echten Fotografie-Charakter – kein steriler 3D-Render." },
-  { title: "Interaktiv im Browser", desc: "Perfekt via QR-Code auf Print, Plakaten oder in Präsentationen – kein Download, keine App." },
-  { title: "Echtzeit in Unreal / Unity", desc: "Je nach Optimierung und Zielhardware direkt in Game-Engines einsetzbar." },
-  { title: "Storytelling-Ready", desc: "Kamerafahrten, Reframing und Social-Media-Clips aus einem einzigen Scan." },
-  { title: "Digital-Twin-kompatibel", desc: "Kombination mit CAD, BIM und Planungsständen für Industrie und Architektur." },
+  { title: 'Underground-Locations mit komplexer Lichtarchitektur', desc: "Clubs, Keller, verlassene Räume – wo Licht zur Atmosphäre wird." },
+  { title: "Ephemere Events und Installationen", desc: "Festivals, Pop-ups, Guerrilla-Kunst – bevor sie verschwinden." },
+  { title: "Verlassene Räume und urbane Ruinen", desc: "Industriebrachen, besetzte Häuser, Orte des Verfalls." },
+  { title: "Film-Sets mit atmosphärischer Tiefe", desc: "Virtual Production ohne Green Screen. Nur rohe, digitalisierte Realität." },
+  { title: "Subkulturen und verborgene Räume", desc: "Was keine Institution jemals dokumentieren würde." },
 ];
 
 const AboutSection = () => {
@@ -25,10 +25,10 @@ const AboutSection = () => {
           className="max-w-3xl mb-16"
         >
           <p className="font-mono text-xs tracking-[0.3em] uppercase text-primary/60 mb-6">
-            What We Do
+            Was Wir Tun
           </p>
           <p className="text-lg md:text-xl text-muted-foreground font-light leading-relaxed">
-            3DARK transforms real-world environments into production-ready digital assets. Using advanced capture and Gaussian Splatting pipelines, we deliver interactive, engine-ready environments that can be used for planning, storytelling, training and preservation.
+            3DARK erfasst das Unsichtbare. Wir archivieren Orte, die dem Vergessen geweiht sind – unterirdische Clubs, verwaiste Industrieruinen, ephemere Installationen, verbotene Räume. Mit Gaussian Splatting und volumetrischer Erfassung schaffen wir digitale Ewigkeit für das, was morgen schon Geschichte ist.
           </p>
         </motion.div>
 
@@ -41,13 +41,13 @@ const AboutSection = () => {
         >
           <div>
             <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-4">
-              Who We Are
+              Wer Wir Sind
             </h2>
             <p className="text-muted-foreground font-light leading-relaxed mb-4">
-              3DARK operates at the intersection of advanced capture technology and production pipelines. We don't just scan — we deliver production-ready spatial intelligence.
+              Wir sind keine Archivare im klassischen Sinne. Wir sind Jäger vergänglicher Momente. Geister in der Maschine. Seit dem Aufkommen von Gaussian Splatting kartieren wir, was andere ignorieren: Die Schattenseiten, die Zwischenräume, die Orte ohne Marketing-Budget.
             </p>
             <p className="text-sm text-muted-foreground/80 font-light leading-relaxed">
-              Born from the convergence of photogrammetry, volumetric capture, and real-time rendering, we've been pushing the boundaries of what's possible since Gaussian Splatting emerged. Elusive by design. Focused on results.
+              Elusive by design. Obsessiv in der Ausführung. Wir dokumentieren nicht – wir konservieren Atmosphäre.
             </p>
           </div>
           <motion.div 
@@ -79,12 +79,10 @@ const AboutSection = () => {
             Warum Gaussian Splatting?
           </p>
           <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-4 max-w-2xl">
-            Extrem realistische Raumwirkung – inklusive feiner Lichtstimmungen und Materialdetails
+            Licht und Schatten in ihrer rohesten Form
           </h2>
           <p className="text-muted-foreground font-light leading-relaxed mb-10 max-w-2xl">
-            Im Vergleich zu klassischen Meshes kann GS je nach Use-Case schneller in der Erfassung
-            sein und wirkt besonders stark bei volumetrischen, komplexen oder detailreichen Szenen –
-            Industrie, Architektur, Kunst, Clubräume.
+            Gaussian Splatting fängt nicht nur Geometrie – es fängt Seele. Die Lichtreflexe einer schäbigen Neonröhre. Der Staub in einem verlassenen Lagerhaus. Die Patina von Jahrzehnten auf Betonwänden. Wo klassische 3D-Scans steril wirken, liefert GS fotorealistischen Verfall.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
