@@ -93,9 +93,12 @@ const HeroSection = () => {
           <motion.div 
             className="aspect-[4/3] overflow-hidden neon-border bg-surface/50 backdrop-blur-sm relative group"
           >
-            <img 
-              src="/images/berlin-street.png" 
-              alt="Berlin Underground Culture" 
+            <video 
+              src="/images/Gen 4 Turbo Camera Dolly.mp4" 
+              autoPlay
+              loop
+              muted
+              playsInline
               className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
