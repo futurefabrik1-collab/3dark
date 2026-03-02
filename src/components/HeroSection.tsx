@@ -22,14 +22,31 @@ const HeroSection = () => {
       <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-12 py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left: Text */}
         <div>
+          {/* Brand Title */}
           <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="font-mono text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-[0.15em] uppercase text-primary mb-8 relative inline-block"
+          >
+            3D-ARK
+            {/* Decorative underline */}
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: "100%" }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="absolute -bottom-3 left-0 h-0.5 bg-primary/40"
+            />
+          </motion.h1>
+
+          <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.2 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-serif leading-[1.1] mb-8 text-foreground"
+            className="text-3xl md:text-4xl lg:text-5xl font-serif leading-[1.2] mb-8 text-foreground max-w-2xl"
           >
             Wir verwandeln reale Räume in <span className="gradient-text">digitale Assets</span>
-          </motion.h1>
+          </motion.h2>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
