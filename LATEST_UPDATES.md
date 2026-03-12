@@ -62,7 +62,7 @@ Increased opacity from 5% to **10%** across all sections:
 ## 🚀 Deployment Status
 - ✅ **Git**: Committed and pushed to `origin/main`
 - ✅ **Vercel Production**: https://www.3dark.de
-- ✅ **Local Backup**: `/Users/markburnett/DevPro/3dark-backup-20260302-135322.tar.gz` (61MB)
+- ✅ **Local Backup**: `/Users/markburnett/DevPro/websites/3dark-backup-20260302-135322.tar.gz` (61MB)
 
 ---
 
