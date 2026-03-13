@@ -71,6 +71,22 @@ const renderProjectMedia = (title: string) => {
     );
   }
 
+  const staticImages: Record<string, string> = {
+    "Babylon Berlin – Drachenburg": "/images/webp/babylon-berlin.webp",
+    "Alfons Zitterbacke": "/images/webp/alfons-zitterbacke.webp",
+    "Abandoned Buildings Leipzig": "/images/webp/abandoned-buildings-leipzig.webp",
+  };
+
+  if (staticImages[title]) {
+    return (
+      <img
+        src={staticImages[title]}
+        alt={title}
+        className="w-full h-full object-cover"
+      />
+    );
+  }
+
   return (
     <div className="relative z-10 text-center p-4">
       <div className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center mx-auto mb-2">
