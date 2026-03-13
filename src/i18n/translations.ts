@@ -200,10 +200,6 @@ export const translations = {
           description: "Your venue is closing. Your festival was a one-off. Your installation is coming down. We create a navigable spatial record. A QR code on a poster — and anyone can experience what you built.",
         },
         {
-          title: "For engineers working with complex infrastructure",
-          description: "Power stations. Underground tunnels. Offshore platforms. Infrastructure too large, too hazardous, or too complex for conventional survey. We document what others won't.",
-        },
-        {
           title: "For creators who need real environments",
           description: "Photogrammetry assets. Gaussian Splatting environments. Volumetric scans. Delivered directly into your pipeline. No stock library. The actual physical reality of the space.",
         },
@@ -221,10 +217,6 @@ export const translations = {
         {
           title: "Für Clubs, Kollektive und Kulturräume",
           description: "Euer Venue schließt. Euer Festival war einmalig. Eure Installation wird abgebaut. Wir schaffen ein navigierbares räumliches Dokument. Ein QR-Code auf dem Plakat — und jeder kann nacherleben, was ihr geschaffen habt.",
-        },
-        {
-          title: "Für Ingenieure mit komplexer Infrastruktur",
-          description: "Kraftwerke. U-Bahn-Tunnel. Offshore-Plattformen. Infrastruktur, die zu groß, zu gefährlich oder zu komplex für klassische Vermessung ist. Wir dokumentieren, was andere scheuen.",
         },
         {
           title: "Für Creators, die reale Umgebungen brauchen",
