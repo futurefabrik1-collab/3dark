@@ -12,7 +12,7 @@ const HowWeWorkSection = () => {
   return (
     <section className="py-32 px-6 parchment-bg relative overflow-hidden">
       <div className="absolute inset-0">
-        <img src="/images/urban-tunnel.png" alt="" className="w-full h-full object-cover opacity-5 mix-blend-screen" />
+        <img src="/images/webp/urban-tunnel.webp" alt="" className="w-full h-full object-cover opacity-5 mix-blend-screen" />
       </div>
       <div ref={ref} className="max-w-4xl mx-auto relative z-10">
         <motion.div

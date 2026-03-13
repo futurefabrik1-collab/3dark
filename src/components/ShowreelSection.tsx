@@ -13,7 +13,7 @@ const ShowreelSection = () => {
   return (
     <section id="showreel" className="py-32 px-6 relative overflow-hidden bg-background">
       <div className="absolute inset-0">
-        <img src="/images/art-installation.png" alt="" className="w-full h-full object-cover opacity-10 mix-blend-screen" />
+        <img src="/images/webp/art-installation.webp" alt="" className="w-full h-full object-cover opacity-10 mix-blend-screen" />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
       </div>
       <div className="absolute inset-0 industrial-grid opacity-10" />

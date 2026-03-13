@@ -13,7 +13,7 @@ const ProcessSection = () => {
   return (
     <section id="process" className="py-32 px-6 relative overflow-hidden">
       <div className="absolute inset-0">
-        <img src="/images/virtual-production.png" alt="" className="w-full h-full object-cover opacity-10 mix-blend-screen" />
+        <img src="/images/webp/virtual-production.webp" alt="" className="w-full h-full object-cover opacity-10 mix-blend-screen" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/98 to-background" />
       </div>
       <div ref={ref} className="max-w-6xl mx-auto relative z-10">

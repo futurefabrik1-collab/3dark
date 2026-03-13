@@ -19,7 +19,7 @@ const HeroSection = () => {
       {/* Background illustration */}
       <div className="absolute inset-0">
         <img
-          src="/images/hero-bg.png"
+          src="/images/webp/hero-bg.webp"
           alt="3D Gaussian Splatting point cloud visualization"
           className="w-full h-full object-cover opacity-20 mix-blend-screen"
         />

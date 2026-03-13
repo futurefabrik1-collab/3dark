@@ -18,7 +18,7 @@ const AboutSection = () => {
     <section id="about" className="py-32 px-6 relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
-        <img src="/images/pattern-grid.png" alt="" className="w-full h-full object-cover mix-blend-overlay" />
+        <img src="/images/webp/pattern-grid.webp" alt="" className="w-full h-full object-cover mix-blend-overlay" />
       </div>
       <div ref={ref} className="max-w-6xl mx-auto relative z-10">
         {/* Intro */}
@@ -59,7 +59,7 @@ const AboutSection = () => {
             className="relative aspect-video overflow-hidden neon-border group"
           >
             <img 
-              src="/images/berlin-street.png" 
+              src="/images/webp/berlin-street.webp" 
               alt="Berlin Underground Culture" 
               className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
             />

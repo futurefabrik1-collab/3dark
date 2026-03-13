@@ -46,7 +46,7 @@ const WhoItsForSection = () => {
   return (
     <section id="who-its-for" className="py-32 px-6 relative overflow-hidden bg-background">
       <div className="absolute inset-0">
-        <img src="/images/warehouse-ruins.png" alt="" className="w-full h-full object-cover opacity-10 mix-blend-overlay" />
+        <img src="/images/webp/warehouse-ruins.webp" alt="" className="w-full h-full object-cover opacity-10 mix-blend-overlay" />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/98 to-background" />
       </div>
 

@@ -4,10 +4,10 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/i18n/translations";
 
 const images = [
-  "/images/service-urban-tunnel.png",
-  "/images/service-club-scan.png",
-  "/images/service-virtual-production.png",
-  "/images/service-warehouse-ruins.png",
+  "/images/webp/service-urban-tunnel.webp",
+  "/images/webp/service-club-scan.webp",
+  "/images/webp/service-virtual-production.webp",
+  "/images/webp/service-warehouse-ruins.webp",
 ];
 
 const ServicesSection = () => {
