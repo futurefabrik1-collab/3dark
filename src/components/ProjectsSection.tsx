@@ -15,7 +15,7 @@ const renderProjectMedia = (title: string) => {
   if (title === "GS Social Media Tour") {
     return (
       <video
-        src="/media/sxsw-future-fabrik-transformers-gorilla.mov"
+        src="/media/sxsw-future-fabrik-transformers-gorilla-small.mp4"
         controls
         playsInline
         className="w-full h-full object-cover bg-black"
