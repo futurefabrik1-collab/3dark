@@ -31,11 +31,12 @@ const ShowreelSection = () => {
           <p className="font-mono text-xs tracking-[0.3em] uppercase text-primary mb-4">
             Showreel
           </p>
+
           <h2 className="text-3xl md:text-4xl font-serif text-foreground max-w-2xl mx-auto mb-4">
-            Gaussian Splatting in Aktion
+            The work, in context
           </h2>
           <p className="text-muted-foreground font-light max-w-2xl mx-auto">
-            Erleben Sie unsere digitalen Environments – von Underground-Locations bis zu industriellen Digital Twins
+            A selection of environments we have documented — underground venues, industrial sites, cultural spaces, and production assets.
           </p>
         </motion.div>
 

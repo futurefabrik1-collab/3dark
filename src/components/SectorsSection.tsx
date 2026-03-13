@@ -4,39 +4,39 @@ import { useRef } from "react";
 const sectors = [
   {
     name: "Film, TV & Games",
-    description: "Fotorealistische Sets, Location Scouting, Set Extensions und virtuelle Produktion. 3D-Scans als VFX-Assets direkt in Post-Production-Pipelines.",
+    description: "Photorealistic location assets, set extensions, and virtual production environments. Spatial data delivered directly into post-production pipelines.",
     icon: "🎬",
     roles: "Producers · VFX Supervisors",
   },
   {
-    name: "Industrie & Infrastruktur",
-    description: "Digitale Zwillinge für Fabriken, Kraftwerke und Infrastruktur. Kombination mit CAD/BIM für Planung, Wartung und Kommunikation.",
+    name: "Industry & Infrastructure",
+    description: "Digital twins of facilities, plants, and infrastructure. Integrated with CAD and BIM for planning, maintenance, and communication.",
     icon: "⚙️",
-    roles: "Project Managers · Planer",
+    roles: "Project Managers · Planners",
   },
   {
-    name: "Marketing & Kommunikation",
-    description: "Interaktive 3D-Erlebnisse, QR-zugängliche Web-Viewer und cinematic Renderings für Kampagnen, Messen und Social Media.",
+    name: "Marketing & Communications",
+    description: "Interactive 3D experiences, browser-accessible viewers, and cinematic renders for campaigns, exhibitions, and events.",
     icon: "📣",
-    roles: "Marketing Manager · Creative Directors",
+    roles: "Marketing Managers · Creative Directors",
   },
   {
-    name: "Kultur & Events",
-    description: "Festivals, Ausstellungen und historische Stätten digital bewahren. Interaktive Archive und immersive Installationen.",
+    name: "Culture & Events",
+    description: "Festivals, exhibitions, and historical sites preserved as navigable digital records. Immersive archives and spatial installations.",
     icon: "🏛️",
-    roles: "Curators · Festival-Organisatoren",
+    roles: "Curators · Festival Organisers",
   },
   {
-    name: "Architektur & Immobilien",
-    description: "Bestandsgebäude, Baustellen und Neubauprojekte als navigierbare 3D-Erfahrung für Kunden und Partner.",
+    name: "Architecture & Real Estate",
+    description: "Existing buildings, construction sites, and new developments as navigable spatial experiences for clients and collaborators.",
     icon: "🏗️",
-    roles: "Architekten · Developer",
+    roles: "Architects · Developers",
   },
   {
-    name: "Bildung & Forschung",
-    description: "Interaktive Lernumgebungen, Trainingsszenarien und Forschungsprojekte in fotorealistischer 3D-Qualität.",
+    name: "Education & Research",
+    description: "Interactive learning environments, training scenarios, and research documentation in photorealistic spatial detail.",
     icon: "📚",
-    roles: "Hochschulen · Trainer",
+    roles: "Universities · Trainers",
   },
 ];
 
@@ -54,14 +54,13 @@ const SectorsSection = () => {
           className="mb-16"
         >
           <p className="font-mono text-xs tracking-[0.3em] uppercase text-primary mb-4">
-            Zielgruppen
+            Sectors
           </p>
           <h2 className="text-3xl md:text-4xl font-serif text-foreground max-w-xl">
-            Branchenübergreifend einsetzbar
+            Across industries
           </h2>
           <p className="text-muted-foreground font-light mt-4 max-w-lg">
-            Unsere Technologie passt sich Ihrer Branche an – nicht umgekehrt. 
-            Entdecken Sie, wie Digital Twins Ihren Bereich transformieren.
+            Our documentation practice adapts to the requirements of the sector — not the other way around.
           </p>
         </motion.div>
 

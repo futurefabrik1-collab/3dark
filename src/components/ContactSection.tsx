@@ -18,13 +18,13 @@ const ContactSection = () => {
             transition={{ duration: 0.7 }}
           >
             <p className="font-mono text-xs tracking-[0.3em] uppercase text-primary mb-4">
-              Kontakt
+              Contact
             </p>
             <h2 className="text-3xl md:text-4xl font-serif text-foreground mb-6">
-              Lasst uns über euren <span className="gradient-text">unmöglichen Ort</span> sprechen
+              Tell us about <span className="gradient-text">the space</span>
             </h2>
             <p className="text-muted-foreground font-light leading-relaxed mb-8">
-              Zu dunkel? Zu komplex? Zu illegal? Zu vergänglich? Genau unser Ding.
+              Complex geometry, difficult lighting, temporary access, uncertain future — these are not obstacles. They are the conditions we work in.
             </p>
 
             <div className="space-y-4">
@@ -67,7 +67,7 @@ const ContactSection = () => {
           © {new Date().getFullYear()} 3DARK
         </p>
         <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground/50">
-          Digitale Ewigkeit · Für Vergängliche Räume
+          A record of spaces that were never meant to last.
         </p>
       </div>
     </section>

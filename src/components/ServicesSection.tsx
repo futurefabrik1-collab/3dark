@@ -4,23 +4,23 @@ import { useRef } from "react";
 const solutions = [
   {
     image: "/images/service-urban-tunnel.png",
-    label: "Digitale Schatten Realer Orte",
-    detail: "Wir erschaffen nicht nur 3D-Modelle – wir klonen Atmosphäre. Jede Fuge, jeder Riss, jede Lichtreflexion. Perfekt für Räume, die zu komplex, zu dunkel oder zu flüchtig für konventionelle Dokumentation sind.",
+    label: "Spatial Documentation",
+    detail: "We capture environments in detail — their geometry, surface texture, and light. Not a stylised rendering, but a precise spatial record. Useful for spaces that are too complex, too dark, or too temporary for conventional photographic documentation.",
   },
   {
     image: "/images/service-club-scan.png",
-    label: "Begehbare Erinnerungen",
-    detail: "Keine Downloads. Kein VR-Headset. Nur ein QR-Code – und der Club, den sie abgerissen haben, lebt wieder. Im Browser. In Echtzeit. Für immer.",
+    label: "Accessible Archives",
+    detail: "The result is a navigable environment, accessible from any browser. No specialist hardware. A QR code, a link — and the space exists again, in the form it held at the moment of capture.",
   },
   {
     image: "/images/service-virtual-production.png",
-    label: "Film-Ready Dystopie",
-    detail: "Location-Scouting für Orte, die nicht mehr existieren. Oder nie hätten existieren dürfen. Gaussian-Splatting-Assets für Virtual Production, VFX-Plates und Game-Environments. Kein Green Screen. Nur rohe, digitalisierte Realität.",
+    label: "Production Assets",
+    detail: "Spatial data ready for film and virtual production pipelines. Location scouting for places that no longer exist. Gaussian Splatting environments as VFX plates, set extensions, or game assets — the physical reality of a space, delivered as a production-ready file.",
   },
   {
     image: "/images/service-warehouse-ruins.png",
-    label: "Archive des Vergessens",
-    detail: "Industrieruinen. Besetzte Häuser. Illegale Raves. Guerrilla-Ausstellungen. Wir archivieren, was keine Institution jemals dokumentieren würde – und geben es der Ewigkeit zurück.",
+    label: "Cultural Record",
+    detail: "Industrial ruins. Informal venues. Underground events. We document the spaces that communities build and inhabit — and that institutional archives consistently overlook. A record made for those who were there, and accessible to those who come after.",
   },
 ];
 
@@ -38,10 +38,10 @@ const SolutionsSection = () => {
           className="mb-16"
         >
           <p className="font-mono text-xs tracking-[0.3em] uppercase text-primary mb-4">
-            Lösungen
+            What We Deliver
           </p>
           <h2 className="text-3xl md:text-4xl font-serif text-foreground max-w-xl">
-            Digitale Umgebungen für das Unmögliche
+            Digital environments for spaces that resist conventional documentation
           </h2>
         </motion.div>
 

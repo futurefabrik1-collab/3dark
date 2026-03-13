@@ -3,8 +3,8 @@ import { useRef } from "react";
 
 const userTypes = [
   {
-    title: "Für Industrie & Infrastruktur-Teams",
-    description: "Kommunizieren Sie komplexe Anlagen verständlich.",
+    title: "Industry & Infrastructure",
+    description: "Communicate complex facilities with spatial precision.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="text-primary">
         <rect x="4" y="12" width="24" height="16" stroke="currentColor" strokeWidth="1.5" />
@@ -14,8 +14,8 @@ const userTypes = [
     link: "/who-its-for/industrial",
   },
   {
-    title: "Für Produzenten & Creative Directors",
-    description: "Erfassen Sie reale Umgebungen für immersives Storytelling.",
+    title: "Producers & Creative Directors",
+    description: "Capture real environments for immersive storytelling and production.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="text-primary">
         <rect x="4" y="10" width="24" height="14" rx="1" stroke="currentColor" strokeWidth="1.5" />
@@ -25,8 +25,8 @@ const userTypes = [
     link: "/who-its-for/producers",
   },
   {
-    title: "Für Kulturinstitutionen & Festivals",
-    description: "Bewahren Sie Räume und schaffen Sie interaktive Archive.",
+    title: "Cultural Institutions & Festivals",
+    description: "Preserve spaces and build accessible, navigable archives.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="text-primary">
         <rect x="6" y="8" width="20" height="18" stroke="currentColor" strokeWidth="1.5" />
@@ -36,8 +36,8 @@ const userTypes = [
     link: "/who-its-for/cultural",
   },
   {
-    title: "Für Marketing & Kommunikations-Verantwortliche",
-    description: "Verwandeln Sie reale Standorte in wirkungsvolle digitale Assets.",
+    title: "Marketing & Communications",
+    description: "Turn physical locations into high-fidelity digital assets.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="text-primary">
         <circle cx="16" cy="16" r="10" stroke="currentColor" strokeWidth="1.5" />
@@ -72,15 +72,15 @@ const WhoItsForSection = () => {
           className="mb-16 text-center max-w-3xl mx-auto"
         >
           <p className="font-mono text-xs tracking-[0.3em] uppercase text-primary mb-4">
-            Für wen
+            Who We Work With
           </p>
           <h2 className="text-3xl md:text-4xl font-serif text-foreground mb-6">
-            Entwickelt für Teams, die mehr als Fotos benötigen
+            For teams that need more than photographs
           </h2>
           <p className="text-muted-foreground font-light leading-relaxed">
-            Ob Sie komplexe Industrieanlagen kommunizieren, Umgebungen für die Produktion erfassen, 
-            kulturelle Räume bewahren oder überzeugende Marketing-Assets erstellen — wir liefern maßgeschneiderte, 
-            modernste Lösungen.
+            Whether you are communicating complex infrastructure, capturing environments for production, 
+            preserving cultural space, or building immersive assets — we deliver spatial documentation 
+            that carries the specificity of the real thing.
           </p>
         </motion.div>
 
@@ -106,7 +106,7 @@ const WhoItsForSection = () => {
                 href={user.link}
                 className="inline-flex items-center gap-2 text-xs text-primary hover:text-primary/80 transition-colors font-medium"
               >
-                Mehr erfahren
+                Learn more
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                   <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>

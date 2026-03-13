@@ -3,11 +3,11 @@ import { useRef } from "react";
 import { getRandomInViewAnimation } from "@/utils/animations";
 
 const benefits = [
-  { title: 'Underground-Locations mit komplexer Lichtarchitektur', desc: "Clubs, Keller, verlassene Räume – wo Licht zur Atmosphäre wird." },
-  { title: "Ephemere Events und Installationen", desc: "Festivals, Pop-ups, Guerrilla-Kunst – bevor sie verschwinden." },
-  { title: "Verlassene Räume und urbane Ruinen", desc: "Industriebrachen, besetzte Häuser, Orte des Verfalls." },
-  { title: "Film-Sets mit atmosphärischer Tiefe", desc: "Virtual Production ohne Green Screen. Nur rohe, digitalisierte Realität." },
-  { title: "Subkulturen und verborgene Räume", desc: "Was keine Institution jemals dokumentieren würde." },
+  { title: 'Underground venues with complex lighting', desc: "Clubs, basements, adapted spaces — where the light defines the atmosphere." },
+  { title: "Ephemeral events and installations", desc: "Festivals, pop-ups, guerrilla exhibitions — documented before they dismantle." },
+  { title: "Abandoned industrial spaces", desc: "Factory floors, former warehouses, sites in transition." },
+  { title: "Film and production environments", desc: "Location assets and set extensions for virtual production workflows." },
+  { title: "Subcultural and informal spaces", desc: "Spaces that operate outside institutional documentation frameworks." },
 ];
 
 const AboutWorkSection = () => {
@@ -40,13 +40,13 @@ const AboutWorkSection = () => {
           className="text-center mb-20"
         >
           <p className="font-mono text-xs tracking-[0.3em] uppercase text-primary mb-6">
-            Was Wir Tun
+            What We Do
           </p>
           <p className="text-lg md:text-xl text-muted-foreground font-light leading-relaxed max-w-3xl mx-auto mb-6">
-            3DARK erfasst das Unsichtbare. Wir archivieren Orte, die dem Vergessen geweiht sind – unterirdische Clubs, verwaiste Industrieruinen, ephemere Installationen, verbotene Räume. Mit Gaussian Splatting und volumetrischer Erfassung schaffen wir digitale Ewigkeit für das, was morgen schon Geschichte ist.
+            3DARK documents spaces that exist outside conventional frameworks — underground clubs, abandoned industrial sites, temporary installations, locations that have no place in institutional archives. We capture their geometry, their surface detail, and their specific sensory character before they close, are demolished, or simply move on.
           </p>
           <p className="text-lg md:text-xl text-muted-foreground font-light leading-relaxed max-w-3xl mx-auto">
-            Wir erfassen reale Umgebungen mit fortschrittlichen Rekonstruktions-Pipelines und verwandeln sie in produktionsreife Digital Twins, optimiert für Web, Echtzeit-Engines und Präsentationsumgebungen.
+            We capture real environments with advanced reconstruction pipelines and deliver them as production-ready spatial documents — optimised for web, real-time engines, and presentation contexts.
           </p>
         </motion.div>
 
@@ -59,13 +59,13 @@ const AboutWorkSection = () => {
         >
           <div>
             <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-4">
-              Wer Wir Sind
+              Who We Are
             </h2>
             <p className="text-muted-foreground font-light leading-relaxed mb-4">
-              Wir sind keine Archivare im klassischen Sinne. Wir sind Jäger vergänglicher Momente. Geister in der Maschine. Seit dem Aufkommen von Gaussian Splatting kartieren wir, was andere ignorieren: Die Schattenseiten, die Zwischenräume, die Orte ohne Marketing-Budget.
+              We came to this work through subcultures and alternative spaces — places built on DIY ethics, operating outside mainstream channels. That context shapes how we approach documentation. We understand the social function of the spaces we record, and that understanding is present in how we work.
             </p>
             <p className="text-sm text-muted-foreground/80 font-light leading-relaxed">
-              Elusive by design. Obsessiv in der Ausführung. Wir dokumentieren nicht – wir konservieren Atmosphäre.
+              Precise in method. Attentive to atmosphere. We record not just what a space looks like, but what it feels like to stand inside it.
             </p>
           </div>
           <motion.div 
@@ -88,13 +88,13 @@ const AboutWorkSection = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
         >
           <p className="font-mono text-xs tracking-[0.3em] uppercase text-primary mb-4">
-            Warum Gaussian Splatting?
+            The Method
           </p>
           <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-4 max-w-2xl">
-            Licht und Schatten in ihrer rohesten Form
+            Light, surface, and texture in their actual state
           </h2>
           <p className="text-muted-foreground font-light leading-relaxed mb-10 max-w-2xl">
-            Gaussian Splatting fängt nicht nur Geometrie – es fängt Seele. Die Lichtreflexe einer schäbigen Neonröhre. Der Staub in einem verlassenen Lagerhaus. Die Patina von Jahrzehnten auf Betonwänden. Wo klassische 3D-Scans steril wirken, liefert GS fotorealistischen Verfall.
+            Gaussian Splatting captures the visual reality of a space with a fidelity that conventional 3D scanning cannot match. The specific quality of light through a dirty skylight. The patina of years of use on a concrete floor. The way a low ceiling changes the acoustic character of a room. These are not decorative details. They are the evidence of a space's social history.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

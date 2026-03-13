@@ -49,7 +49,7 @@ const HeroSection = () => {
             transition={{ duration: 0.9, delay: 0.2 }}
             className="text-3xl md:text-4xl lg:text-5xl font-serif leading-[1.2] mb-8 text-foreground max-w-2xl"
           >
-            Wir verwandeln reale Räume in <span className="gradient-text">digitale Assets</span>
+            Some spaces are only understood by the people <span className="gradient-text">who were in them.</span>
           </motion.h2>
 
           <motion.p
@@ -58,7 +58,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-lg md:text-xl text-muted-foreground font-light max-w-2xl leading-relaxed mb-10"
           >
-            Für alle, die Räume festhalten, die nicht in Hochglanzbroschüren passen. Underground-Locations, verlassene Industrie, flüchtige Events, subversive Kulturen – bevor sie verschwinden.
+            We document environments before they disappear — underground venues, DIY spaces, industrial ruins, ephemeral events. What we capture is not just geometry. It is the specific atmosphere of a room: its dimensions, its surface texture, its quality of light. A record that persists after the space is gone.
           </motion.p>
 
           <motion.div
@@ -71,7 +71,7 @@ const HeroSection = () => {
               href="#who-its-for"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 text-sm font-mono uppercase tracking-wider hover:bg-primary/90 transition-all neon-glow hover:shadow-[0_0_20px_rgba(var(--glow),0.5)]"
             >
-              Projekttyp identifizieren
+              Find your project type
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="mt-px">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -80,7 +80,7 @@ const HeroSection = () => {
               href="#projects"
               className="text-sm text-muted-foreground hover:text-primary transition-colors font-mono uppercase tracking-wider border-b border-border pb-0.5 hover:border-primary"
             >
-              Projekte ansehen
+              View our work
             </a>
           </motion.div>
         </div>

@@ -3,10 +3,10 @@ import { useRef } from "react";
 import { getRandomInViewAnimation } from "@/utils/animations";
 
 const steps = [
-  { step: "01", title: "Capture", desc: "Advanced multi-camera workflows capturing hundreds to thousands of images from all angles." },
-  { step: "02", title: "Reconstruction", desc: "Gaussian Splatting algorithms process raw data into photorealistic 3D point clouds." },
-  { step: "03", title: "Optimization", desc: "Real-time engine optimization balancing visual fidelity with performance requirements." },
-  { step: "04", title: "Delivery", desc: "Production-ready assets for web, engines, VFX pipelines, or custom integrations." },
+  { step: "01", title: "Capture", desc: "Multi-camera workflows producing hundreds to thousands of source images, adapted to the specific lighting and spatial conditions of each environment." },
+  { step: "02", title: "Reconstruction", desc: "Gaussian Splatting processing transforms raw image data into a navigable, photorealistic environment that preserves the visual character of the original space." },
+  { step: "03", title: "Optimisation", desc: "Real-time engine optimisation balancing visual fidelity with performance across web, desktop, and presentation environments." },
+  { step: "04", title: "Delivery", desc: "Production-ready assets for web viewers, game engines, VFX pipelines, or custom integrations. Accessible from a browser, without specialist hardware." },
 ];
 
 const ProcessSection = () => {
@@ -32,13 +32,13 @@ const ProcessSection = () => {
           className="mb-16"
         >
           <p className="font-mono text-xs tracking-[0.3em] uppercase text-primary mb-4">
-            Technology
+            The Process
           </p>
           <h2 className="text-3xl md:text-4xl font-serif text-foreground max-w-xl">
-            Scalable Environments That Balance Realism and Performance
+            A pipeline built for real environments
           </h2>
           <p className="text-muted-foreground font-light mt-4 max-w-2xl">
-            Our pipeline combines advanced capture workflows, Gaussian Splatting reconstruction and real-time engine optimization. The result: scalable digital environments that balance realism and performance.
+            We work with spaces as they are — not as they should be. Our capture and reconstruction workflow is designed for difficult conditions: low light, complex geometry, inaccessible surfaces.
           </p>
         </motion.div>
 
