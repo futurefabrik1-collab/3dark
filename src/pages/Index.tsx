@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ShowreelSection from "@/components/ShowreelSection";
 import WhoItsForSection from "@/components/WhoItsForSection";
@@ -12,6 +13,7 @@ import CookieConsent from "@/components/CookieConsent";
 const Index = () => {
   return (
     <main className="bg-background min-h-screen">
+      <Navbar />
       <HeroSection />
       <ShowreelSection />
       <WhoItsForSection />

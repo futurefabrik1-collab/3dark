@@ -2,10 +2,14 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import ContactForm from "./ContactForm";
 import { getRandomInViewAnimation } from "@/utils/animations";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/i18n/translations";
 
 const ContactSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const { lang } = useLanguage();
+  const t = translations.contact[lang];
 
   return (
     <section id="contact" className="py-32 px-6">
@@ -18,13 +22,13 @@ const ContactSection = () => {
             transition={{ duration: 0.7 }}
           >
             <p className="font-mono text-xs tracking-[0.3em] uppercase text-primary mb-4">
-              Contact
+              {t.sectionLabel}
             </p>
             <h2 className="text-3xl md:text-4xl font-serif text-foreground mb-6">
-              Tell us about <span className="gradient-text">the space</span>
+              {t.h2} <span className="gradient-text">{t.h2Highlight}</span>
             </h2>
             <p className="text-muted-foreground font-light leading-relaxed mb-8">
-              Complex geometry, difficult lighting, temporary access, uncertain future — these are not obstacles. They are the conditions we work in.
+              {t.body}
             </p>
 
             <div className="space-y-4">
@@ -35,7 +39,7 @@ const ContactSection = () => {
                     <circle cx="12" cy="10" r="3" stroke="currentColor" strokeWidth="2" />
                   </svg>
                 </div>
-                <span className="text-sm text-muted-foreground">Leipzig, Deutschland</span>
+                <span className="text-sm text-muted-foreground">{t.location}</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 border border-primary/30 flex items-center justify-center">
@@ -51,9 +55,7 @@ const ContactSection = () => {
           </motion.div>
 
           {/* Right: Contact Form */}
-          <motion.div
-            {...getRandomInViewAnimation(isInView, 0.2)}
-          >
+          <motion.div {...getRandomInViewAnimation(isInView, 0.2)}>
             <div className="bg-card border border-border rounded-sm p-8">
               <ContactForm />
             </div>
@@ -67,7 +69,7 @@ const ContactSection = () => {
           © {new Date().getFullYear()} 3DARK
         </p>
         <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground/50">
-          A record of spaces that were never meant to last.
+          {t.footerTagline}
         </p>
       </div>
     </section>

@@ -2,6 +2,8 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import illustrationScan from "@/assets/illustration-scan.jpg";
 import { getRandomInViewAnimation } from "@/utils/animations";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/i18n/translations";
 
 const projects = [
   {
@@ -100,6 +102,8 @@ const projects = [
 const ProjectsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const { lang } = useLanguage();
+  const t = translations.projects[lang];
 
   return (
     <section id="projects" className="py-32 px-6 relative overflow-hidden">
@@ -121,10 +125,10 @@ const ProjectsSection = () => {
           className="mb-16"
         >
           <p className="font-mono text-xs tracking-[0.3em] uppercase text-primary mb-4">
-            Projekt-Highlights
+            {t.sectionLabel}
           </p>
           <h2 className="text-3xl md:text-4xl font-serif text-foreground max-w-xl">
-            Timeline unserer Arbeit
+            {t.h2}
           </h2>
         </motion.div>
 

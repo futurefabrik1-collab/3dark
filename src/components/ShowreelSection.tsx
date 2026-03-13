@@ -1,26 +1,23 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { getRandomInViewAnimation } from "@/utils/animations";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/i18n/translations";
 
 const ShowreelSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const { lang } = useLanguage();
+  const t = translations.showreel[lang];
 
   return (
     <section id="showreel" className="py-32 px-6 relative overflow-hidden bg-background">
-      {/* Background image with dark overlay */}
       <div className="absolute inset-0">
-        <img 
-          src="/images/art-installation.png" 
-          alt="" 
-          className="w-full h-full object-cover opacity-10 mix-blend-screen"
-        />
+        <img src="/images/art-installation.png" alt="" className="w-full h-full object-cover opacity-10 mix-blend-screen" />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
       </div>
-      
-      {/* Industrial grid overlay */}
       <div className="absolute inset-0 industrial-grid opacity-10" />
-      
+
       <div ref={ref} className="max-w-6xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
@@ -29,28 +26,24 @@ const ShowreelSection = () => {
           className="mb-12 text-center"
         >
           <p className="font-mono text-xs tracking-[0.3em] uppercase text-primary mb-4">
-            Showreel
+            {t.sectionLabel}
           </p>
-
           <h2 className="text-3xl md:text-4xl font-serif text-foreground max-w-2xl mx-auto mb-4">
-            The work, in context
+            {t.h2}
           </h2>
           <p className="text-muted-foreground font-light max-w-2xl mx-auto">
-            A selection of environments we have documented — underground venues, industrial sites, cultural spaces, and production assets.
+            {t.body}
           </p>
         </motion.div>
 
-        {/* Full-width video placeholder */}
         <motion.div
           {...getRandomInViewAnimation(isInView, 0.3)}
           className="mt-12"
         >
           <div className="aspect-[21/9] media-placeholder rounded-sm flex items-center justify-center neon-border group relative overflow-hidden">
-            {/* Background pattern */}
             <div className="absolute inset-0 opacity-5">
               <img src="/images/pattern-grid.png" alt="" className="w-full h-full object-cover" />
             </div>
-            
             <div className="relative z-10 text-center">
               <div className="w-20 h-20 rounded-full border-2 border-primary/30 flex items-center justify-center mx-auto mb-4 group-hover:border-primary/60 transition-all duration-500 group-hover:scale-110">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="text-primary ml-1">
@@ -58,10 +51,7 @@ const ShowreelSection = () => {
                 </svg>
               </div>
               <p className="font-mono text-xs tracking-wider text-muted-foreground uppercase">
-                Showreel · Gaussian Splatting in Aktion
-              </p>
-              <p className="text-xs text-muted-foreground/50 mt-1">
-                Video Platzhalter · 21:9
+                Showreel · Gaussian Splatting
               </p>
             </div>
           </div>

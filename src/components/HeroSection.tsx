@@ -1,8 +1,12 @@
 import { motion } from "framer-motion";
-import heroBg from "@/assets/hero-bg.jpg";
 import { getRandomEntranceAnimation } from "@/utils/animations";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/i18n/translations";
 
 const HeroSection = () => {
+  const { lang } = useLanguage();
+  const t = translations.hero[lang];
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-background scanlines">
       {/* Industrial grid background */}
@@ -12,7 +16,7 @@ const HeroSection = () => {
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       
-      {/* Background illustration - 3D Gaussian Splatting Visualization */}
+      {/* Background illustration */}
       <div className="absolute inset-0">
         <img
           src="/images/hero-bg.png"
@@ -34,7 +38,6 @@ const HeroSection = () => {
             className="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-[0.1em] uppercase text-primary text-glow mb-8 relative inline-block font-semibold"
           >
             3D-ARK
-            {/* Neon underline */}
             <motion.div
               initial={{ width: 0 }}
               animate={{ width: "100%" }}
@@ -49,7 +52,8 @@ const HeroSection = () => {
             transition={{ duration: 0.9, delay: 0.2 }}
             className="text-3xl md:text-4xl lg:text-5xl font-serif leading-[1.2] mb-8 text-foreground max-w-2xl"
           >
-            Some spaces are only understood by the people <span className="gradient-text">who were in them.</span>
+            {t.h2.replace(t.h2Highlight, "")}{" "}
+            <span className="gradient-text">{t.h2Highlight}</span>
           </motion.h2>
 
           <motion.p
@@ -58,7 +62,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-lg md:text-xl text-muted-foreground font-light max-w-2xl leading-relaxed mb-10"
           >
-            We document environments before they disappear — underground venues, DIY spaces, industrial ruins, ephemeral events. What we capture is not just geometry. It is the specific atmosphere of a room: its dimensions, its surface texture, its quality of light. A record that persists after the space is gone.
+            {t.body}
           </motion.p>
 
           <motion.div
@@ -71,7 +75,7 @@ const HeroSection = () => {
               href="#who-its-for"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 text-sm font-mono uppercase tracking-wider hover:bg-primary/90 transition-all neon-glow hover:shadow-[0_0_20px_rgba(var(--glow),0.5)]"
             >
-              Find your project type
+              {t.cta}
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="mt-px">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -80,12 +84,12 @@ const HeroSection = () => {
               href="#projects"
               className="text-sm text-muted-foreground hover:text-primary transition-colors font-mono uppercase tracking-wider border-b border-border pb-0.5 hover:border-primary"
             >
-              View our work
+              {t.ctaSecondary}
             </a>
           </motion.div>
         </div>
 
-        {/* Right: Video/iframe placeholder */}
+        {/* Right: Video */}
         <motion.div
           {...getRandomEntranceAnimation(0.6)}
           className="relative"
@@ -103,7 +107,6 @@ const HeroSection = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
           </motion.div>
-          {/* Neon corner accents */}
           <div className="absolute -top-3 -left-3 w-6 h-6 border-t border-l border-primary shadow-[0_0_5px_rgba(var(--glow),0.4)]" />
           <div className="absolute -bottom-3 -right-3 w-6 h-6 border-b border-r border-primary shadow-[0_0_5px_rgba(var(--glow),0.4)]" />
         </motion.div>
