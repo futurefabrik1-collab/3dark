@@ -13,11 +13,11 @@ const AboutWorkSection = () => {
   return (
     <section id="about" className="py-32 px-6 relative overflow-hidden parchment-bg">
       <div className="absolute inset-0">
-        <img src="/images/urban-tunnel.png" alt="" className="w-full h-full object-cover opacity-10 mix-blend-screen" />
+        <img src="/images/webp/urban-tunnel.webp" alt="" className="w-full h-full object-cover opacity-10 mix-blend-screen" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/95 to-background" />
       </div>
       <div className="absolute inset-0 opacity-5">
-        <img src="/images/pattern-grid.png" alt="" className="w-full h-full object-cover mix-blend-overlay" />
+        <img src="/images/webp/pattern-grid.webp" alt="" className="w-full h-full object-cover mix-blend-overlay" />
       </div>
 
       <div ref={ref} className="max-w-6xl mx-auto relative z-10">
