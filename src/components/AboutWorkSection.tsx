@@ -59,14 +59,16 @@ const AboutWorkSection = () => {
           </div>
           <motion.div
             {...getRandomInViewAnimation(isInView, 0.4)}
-            className="relative aspect-video overflow-hidden neon-border group"
+            className="relative aspect-video overflow-hidden neon-border bg-background"
           >
-            <img
-              src="/images/art-installation.png"
-              alt="3DARK Art Installation"
-              className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+            <iframe
+              src="https://lumalabs.ai/embed/42e93363-cf57-43d4-b69c-539dfe439058?mode=sparkles&background=%23ffffff&color=%23000000&showTitle=true&loadBg=true&logoPosition=bottom-left&infoPosition=bottom-right&cinematicVideo=undefined&showMenu=false"
+              width="1000"
+              height="500"
+              frameBorder="0"
+              title="luma embed"
+              className="w-full h-full border-0"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
           </motion.div>
         </motion.div>
 
