@@ -20,14 +20,14 @@ export const translations = {
     en: {
       h2: "Some spaces are only understood by the people who were in them.",
       h2Highlight: "who were in them.",
-      body: "We document environments before they disappear — underground venues, DIY spaces, industrial ruins, ephemeral events. What we capture is not just geometry. It is the specific atmosphere of a room: its dimensions, its surface texture, its quality of light. A record that persists after the space is gone.",
+      body: "We document environments that resist conventional capture — underground venues, DIY spaces, industrial ruins, ephemeral installations. What we capture is not just geometry. It is the specific character of a room: its dimensions, its surface texture, its quality of light. A spatial record that carries the atmosphere of the original.",
       cta: "Find your project type",
       ctaSecondary: "View our work",
     },
     de: {
       h2: "Manche Räume versteht man nur, wenn man selbst dort war.",
       h2Highlight: "wenn man selbst dort war.",
-      body: "Wir dokumentieren Orte, bevor sie verschwinden — Clubs, DIY-Räume, Industrieruinen, ephemere Events. Was wir erfassen, ist nicht nur Geometrie. Es ist die spezifische Atmosphäre eines Raums: seine Maße, seine Oberfläche, seine Qualität des Lichts. Ein Dokument, das bleibt, wenn der Raum längst fort ist.",
+      body: "Wir dokumentieren Umgebungen, die sich konventioneller Erfassung entziehen — Clubs, DIY-Räume, Industrieruinen, ephemere Installationen. Was wir erfassen, ist nicht nur Geometrie. Es ist der spezifische Charakter eines Raums: seine Maße, seine Oberfläche, seine Qualität des Lichts. Ein Raum-Dokument, das die Atmosphäre des Originals trägt.",
       cta: "Projekttyp finden",
       ctaSecondary: "Unsere Arbeit ansehen",
     },
