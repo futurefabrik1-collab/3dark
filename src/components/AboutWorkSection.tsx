@@ -62,7 +62,7 @@ const AboutWorkSection = () => {
             className="relative aspect-video overflow-hidden neon-border bg-background"
           >
             <iframe
-              src="https://lumalabs.ai/embed/42e93363-cf57-43d4-b69c-539dfe439058?mode=sparkles&background=%23ffffff&color=%23000000&showTitle=true&loadBg=true&logoPosition=bottom-left&infoPosition=bottom-right&cinematicVideo=undefined&showMenu=false"
+              src="https://lumalabs.ai/embed/42e93363-cf57-43d4-b69c-539dfe439058?mode=sparkles&background=%23ffffff&color=%23000000&showTitle=false&loadBg=true&logoPosition=hidden&infoPosition=hidden&cinematicVideo=undefined&showMenu=false"
               width="1000"
               height="500"
               frameBorder="0"
