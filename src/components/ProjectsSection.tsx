@@ -5,6 +5,75 @@ import { getRandomInViewAnimation } from "@/utils/animations";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/i18n/translations";
 
+const renderProjectMedia = (title: string) => {
+  switch (title) {
+    case "GS Social Media Tour":
+      return (
+        <video
+          src="/media/sxsw-future-fabrik-transformers-gorilla.mov"
+          controls
+          playsInline
+          className="block w-full h-full object-cover bg-black"
+        />
+      );
+    case "Klärwerk Leipzig":
+      return (
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/3ibVve3ViK0"
+          title="Klärwerk Leipzig"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+          className="block w-full h-full border-0"
+        />
+      );
+    case "Alice im Wonderland":
+      return (
+        <iframe
+          src="https://discover.storysplat.com/api/v2-html/43774b28-c045-485a-8117-db88189d727c"
+          title="Alice im Wonderland"
+          allow="accelerometer; gyroscope; xr-spatial-tracking"
+          allowFullScreen
+          className="block w-full h-full border-0"
+        />
+      );
+    case "iBug Festival":
+      return (
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/ump032qGpK4"
+          title="iBug Festival"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+          className="block w-full h-full border-0"
+        />
+      );
+    case "MACHN Festival":
+      return (
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/SA-d86T98lg"
+          title="MACHN Festival"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+          className="block w-full h-full border-0"
+        />
+      );
+    default:
+      return (
+        <div className="relative z-10 text-center p-4">
+          <div className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center mx-auto mb-2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-primary">
+              <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="1.5" />
+              <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor" />
+              <path d="M21 15l-5-5L5 21" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
+          <p className="font-mono text-[10px] tracking-wider text-muted-foreground uppercase">
+            {title}
+          </p>
+        </div>
+      );
+  }
+};
+
 const ProjectsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
@@ -38,7 +107,6 @@ const ProjectsSection = () => {
           </h2>
         </motion.div>
 
-        {/* Timeline */}
         <div className="relative">
           <div className="absolute left-[60px] md:left-[80px] top-0 bottom-0 w-px bg-border hidden md:block" />
 
@@ -51,14 +119,12 @@ const ProjectsSection = () => {
                 transition={{ duration: 0.6, delay: 0.1 * Math.min(i, 6) }}
                 className="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-6 md:gap-10"
               >
-                {/* Year */}
                 <div className="flex items-start">
                   <span className="font-mono text-xs tracking-[0.15em] text-primary bg-background relative z-10 pr-2">
                     {project.year}
                   </span>
                 </div>
 
-                {/* Content */}
                 <div className={`grid grid-cols-1 ${project.showMedia ? "lg:grid-cols-2" : ""} gap-8`}>
                   <div>
                     <div className="flex items-center gap-3 mb-3">
@@ -80,20 +146,9 @@ const ProjectsSection = () => {
                   {project.showMedia && (
                     <motion.div
                       {...getRandomInViewAnimation(isInView, 0.1 * Math.min(i, 6) + 0.2)}
-                      className="aspect-video media-placeholder rounded-sm flex items-center justify-center"
+                      className="aspect-video media-placeholder rounded-sm flex items-center justify-center overflow-hidden"
                     >
-                      <div className="relative z-10 text-center p-4">
-                        <div className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center mx-auto mb-2">
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-primary">
-                            <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="1.5" />
-                            <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor" />
-                            <path d="M21 15l-5-5L5 21" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        </div>
-                        <p className="font-mono text-[10px] tracking-wider text-muted-foreground uppercase">
-                          {project.title}
-                        </p>
-                      </div>
+                      {renderProjectMedia(project.title)}
                     </motion.div>
                   )}
                 </div>
