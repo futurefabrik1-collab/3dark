@@ -40,20 +40,16 @@ const ShowreelSection = () => {
           {...getRandomInViewAnimation(isInView, 0.3)}
           className="mt-12"
         >
-          <div className="aspect-[21/9] media-placeholder rounded-sm flex items-center justify-center neon-border group relative overflow-hidden">
-            <div className="absolute inset-0 opacity-5">
-              <img src="/images/pattern-grid.png" alt="" className="w-full h-full object-cover" />
-            </div>
-            <div className="relative z-10 text-center">
-              <div className="w-20 h-20 rounded-full border-2 border-primary/30 flex items-center justify-center mx-auto mb-4 group-hover:border-primary/60 transition-all duration-500 group-hover:scale-110">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="text-primary ml-1">
-                  <path d="M8 5v14l11-7L8 5z" fill="currentColor" />
-                </svg>
-              </div>
-              <p className="font-mono text-xs tracking-wider text-muted-foreground uppercase">
-                Showreel · Gaussian Splatting
-              </p>
-            </div>
+          <div className="neon-border overflow-hidden">
+            <iframe
+              src="https://discover.storysplat.com/api/v2-html/43774b28-c045-485a-8117-db88189d727c"
+              width="100%"
+              height="500"
+              frameBorder="0"
+              allow="accelerometer; gyroscope; xr-spatial-tracking"
+              allowFullScreen
+              className="block w-full"
+            />
           </div>
         </motion.div>
       </div>
