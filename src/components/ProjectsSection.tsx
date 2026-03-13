@@ -5,116 +5,22 @@ import { getRandomInViewAnimation } from "@/utils/animations";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/i18n/translations";
 
-const projects = [
-  {
-    year: "2023",
-    title: "GS Social Media Tour",
-    subtitle: "SXSW-Kontext · Visual Storytelling",
-    description: 'Unsere erste \u201eechte\u201c Gaussian-Splatting-Erfahrung: GS als visuelles Medium f\u00fcr kurze, starke Clips \u2013 kombiniert mit lokal produzierter, druckvoller Musik. Der Moment, in dem klar wurde: GS ist nicht nur Technik, sondern ein neues Erz\u00e4hlwerkzeug zwischen Fotografie, Film und 3D.',
-    tag: "Content",
-    showMedia: true,
-  },
-  {
-    year: "2024",
-    title: "Klärwerk Leipzig",
-    subtitle: "Industrial Digital Twin",
-    description: "Complete digital twin of Leipzig wastewater treatment facility. High-fidelity spatial data combined with CAD integration for infrastructure planning and communication.",
-    tag: "Industrial",
-    showMedia: true,
-  },
-  {
-    year: "2024",
-    title: "Alice im Wonderland",
-    subtitle: "Kunstkraftwerk · Medienproduktion",
-    description: "Gaussian Splatting wurde selbst zum Medium: Inhalte der Ausstellung wurden GS-basiert abstrahiert, neu gerahmt und in Szene gesetzt – aufregend, experimentell und passend zur Atmosphäre. Technisch anspruchsvoll, kreativ maximal dankbar.",
-    tag: "Kultur",
-    showMedia: true,
-  },
-  {
-    year: "2024/25",
-    title: "iBug Festival",
-    subtitle: "3D Twin & Time Machine",
-    description: "Multi-year digital documentation of international art festival. Interactive time-travel experience allowing visitors to explore current and historical festival editions through immersive 3D environments.",
-    tag: "Culture",
-    showMedia: true,
-  },
-  {
-    year: "2024/25",
-  },
-  {
-    year: "2025",
-    title: "MACHN Festival",
-    subtitle: "Interactive Navigation System",
-    description: "Real-time 3D festival navigation integrated with live geo-data. Context-aware wayfinding system helping thousands of visitors navigate the festival grounds through an immersive digital twin.",
-    tag: "Events",
-    showMedia: true,
-  },
-  {
-    year: "2025",
-    title: "Digitales Archiv Berliner Clubkultur",
-    subtitle: "TU Berlin · Seminarreihe",
-    description: "Im Rahmen einer Seminarreihe mit der TU Berlin helfen wir, bedrohte Clubräume digital zu erhalten. Wir vermitteln Grundlagen des GS-Scannings und schaffen eine Basis für audiovisuelle Digital Twins einer verschwindenden Clubkultur – als Dokumentation, Zeitzeugnis und kreativer Rohstoff.",
-    tag: "Forschung",
-    showMedia: false,
-  },
-  {
-    year: "Ongoing",
-    title: "4D Gaussian Splatting",
-    subtitle: "HTWK · Forschungsprojekt",
-    description: "Gemeinsam mit der HTWK entwickeln wir eine 4D-Gaussian-Splatting-Pipeline – Fokus auf sparse Datensets und Novel View Synthesis. Parallel arbeiten wir an einem Kompressionsformat, um 4DGS-Assets effizient in Realtime-Engines einsetzen zu können.",
-    tag: "Forschung",
-    showMedia: false,
-  },
-  {
-    year: "Ongoing",
-    title: "Interaktive Lerninhalte",
-    subtitle: "Deutsche Bahn · Gamified Training",
-    description: "Spielerische, interaktive Formate für Erwachsenenlernen: Rangieren, Abläufe und Planspiele werden durch 3D-Modelle, reale Prozesslogik und Game-Mechaniken erweitert. Komplexe Vorgänge werden anschaulicher, merkbarer und praxisnäher.",
-    tag: "Bildung",
-    showMedia: false,
-  },
-  {
-    year: "VFX",
-    title: "Babylon Berlin – Drachenburg",
-    subtitle: "Scan für Set Extension",
-    description: "In der Serie Babylon Berlin demonstriert der Industrielle Alfred Nyssen einen ersten Raketenprototypen. Für die Außenshots der Drachenburg lieferten wir den 3D-Scan als VFX-Asset.",
-    tag: "Film",
-    showMedia: true,
-  },
-  {
-    year: "VFX",
-    title: "Alfons Zitterbacke",
-    subtitle: "Scan für Set Extension",
-    description: "3D-Set-Scanning für VFX-Workflows in der Filmproduktion – schnelle Erfassung, hohe Detailtreue, nahtlose Integration in Post-Production-Pipelines.",
-    tag: "Film",
-    showMedia: true,
-  },
-  {
-    year: "2020+",
-    title: "Abandoned Buildings Leipzig",
-    subtitle: "Digitale Archivierung · Lost Places",
-    description: "Fotorealistische Dokumentation und Digital-Twin-Aufbau von Orten, die vom Verfall bedroht sind: Alter Hafen Lindenau, Fabrik am Bahnbogen Leutzsch, Polygraphenwerk und Karl Krause Fabrik. Hochdetaillierte Zeitzeugnisse für Ausstellungen, Forschung und VR.",
-    tag: "Archiv",
-    showMedia: true,
-  },
-];
-
 const ProjectsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const { lang } = useLanguage();
   const t = translations.projects[lang];
+  const projects = translations.projectsList[lang];
 
   return (
     <section id="projects" className="py-32 px-6 relative overflow-hidden">
-      {/* Background illustration */}
-      <div 
+      <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
           backgroundImage: `url(${illustrationScan})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
       />
       <div ref={ref} className="max-w-6xl mx-auto relative z-10">
@@ -134,7 +40,6 @@ const ProjectsSection = () => {
 
         {/* Timeline */}
         <div className="relative">
-          {/* Vertical line */}
           <div className="absolute left-[60px] md:left-[80px] top-0 bottom-0 w-px bg-border hidden md:block" />
 
           <div className="space-y-16">
@@ -154,7 +59,7 @@ const ProjectsSection = () => {
                 </div>
 
                 {/* Content */}
-                <div className={`grid grid-cols-1 ${project.showMedia ? 'lg:grid-cols-2' : ''} gap-8`}>
+                <div className={`grid grid-cols-1 ${project.showMedia ? "lg:grid-cols-2" : ""} gap-8`}>
                   <div>
                     <div className="flex items-center gap-3 mb-3">
                       <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-primary border border-primary/30 px-3 py-1">
@@ -172,9 +77,8 @@ const ProjectsSection = () => {
                     </p>
                   </div>
 
-                  {/* Media placeholder */}
                   {project.showMedia && (
-                    <motion.div 
+                    <motion.div
                       {...getRandomInViewAnimation(isInView, 0.1 * Math.min(i, 6) + 0.2)}
                       className="aspect-video media-placeholder rounded-sm flex items-center justify-center"
                     >
@@ -187,10 +91,7 @@ const ProjectsSection = () => {
                           </svg>
                         </div>
                         <p className="font-mono text-[10px] tracking-wider text-muted-foreground uppercase">
-                          {project.title} · GS Viewer
-                        </p>
-                        <p className="text-[10px] text-muted-foreground/50 mt-1">
-                          Iframe / Video Platzhalter
+                          {project.title}
                         </p>
                       </div>
                     </motion.div>
@@ -200,7 +101,6 @@ const ProjectsSection = () => {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );
