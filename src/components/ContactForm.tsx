@@ -14,24 +14,26 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/i18n/translations";
 
-const formSchema = z.object({
-  name: z.string().min(2, {
-    message: "Name muss mindestens 2 Zeichen lang sein.",
-  }),
-  email: z.string().email({
-    message: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
-  }),
-  message: z.string().min(10, {
-    message: "Nachricht muss mindestens 10 Zeichen lang sein.",
-  }),
-});
-
-type FormData = z.infer<typeof formSchema>;
+type FormData = {
+  name: string;
+  email: string;
+  message: string;
+};
 
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const { lang } = useLanguage();
+  const t = translations.contactForm[lang];
+
+  const formSchema = z.object({
+    name: z.string().min(2, { message: t.validationName }),
+    email: z.string().email({ message: t.validationEmail }),
+    message: z.string().min(10, { message: t.validationMessage }),
+  });
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -44,7 +46,7 @@ const ContactForm = () => {
 
   const onSubmit = async (values: FormData) => {
     setIsSubmitting(true);
-    
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -58,17 +60,17 @@ const ContactForm = () => {
 
       if (response.ok) {
         toast({
-          title: "Nachricht gesendet!",
-          description: "Wir werden uns bald bei Ihnen melden.",
+          title: t.successTitle,
+          description: t.successDesc,
         });
         form.reset();
       } else {
-        throw new Error(data.error || "Fehler beim Senden der Nachricht");
+        throw new Error(data.error || t.errorDesc);
       }
     } catch (error) {
       toast({
-        title: "Fehler",
-        description: error instanceof Error ? error.message : "Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es später erneut.",
+        title: t.errorTitle,
+        description: error instanceof Error ? error.message : t.errorDesc,
         variant: "destructive",
       });
     } finally {
@@ -85,11 +87,11 @@ const ContactForm = () => {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="text-sm font-mono tracking-wider uppercase text-muted-foreground">
-                Name
+                {t.nameLabel}
               </FormLabel>
               <FormControl>
                 <Input
-                  placeholder="Ihr Name"
+                  placeholder={t.namePlaceholder}
                   {...field}
                   className="bg-background border-border focus:border-primary transition-colors"
                 />
@@ -104,12 +106,12 @@ const ContactForm = () => {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="text-sm font-mono tracking-wider uppercase text-muted-foreground">
-                E-Mail
+                {t.emailLabel}
               </FormLabel>
               <FormControl>
                 <Input
                   type="email"
-                  placeholder="ihre.email@beispiel.de"
+                  placeholder={t.emailPlaceholder}
                   {...field}
                   className="bg-background border-border focus:border-primary transition-colors"
                 />
@@ -124,11 +126,11 @@ const ContactForm = () => {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="text-sm font-mono tracking-wider uppercase text-muted-foreground">
-                Nachricht
+                {t.messageLabel}
               </FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="Erzählen Sie uns von Ihrem Projekt..."
+                  placeholder={t.messagePlaceholder}
                   className="min-h-[120px] bg-background border-border focus:border-primary transition-colors resize-none"
                   {...field}
                 />
@@ -142,7 +144,7 @@ const ContactForm = () => {
           disabled={isSubmitting}
           className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
         >
-          {isSubmitting ? "Wird gesendet..." : "Nachricht senden"}
+          {isSubmitting ? t.submitting : t.submit}
         </Button>
       </form>
     </Form>

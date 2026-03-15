@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/i18n/translations";
 
 const CookieConsent = () => {
   const [showBanner, setShowBanner] = useState(false);
+  const { lang } = useLanguage();
+  const t = translations.cookie[lang];
 
   useEffect(() => {
     const consent = localStorage.getItem("cookieConsent");
@@ -37,12 +41,10 @@ const CookieConsent = () => {
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
               <div className="flex-1">
                 <h3 className="text-sm font-medium text-foreground mb-2">
-                  Cookie Notice
+                  {t.title}
                 </h3>
                 <p className="text-xs text-muted-foreground font-light leading-relaxed">
-                  We use cookies to analyze site traffic and optimize your experience. 
-                  By accepting, you consent to our use of Google Analytics. 
-                  Your data is processed in accordance with GDPR.
+                  {t.body}
                 </p>
               </div>
               <div className="flex items-center gap-3">
@@ -50,13 +52,13 @@ const CookieConsent = () => {
                   onClick={declineCookies}
                   className="px-4 py-2 text-xs text-muted-foreground hover:text-foreground border border-border hover:border-foreground transition-colors"
                 >
-                  Decline
+                  {t.decline}
                 </button>
                 <button
                   onClick={acceptCookies}
                   className="px-6 py-2 text-xs bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium"
                 >
-                  Accept
+                  {t.accept}
                 </button>
               </div>
             </div>

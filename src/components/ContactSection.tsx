@@ -57,7 +57,7 @@ const ContactSection = () => {
           {/* Right: Contact Form */}
           <motion.div {...getRandomInViewAnimation(isInView, 0.2)}>
             <div className="bg-card border border-border rounded-sm p-8">
-              <ContactForm />
+              <ContactForm key={lang} />
             </div>
           </motion.div>
         </div>

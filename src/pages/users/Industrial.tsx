@@ -1,29 +1,18 @@
 import UserLandingPage from "@/components/UserLandingPage";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/i18n/translations";
 
 const Industrial = () => {
+  const { lang } = useLanguage();
+  const t = translations.userPages[lang].industrial;
+
   return (
     <UserLandingPage
-      title="Für Industrie & Infrastruktur-Teams"
-      subtitle="Digital Twin Lösungen"
-      challenge={{
-        title: "Die Herausforderung",
-        description: "Industrielle Umgebungen sind komplex und schwer über Teams, Stakeholder und öffentliche Zielgruppen hinweg zu kommunizieren.",
-      }}
-      approach={{
-        title: "Unser Ansatz",
-        description: "Wir erstellen fotorealistische Digital Twins realer Standorte und integrieren bei Bedarf Planungsdaten.",
-      }}
-      benefits={{
-        title: "Was dies ermöglicht",
-        items: [
-          "Klare Stakeholder-Abstimmung",
-          "Bessere Planungskommunikation",
-          "Verbesserte Präsentationen",
-          "Reduzierte Mehrdeutigkeit",
-          "Nahtlose Integration mit CAD/BIM-Systemen",
-          "Echtzeit-Standortdokumentation",
-        ],
-      }}
+      title={t.title}
+      subtitle={t.subtitle}
+      challenge={t.challenge}
+      approach={t.approach}
+      benefits={t.benefits}
       icon={
         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="text-primary">
           <rect x="6" y="18" width="36" height="24" stroke="currentColor" strokeWidth="2" />

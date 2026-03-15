@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import ContactSection from "./ContactSection";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/i18n/translations";
 
 interface UserLandingPageProps {
   title: string;
@@ -26,9 +28,13 @@ const UserLandingPage = ({
   challenge,
   approach,
   benefits,
-  ctaText = "Discuss Your Project",
+  ctaText,
   icon,
 }: UserLandingPageProps) => {
+  const { lang } = useLanguage();
+  const tCta = translations.userPages[lang];
+  const resolvedCtaText = ctaText ?? tCta.ctaButton;
+
   return (
     <main className="bg-background min-h-screen">
       {/* Hero Section */}
@@ -131,13 +137,13 @@ const UserLandingPage = ({
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl font-serif text-foreground mb-6">
-              Ready to Transform Your Environment?
+              {tCta.ctaHeading}
             </h2>
             <a
               href="#contact"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 text-sm font-medium tracking-wide hover:bg-primary/90 transition-colors"
             >
-              {ctaText}
+              {resolvedCtaText}
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
