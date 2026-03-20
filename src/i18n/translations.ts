@@ -18,16 +18,16 @@ export const translations = {
 
   hero: {
     en: {
-      h2: "A global archive of subculture spaces",
-      h2Highlight: "subculture spaces",
-      body: "We document environments that resist conventional capture — underground venues, DIY spaces, industrial ruins, ephemeral installations. What we capture is not just geometry. It is the specific character of a room: its dimensions, its surface texture, its quality of light. A spatial record that carries the atmosphere of the original.",
+      h2: "Real environments. Captured in 3D and 4D.",
+      h2Highlight: "3D and 4D.",
+      body: "We capture real environments at full fidelity — geometry, surface, light, and time. Static spaces, dynamic events, complex infrastructure, ephemeral moments. Delivered as production-ready spatial records for web, real-time engines, and creative pipelines.",
       cta: "Find your project type",
       ctaSecondary: "View our work",
     },
     de: {
-      h2: "Ein globales Archiv der Subkultur-Räume",
-      h2Highlight: "Subkultur-Räume",
-      body: "Wir dokumentieren Umgebungen, die sich konventioneller Erfassung entziehen — Clubs, DIY-Räume, Industrieruinen, ephemere Installationen. Was wir erfassen, ist nicht nur Geometrie. Es ist der spezifische Charakter eines Raums: seine Maße, seine Oberfläche, seine Qualität des Lichts. Ein Raum-Dokument, das die Atmosphäre des Originals trägt.",
+      h2: "Reale Umgebungen. In 3D und 4D erfasst.",
+      h2Highlight: "3D und 4D erfasst.",
+      body: "Wir erfassen reale Umgebungen in voller Qualität — Geometrie, Oberfläche, Licht und Zeit. Statische Räume, dynamische Events, komplexe Infrastruktur, ephemere Momente. Als produktionsreife Raum-Dokumente für Web, Echtzeit-Engines und kreative Pipelines.",
       cta: "Projekttyp finden",
       ctaSecondary: "Unsere Arbeit ansehen",
     },
