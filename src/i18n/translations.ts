@@ -37,7 +37,7 @@ export const translations = {
     en: {
       sectionLabel: "What We Do",
       intro1:
-        "3DARK documents spaces that exist outside conventional frameworks — underground clubs, abandoned industrial sites, temporary installations, locations that have no place in institutional archives. We capture their geometry, their surface detail, and their specific sensory character before they close, are demolished, or simply move on.",
+        "3DARK captures real environments in three and four dimensions — from static industrial infrastructure to dynamic live events, from cultural spaces to complex architecture. We capture geometry, surface detail, light, and time, delivering spatial records that carry the full fidelity of the physical world.",
       intro2:
         "We capture real environments with advanced reconstruction pipelines and deliver them as production-ready spatial documents — optimised for web, real-time engines, and presentation contexts.",
       whoH2: "Who We Are",
@@ -60,7 +60,7 @@ export const translations = {
     de: {
       sectionLabel: "Was Wir Tun",
       intro1:
-        "3DARK dokumentiert Räume, die außerhalb konventioneller Strukturen existieren — Clubs, verlassene Industrieareale, temporäre Installationen, Orte ohne institutionellen Rückhalt. Wir erfassen ihre Geometrie, ihre Oberflächendetails und ihren spezifischen sensorischen Charakter — bevor sie schließen, abgerissen werden oder einfach verschwinden.",
+        "3DARK erfasst reale Umgebungen in drei und vier Dimensionen — von statischer Industrieinfrastruktur bis zu dynamischen Live-Events, von Kulturräumen bis zu komplexer Architektur. Wir erfassen Geometrie, Oberflächendetails, Licht und Zeit und liefern Raum-Dokumente mit der vollen Qualität der physischen Welt.",
       intro2:
         "Wir erfassen reale Umgebungen mit fortschrittlichen Rekonstruktions-Pipelines und liefern sie als produktionsreife Raum-Dokumente — optimiert für Web, Echtzeit-Engines und Präsentationsumgebungen.",
       whoH2: "Wer Wir Sind",
