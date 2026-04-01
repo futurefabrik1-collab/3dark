@@ -71,21 +71,6 @@ const HeroSection = () => {
             transition={{ duration: 1, delay: 1.1 }}
             className="flex items-center gap-6"
           >
-            <a
-              href="#who-its-for"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 text-sm font-mono uppercase tracking-wider hover:bg-primary/90 transition-all neon-glow hover:shadow-[0_0_20px_rgba(var(--glow),0.5)]"
-            >
-              {t.cta}
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="mt-px">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </a>
-            <a
-              href="#projects"
-              className="text-sm text-muted-foreground hover:text-primary transition-colors font-mono uppercase tracking-wider border-b border-border pb-0.5 hover:border-primary"
-            >
-              {t.ctaSecondary}
-            </a>
           </motion.div>
         </div>
 

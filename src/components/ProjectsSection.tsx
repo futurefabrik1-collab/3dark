@@ -108,7 +108,7 @@ const ProjectsSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const { lang } = useLanguage();
   const t = translations.projects[lang];
-  const projects = [...translations.projectsList[lang]].reverse();
+  const projects = translations.projectsList[lang];
 
   return (
     <section id="projects" className="py-32 px-6 relative overflow-hidden">
