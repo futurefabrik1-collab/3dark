@@ -253,14 +253,14 @@ export const translations = {
 
   showreel: {
     en: {
-      sectionLabel: "Showreel",
-      h2: "The work, in context",
-      body: "A selection of environments we have documented — underground venues, industrial sites, cultural spaces, and production assets.",
+      sectionLabel: "Current Project",
+      h2: "iBug Festival — 4 years in 3D",
+      body: "Since 2022 we have been the official spatial documentation partner of iBug, one of Europe's leading international street art festivals. Each year we capture the full festival environment in photorealistic 3D — building an interactive archive that lets anyone explore past and present editions of the event.",
     },
     de: {
-      sectionLabel: "Showreel",
-      h2: "Die Arbeit, im Kontext",
-      body: "Eine Auswahl dokumentierter Umgebungen — Clubs, Industriestandorte, Kulturräume und Produktions-Assets.",
+      sectionLabel: "Aktuelles Projekt",
+      h2: "iBug Festival — 4 Jahre in 3D",
+      body: "Seit 2022 sind wir der offizielle Partner für räumliche Dokumentation des iBug, eines der führenden internationalen Street-Art-Festivals Europas. Jedes Jahr erfassen wir das gesamte Festival-Gelände in fotorealistischem 3D — und bauen ein interaktives Archiv auf, das es jedem ermöglicht, vergangene und aktuelle Ausgaben des Events zu erkunden.",
     },
   },
 
