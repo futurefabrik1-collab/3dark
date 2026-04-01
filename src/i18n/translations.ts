@@ -83,7 +83,7 @@ export const translations = {
     de: {
       sectionLabel: "Für Wen",
       h2: "Für Teams, die mehr als Fotos brauchen",
-      body: "Ob Sie komplexe Infrastruktur kommunizieren, Umgebungen für Produktionen erfassen, kulturelle Räume bewahren oder immersive Assets entwickeln — wir liefern räumliche Dokumentation, die die Spezifität des Originals trägt.",
+      body: "3DARK erstellt fotorealistische Digitale Zwillinge und interaktive 3D-Umgebungen — ob für industrielle Kommunikation, kulturelle Bewahrung oder Virtual Production. Reale Standorte in voller Qualität erfasst und als web-zugängliche, engine-ready Assets geliefert, die die Spezifität des Originals tragen.",
       learnMore: "Mehr erfahren",
       deliversLabel: "Sie erhalten:",
       cta: "Nicht sicher, wo Sie passen? Sprechen Sie mit uns.",
