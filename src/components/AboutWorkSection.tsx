@@ -1,6 +1,5 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { getRandomInViewAnimation } from "@/utils/animations";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/i18n/translations";
 
@@ -133,35 +132,6 @@ const AboutWorkSection = () => {
           </div>
         </motion.div>
 
-        {/* The Method */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.5 }}
-        >
-          <p className="font-mono text-xs tracking-[0.3em] uppercase text-primary mb-4">
-            {t.methodLabel}
-          </p>
-          <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-4 max-w-2xl">
-            {t.methodH2}
-          </h2>
-          <p className="text-muted-foreground font-light leading-relaxed mb-10 max-w-2xl">
-            {t.methodBody}
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {t.benefits.map((b, i) => (
-              <motion.div
-                key={b.title}
-                {...getRandomInViewAnimation(isInView, 0.6 + 0.1 * i)}
-                className="p-6 border border-border hover:border-primary/30 transition-all duration-500"
-              >
-                <h3 className="text-sm font-medium text-foreground mb-2">{b.title}</h3>
-                <p className="text-xs text-muted-foreground font-light leading-relaxed">{b.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );
