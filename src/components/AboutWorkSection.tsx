@@ -4,12 +4,12 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/i18n/translations";
 
 const TEAM = [
-  { name: "Marcus Heller", role: "Founder & Lead Developer", location: "Leipzig" },
-  { name: "Jana Richter", role: "3D Capture Specialist", location: "Berlin" },
-  { name: "Tom Brauer", role: "Software Engineer", location: "Leipzig" },
-  { name: "Lea Fischer", role: "Creative Director", location: "Hamburg" },
-  { name: "Kai Mertens", role: "Project Manager", location: "Berlin" },
-  { name: "Nina Wolff", role: "Post-Production Artist", location: "Leipzig" },
+  { name: "Mark Burnett", role: "Founder & Lead Developer", location: "Leipzig" },
+  { name: "Florian Manhardt", role: "3D Capture Specialist", location: "Leipzig" },
+  { name: "Samsmeep Singh", role: "Software Engineer", location: "Leipzig" },
+  { name: "Sascha Geddert", role: "Creative Director", location: "Leipzig" },
+  { name: "Sebastian Mücke", role: "Project Manager", location: "Leipzig" },
+  { name: "Christian Rauschenbach", role: "Post-Production Artist", location: "Leipzig" },
 ];
 
 const AboutWorkSection = () => {
