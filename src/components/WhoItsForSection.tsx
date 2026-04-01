@@ -70,12 +70,13 @@ const WhoItsForSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {t.users.map((user, i) => (
-            <motion.div
+            <motion.a
               key={user.title}
+              href={links[i]}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 * i }}
-              className="group p-8 border border-border bg-background hover:bg-surface-elevated transition-all duration-500 hover:border-primary/30"
+              className="group p-8 border border-border bg-background hover:bg-surface-elevated transition-all duration-500 hover:border-primary/30 cursor-pointer block"
             >
               <div className="mb-5 opacity-70 group-hover:opacity-100 transition-opacity">
                 {icons[i]}
@@ -86,16 +87,13 @@ const WhoItsForSection = () => {
               <p className="text-sm text-muted-foreground font-light leading-relaxed mb-6">
                 {user.description}
               </p>
-              <a
-                href={links[i]}
-                className="inline-flex items-center gap-2 text-xs text-primary hover:text-primary/80 transition-colors font-medium"
-              >
+              <span className="inline-flex items-center gap-2 text-xs text-primary group-hover:text-primary/80 transition-colors font-medium">
                 {t.learnMore}
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                   <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </a>
-            </motion.div>
+              </span>
+            </motion.a>
           ))}
         </div>
       </div>
