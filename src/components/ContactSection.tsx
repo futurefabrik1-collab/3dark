@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import ContactForm from "./ContactForm";
 import { getRandomInViewAnimation } from "@/utils/animations";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -54,11 +55,26 @@ const ContactSection = () => {
       </div>
 
       {/* Footer */}
-      <div className="max-w-6xl mx-auto mt-32 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
-          © {new Date().getFullYear()} 3DARK
-        </p>
-        <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground/50">
+      <div className="max-w-6xl mx-auto mt-32 pt-8 border-t border-border">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div className="space-y-1">
+            <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
+              © {new Date().getFullYear()} 3DARK — A service by Future Fabrik
+            </p>
+            <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-muted-foreground/40">
+              Burnett &amp; Manhardt GbR · Klingenstraße 22 · 04229 Leipzig
+            </p>
+          </div>
+          <div className="flex items-center gap-6">
+            <Link to="/impressum" className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground/50 hover:text-primary transition-colors">
+              Impressum
+            </Link>
+            <Link to="/datenschutz" className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground/50 hover:text-primary transition-colors">
+              Datenschutz
+            </Link>
+          </div>
+        </div>
+        <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground/30 mt-4">
           {t.footerTagline}
         </p>
       </div>

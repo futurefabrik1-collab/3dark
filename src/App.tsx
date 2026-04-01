@@ -7,6 +7,8 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import Impressum from "./pages/Impressum";
+import Datenschutz from "./pages/Datenschutz";
 import Industrial from "./pages/users/Industrial";
 import Producers from "./pages/users/Producers";
 import Cultural from "./pages/users/Cultural";
@@ -24,6 +26,8 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/impressum" element={<Impressum />} />
+            <Route path="/datenschutz" element={<Datenschutz />} />
             <Route path="/who-its-for/industrial" element={<Industrial />} />
             <Route path="/who-its-for/producers" element={<Producers />} />
             <Route path="/who-its-for/cultural" element={<Cultural />} />
