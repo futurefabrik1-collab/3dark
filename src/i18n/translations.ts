@@ -18,14 +18,14 @@ export const translations = {
 
   hero: {
     en: {
-      h2: "Real environments. Captured in 3D and 4D.",
-      h2Highlight: "3D and 4D.",
-      body: "We capture real environments at full fidelity — geometry, surface, light, and time. Static spaces, dynamic events, complex infrastructure, ephemeral moments. Delivered as production-ready spatial records for web, real-time engines, and creative pipelines.",
+      h2: "Digital twins that communicate. Archives that last.",
+      h2Highlight: "Archives that last.",
+      body: "We turn real environments into high-fidelity digital twins and interactive 3D records — for industrial communication, cultural preservation, and virtual production. Fast turnaround. Web-accessible. Production-ready.",
     },
     de: {
-      h2: "Reale Umgebungen. In 3D und 4D erfasst.",
-      h2Highlight: "3D und 4D erfasst.",
-      body: "Wir erfassen reale Umgebungen in voller Qualität — Geometrie, Oberfläche, Licht und Zeit. Statische Räume, dynamische Events, komplexe Infrastruktur, ephemere Momente. Als produktionsreife Raum-Dokumente für Web, Echtzeit-Engines und kreative Pipelines.",
+      h2: "Digitale Zwillinge, die kommunizieren. Archive, die bleiben.",
+      h2Highlight: "Archive, die bleiben.",
+      body: "Wir verwandeln reale Umgebungen in hochauflösende Digitale Zwillinge und interaktive 3D-Dokumente — für industrielle Kommunikation, kulturelle Bewahrung und Virtual Production. Schnelle Umsetzung. Web-zugänglich. Produktionsreif.",
     },
   },
 
@@ -33,13 +33,13 @@ export const translations = {
     en: {
       sectionLabel: "What We Do",
       intro1:
-        "3DARK captures real environments in 3D and 4D — from industrial infrastructure and complex architecture to live events and cultural spaces — using advanced reconstruction pipelines to deliver production-ready spatial records optimised for web, real-time engines, and presentation contexts.",
+        "3DARK produces photorealistic digital twins and interactive 3D environments for industrial communication, cultural heritage preservation, and virtual production — capturing real sites at full fidelity and delivering them as web-accessible, engine-ready assets.",
       whoH2: "Who We Are",
     },
     de: {
       sectionLabel: "Was Wir Tun",
       intro1:
-        "3DARK erfasst reale Umgebungen in 3D und 4D — von Industrieinfrastruktur und komplexer Architektur bis zu Live-Events und Kulturräumen — mit fortschrittlichen Rekonstruktions-Pipelines und liefert produktionsreife Raum-Dokumente, optimiert für Web, Echtzeit-Engines und Präsentationsumgebungen.",
+        "3DARK erstellt fotorealistische Digitale Zwillinge und interaktive 3D-Umgebungen für industrielle Kommunikation, kulturelle Bewahrung und Virtual Production — reale Standorte in voller Qualität erfasst und als web-zugängliche, engine-ready Assets geliefert.",
       whoH2: "Wer Wir Sind",
     },
   },
