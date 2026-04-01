@@ -20,12 +20,16 @@ export const translations = {
     en: {
       h2: "Digital twins that communicate. Archives that last.",
       h2Highlight: "Archives that last.",
-      body: "We turn real environments into high-fidelity digital twins and interactive 3D records — for industrial communication, cultural preservation, and virtual production. Fast turnaround. Web-accessible. Production-ready.",
+      body: "We turn real environments into high-fidelity digital twins and interactive 3D records — browser-viewable, QR-shareable, engine-ready. For industrial communication, cultural preservation, and virtual production.",
+      differentiator: "Not CGI. Not renders. Captured from reality.",
+      ctaButton: "Discuss your project",
     },
     de: {
       h2: "Digitale Zwillinge, die kommunizieren. Archive, die bleiben.",
       h2Highlight: "Archive, die bleiben.",
-      body: "Wir verwandeln reale Umgebungen in hochauflösende Digitale Zwillinge und interaktive 3D-Dokumente — für industrielle Kommunikation, kulturelle Bewahrung und Virtual Production. Schnelle Umsetzung. Web-zugänglich. Produktionsreif.",
+      body: "Wir verwandeln reale Umgebungen in hochauflösende Digitale Zwillinge und interaktive 3D-Dokumente — browser-begehbar, per QR teilbar, engine-ready. Für industrielle Kommunikation, kulturelle Bewahrung und Virtual Production.",
+      differentiator: "Kein CGI. Keine Renderings. Erfasst aus der Realität.",
+      ctaButton: "Projekt anfragen",
     },
   },
 
@@ -50,11 +54,30 @@ export const translations = {
       h2: "For teams that need more than photographs",
       body: "Whether you are communicating complex infrastructure, capturing environments for production, preserving cultural space, or building immersive assets — we deliver spatial documentation that carries the specificity of the real thing.",
       learnMore: "Learn more",
+      deliversLabel: "You receive:",
+      cta: "Not sure where you fit? Talk to us.",
+      ctaButton: "Start a conversation",
       users: [
-        { title: "Industry & Infrastructure", description: "Digital twins of facilities, plants, and complex infrastructure. Photorealistic spatial records for planning, communication, and stakeholder alignment — integrated with CAD and BIM workflows where required." },
-        { title: "Producers & Creative Directors", description: "Real environments for VFX, virtual production, and immersive storytelling. Abandoned architecture, industrial ruins, complex interiors — scanned and delivered production-ready for Unreal, Unity, or Houdini. No location scouting required." },
-        { title: "Cultural Institutions & Festivals", description: "Preserve spaces before they close, change, or disappear. Interactive 3D archives accessible from any browser — a navigable record for audiences, researchers, and future generations. A QR code on a poster and anyone can experience what you built." },
-        { title: "Marketing & Communications", description: "Turn physical locations into high-fidelity interactive assets for campaigns, presentations, and stakeholder communication. Shareable from a link. No specialist hardware required." },
+        {
+          title: "Industry & Infrastructure",
+          description: "Digital twins of facilities, plants, and complex infrastructure. Photorealistic spatial records for planning, communication, and stakeholder alignment — integrated with CAD and BIM workflows where required.",
+          deliverables: ["Browser-accessible 3D twin, shareable by link or QR code", "CAD/BIM-integrated spatial data", "Stakeholder presentation export"],
+        },
+        {
+          title: "Producers & Creative Directors",
+          description: "Real environments for VFX, virtual production, and immersive storytelling. Abandoned architecture, industrial ruins, complex interiors — scanned and delivered production-ready for Unreal, Unity, or Houdini. No location scouting required.",
+          deliverables: ["Unreal / Unity-ready environment assets", "Virtual camera walk-through export", "VFX pipeline-compatible delivery"],
+        },
+        {
+          title: "Cultural Institutions & Festivals",
+          description: "Preserve spaces before they close, change, or disappear. Interactive 3D archives accessible from any browser — a navigable record for audiences, researchers, and future generations. A QR code on a poster and anyone can experience what you built.",
+          deliverables: ["QR-linkable interactive archive, runs in any browser", "Embeddable tour for website or exhibition", "High-resolution spatial record for research and posterity"],
+        },
+        {
+          title: "Marketing & Communications",
+          description: "Turn physical locations into high-fidelity interactive assets for campaigns, presentations, and stakeholder communication. Shareable from a link. No specialist hardware required.",
+          deliverables: ["Shareable URL — no app or hardware required", "QR code asset ready for print and out-of-home", "Campaign-ready 3D content for web and social"],
+        },
       ],
     },
     de: {
@@ -62,11 +85,30 @@ export const translations = {
       h2: "Für Teams, die mehr als Fotos brauchen",
       body: "Ob Sie komplexe Infrastruktur kommunizieren, Umgebungen für Produktionen erfassen, kulturelle Räume bewahren oder immersive Assets entwickeln — wir liefern räumliche Dokumentation, die die Spezifität des Originals trägt.",
       learnMore: "Mehr erfahren",
+      deliversLabel: "Sie erhalten:",
+      cta: "Nicht sicher, wo Sie passen? Sprechen Sie mit uns.",
+      ctaButton: "Gespräch starten",
       users: [
-        { title: "Industrie & Infrastruktur", description: "Digitale Zwillinge von Anlagen, Fabriken und komplexer Infrastruktur. Fotorealistische Raum-Dokumente für Planung, Kommunikation und Stakeholder-Abstimmung — bei Bedarf mit CAD- und BIM-Integration." },
-        { title: "Produzenten & Creative Directors", description: "Reale Umgebungen für VFX, Virtual Production und immersives Storytelling. Verlassene Architektur, Industrieruinen, komplexe Innenräume — gescannt und produktionsbereit für Unreal, Unity oder Houdini. Kein Location-Scouting erforderlich." },
-        { title: "Kulturinstitutionen & Festivals", description: "Räume bewahren, bevor sie schließen, sich verändern oder verschwinden. Interaktive 3D-Archive, zugänglich aus jedem Browser — ein navigierbares Dokument für Publikum, Forschung und künftige Generationen. Ein QR-Code auf dem Plakat genügt." },
-        { title: "Marketing & Kommunikation", description: "Physische Standorte in hochauflösende, interaktive Assets für Kampagnen, Präsentationen und Stakeholder-Kommunikation verwandeln. Per Link teilbar. Keine Spezialhardware erforderlich." },
+        {
+          title: "Industrie & Infrastruktur",
+          description: "Digitale Zwillinge von Anlagen, Fabriken und komplexer Infrastruktur. Fotorealistische Raum-Dokumente für Planung, Kommunikation und Stakeholder-Abstimmung — bei Bedarf mit CAD- und BIM-Integration.",
+          deliverables: ["Browser-zugänglicher 3D-Zwilling, per Link oder QR teilbar", "CAD/BIM-integrierte Raumdaten", "Stakeholder-Präsentationsexport"],
+        },
+        {
+          title: "Produzenten & Creative Directors",
+          description: "Reale Umgebungen für VFX, Virtual Production und immersives Storytelling. Verlassene Architektur, Industrieruinen, komplexe Innenräume — gescannt und produktionsbereit für Unreal, Unity oder Houdini. Kein Location-Scouting erforderlich.",
+          deliverables: ["Unreal / Unity-ready Umgebungs-Assets", "Virtueller Kamera-Walk-through Export", "VFX-Pipeline-kompatible Lieferung"],
+        },
+        {
+          title: "Kulturinstitutionen & Festivals",
+          description: "Räume bewahren, bevor sie schließen, sich verändern oder verschwinden. Interaktive 3D-Archive, zugänglich aus jedem Browser — ein navigierbares Dokument für Publikum, Forschung und künftige Generationen. Ein QR-Code auf dem Plakat genügt.",
+          deliverables: ["QR-verlinktes interaktives Archiv, läuft in jedem Browser", "Einbettbare Tour für Website oder Ausstellung", "Hochauflösendes Raum-Dokument für Forschung und Nachwelt"],
+        },
+        {
+          title: "Marketing & Kommunikation",
+          description: "Physische Standorte in hochauflösende, interaktive Assets für Kampagnen, Präsentationen und Stakeholder-Kommunikation verwandeln. Per Link teilbar. Keine Spezialhardware erforderlich.",
+          deliverables: ["Teilbarer Link — keine App, keine Hardware", "QR-Code-Asset für Print und Out-of-Home", "Kampagnen-ready 3D-Inhalte für Web und Social"],
+        },
       ],
     },
   },

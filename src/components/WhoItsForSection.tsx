@@ -87,7 +87,20 @@ const WhoItsForSection = () => {
               <p className="text-sm text-muted-foreground font-light leading-relaxed mb-6">
                 {user.description}
               </p>
-              <span className="inline-flex items-center gap-2 text-xs text-primary group-hover:text-primary/80 transition-colors font-medium">
+              <div className="mb-6">
+                <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-primary/60 mb-3">
+                  {t.deliversLabel}
+                </p>
+                <ul className="space-y-2">
+                  {user.deliverables.map((item, j) => (
+                    <li key={j} className="flex items-start gap-2 text-xs text-muted-foreground font-light leading-relaxed">
+                      <span className="text-primary mt-0.5 shrink-0">—</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <span className="inline-flex items-center gap-2 text-xs text-primary group-hover:gap-3 transition-all duration-300 font-mono tracking-widest uppercase">
                 {t.learnMore}
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                   <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -96,6 +109,24 @@ const WhoItsForSection = () => {
             </motion.a>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-border pt-10"
+        >
+          <p className="text-muted-foreground font-light text-sm">{t.cta}</p>
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-3 px-6 py-3 border border-primary text-primary font-mono text-xs tracking-widest uppercase hover:bg-primary hover:text-background transition-all duration-300 shrink-0"
+          >
+            {t.ctaButton}
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </a>
+        </motion.div>
       </div>
     </section>
   );

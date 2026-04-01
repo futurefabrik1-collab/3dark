@@ -60,17 +60,35 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-lg md:text-xl text-muted-foreground font-light max-w-2xl leading-relaxed mb-10"
+            className="text-lg md:text-xl text-muted-foreground font-light max-w-2xl leading-relaxed mb-4"
           >
             {t.body}
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="font-mono text-xs tracking-[0.2em] uppercase text-primary/70 mb-10"
+          >
+            {t.differentiator}
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1.1 }}
+            transition={{ duration: 1, delay: 1.0 }}
             className="flex items-center gap-6"
           >
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-3 px-6 py-3 border border-primary text-primary font-mono text-sm tracking-widest uppercase hover:bg-primary hover:text-background transition-all duration-300"
+            >
+              {t.ctaButton}
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </a>
           </motion.div>
         </div>
 
