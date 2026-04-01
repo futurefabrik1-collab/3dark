@@ -4,7 +4,6 @@ import ShowreelSection from "@/components/ShowreelSection";
 import WhoItsForSection from "@/components/WhoItsForSection";
 import AboutWorkSection from "@/components/AboutWorkSection";
 import ProjectsSection from "@/components/ProjectsSection";
-import ProcessSection from "@/components/ProcessSection";
 import MethodEquipmentSection from "@/components/MethodEquipmentSection";
 import ContactSection from "@/components/ContactSection";
 import CookieConsent from "@/components/CookieConsent";
@@ -20,7 +19,6 @@ const Index = () => {
       
       <MethodEquipmentSection />
       <ProjectsSection />
-      <ProcessSection />
       <ContactSection />
       <CookieConsent />
     </main>
