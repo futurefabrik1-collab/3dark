@@ -3,6 +3,24 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/i18n/translations";
 
+const GA_ID = "G-451DTY0R49";
+
+const loadGA = () => {
+  if (document.getElementById("ga-script")) return;
+  const script = document.createElement("script");
+  script.id = "ga-script";
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+  document.head.appendChild(script);
+  script.onload = () => {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(...args: unknown[]) { window.dataLayer.push(args); }
+    gtag("js", new Date());
+    gtag("config", GA_ID);
+    window.gtag = gtag;
+  };
+};
+
 const CookieConsent = () => {
   const [showBanner, setShowBanner] = useState(false);
   const { lang } = useLanguage();
@@ -12,19 +30,20 @@ const CookieConsent = () => {
     const consent = localStorage.getItem("cookieConsent");
     if (!consent) {
       setShowBanner(true);
+    } else if (consent === "accepted") {
+      loadGA();
     }
   }, []);
 
   const acceptCookies = () => {
     localStorage.setItem("cookieConsent", "accepted");
     setShowBanner(false);
+    loadGA();
   };
 
   const declineCookies = () => {
     localStorage.setItem("cookieConsent", "declined");
     setShowBanner(false);
-    // Disable Google Analytics
-    window['ga-disable-G-451DTY0R49'] = true;
   };
 
   return (

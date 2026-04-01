@@ -160,13 +160,13 @@ export const translations = {
   cookie: {
     en: {
       title: "Cookie Notice",
-      body: "We use essential cookies to remember your preferences (language and display settings). No tracking or analytics cookies are used.",
+      body: "We use cookies to remember your preferences and, with your consent, to analyse site usage via Google Analytics. Your data is processed in accordance with GDPR.",
       accept: "Accept",
       decline: "Decline",
     },
     de: {
       title: "Cookie-Hinweis",
-      body: "Wir verwenden technisch notwendige Cookies, um Ihre Einstellungen (Sprache und Darstellung) zu speichern. Es werden keine Tracking- oder Analyse-Cookies eingesetzt.",
+      body: "Wir verwenden Cookies, um Ihre Einstellungen zu speichern und — mit Ihrer Zustimmung — die Website-Nutzung über Google Analytics zu analysieren. Ihre Daten werden gemäß DSGVO verarbeitet.",
       accept: "Akzeptieren",
       decline: "Ablehnen",
     },
