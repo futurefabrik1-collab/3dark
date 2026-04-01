@@ -1,38 +1,22 @@
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/i18n/translations";
 
 const TEAM = [
-  { name: "Name Placeholder", role: "Founder & Lead Developer" },
-  { name: "Name Placeholder", role: "3D Capture Specialist" },
-  { name: "Name Placeholder", role: "Software Engineer" },
-  { name: "Name Placeholder", role: "Creative Director" },
-  { name: "Name Placeholder", role: "Project Manager" },
-  { name: "Name Placeholder", role: "Post-Production Artist" },
+  { name: "Marcus Heller", role: "Founder & Lead Developer", location: "Leipzig" },
+  { name: "Jana Richter", role: "3D Capture Specialist", location: "Berlin" },
+  { name: "Tom Brauer", role: "Software Engineer", location: "Leipzig" },
+  { name: "Lea Fischer", role: "Creative Director", location: "Hamburg" },
+  { name: "Kai Mertens", role: "Project Manager", location: "Berlin" },
+  { name: "Nina Wolff", role: "Post-Production Artist", location: "Leipzig" },
 ];
-
-const AvatarPlaceholder = () => (
-  <div className="w-full aspect-[3/4] bg-muted border border-border flex items-end justify-center overflow-hidden">
-    <svg viewBox="0 0 120 160" fill="none" className="w-3/4 opacity-20" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="60" cy="48" rx="28" ry="30" fill="currentColor"/>
-      <path d="M10 160c0-38 22-62 50-62s50 24 50 62H10z" fill="currentColor"/>
-    </svg>
-  </div>
-);
 
 const AboutWorkSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { lang } = useLanguage();
   const t = translations.about[lang];
-
-  const [index, setIndex] = useState(0);
-  const visible = 3; // cards visible at once on desktop
-  const max = TEAM.length - visible;
-
-  const prev = () => setIndex((i) => Math.max(0, i - 1));
-  const next = () => setIndex((i) => Math.min(max, i + 1));
 
   return (
     <section id="about" className="py-32 px-6 relative overflow-hidden parchment-bg">
@@ -61,73 +45,40 @@ const AboutWorkSection = () => {
           </p>
         </motion.div>
 
-        {/* Who We Are — Team Carousel */}
+        {/* Who We Are — Team Grid */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="border-t border-border pt-12 mb-20"
+          className="border-t border-border pt-12"
         >
-          <div className="flex items-end justify-between mb-8">
-            <h2 className="text-2xl md:text-3xl font-serif text-foreground">
-              {t.whoH2}
-            </h2>
-            {/* Prev / Next */}
-            <div className="flex items-center gap-2">
-              <button
-                onClick={prev}
-                disabled={index === 0}
-                aria-label="Previous"
-                className="w-9 h-9 flex items-center justify-center border border-border hover:border-primary/60 text-muted-foreground hover:text-primary disabled:opacity-30 disabled:pointer-events-none transition-colors"
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M15 18l-6-6 6-6"/>
-                </svg>
-              </button>
-              <button
-                onClick={next}
-                disabled={index >= max}
-                aria-label="Next"
-                className="w-9 h-9 flex items-center justify-center border border-border hover:border-primary/60 text-muted-foreground hover:text-primary disabled:opacity-30 disabled:pointer-events-none transition-colors"
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M9 18l6-6-6-6"/>
-                </svg>
-              </button>
-            </div>
-          </div>
+          <h2 className="text-xl font-serif text-foreground mb-8">
+            {t.whoH2}
+          </h2>
 
-          {/* Carousel track */}
-          <div className="overflow-hidden">
-            <motion.div
-              className="flex gap-4"
-              animate={{ x: `calc(-${index} * (100% / ${visible} + 1rem / ${visible}))` }}
-              transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
-            >
-              {TEAM.map((member, i) => (
-                <div
-                  key={i}
-                  className="flex-shrink-0 w-[calc(33.333%-0.89rem)] min-w-[220px] border border-border bg-background hover:border-primary/30 transition-colors duration-300"
-                >
-                  <AvatarPlaceholder />
-                  <div className="p-5">
-                    <p className="text-sm font-medium text-foreground mb-1">{member.name}</p>
-                    <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-primary">{member.role}</p>
-                  </div>
-                </div>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* Dot indicators */}
-          <div className="flex items-center gap-2 mt-6">
-            {Array.from({ length: max + 1 }).map((_, i) => (
-              <button
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-border">
+            {TEAM.map((member, i) => (
+              <motion.div
                 key={i}
-                onClick={() => setIndex(i)}
-                className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${i === index ? "bg-primary w-4" : "bg-border hover:bg-muted-foreground"}`}
-                aria-label={`Go to slide ${i + 1}`}
-              />
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : {}}
+                transition={{ duration: 0.4, delay: 0.35 + i * 0.07 }}
+                className="bg-background p-5 flex gap-4 items-start group hover:bg-surface-elevated transition-colors duration-300"
+              >
+                {/* Avatar */}
+                <div className="flex-shrink-0 w-10 h-10 bg-muted border border-border flex items-end justify-center overflow-hidden">
+                  <svg viewBox="0 0 40 48" fill="none" className="w-full opacity-25">
+                    <ellipse cx="20" cy="14" rx="8" ry="9" fill="currentColor"/>
+                    <path d="M2 48c0-11 7-18 18-18s18 7 18 18H2z" fill="currentColor"/>
+                  </svg>
+                </div>
+                {/* Info */}
+                <div className="min-w-0">
+                  <p className="text-sm font-medium text-foreground leading-snug truncate">{member.name}</p>
+                  <p className="font-mono text-[10px] tracking-[0.12em] uppercase text-primary mt-0.5">{member.role}</p>
+                  <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/50 mt-1">{member.location}</p>
+                </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>
