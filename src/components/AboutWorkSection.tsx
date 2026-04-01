@@ -75,7 +75,7 @@ const AboutWorkSection = () => {
                 {/* Info */}
                 <div className="min-w-0">
                   <p className="text-sm font-medium text-foreground leading-snug truncate">{member.name}</p>
-                  <p className="font-mono text-[10px] tracking-[0.12em] uppercase text-primary mt-0.5">{member.role}</p>
+
                   <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/50 mt-1">{member.location}</p>
                 </div>
               </motion.div>
