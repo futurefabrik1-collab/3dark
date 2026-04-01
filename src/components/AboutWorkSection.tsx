@@ -34,9 +34,6 @@ const AboutWorkSection = () => {
           <p className="text-lg md:text-xl text-muted-foreground font-light leading-relaxed max-w-3xl mx-auto mb-6">
             {t.intro1}
           </p>
-          <p className="text-lg md:text-xl text-muted-foreground font-light leading-relaxed max-w-3xl mx-auto">
-            {t.intro2}
-          </p>
         </motion.div>
 
         {/* Who We Are */}

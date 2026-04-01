@@ -37,9 +37,8 @@ export const translations = {
     en: {
       sectionLabel: "What We Do",
       intro1:
-        "3DARK captures real environments in three and four dimensions — from static industrial infrastructure to dynamic live events, from cultural spaces to complex architecture. We capture geometry, surface detail, light, and time, delivering spatial records that carry the full fidelity of the physical world.",
-      intro2:
-        "We capture real environments with advanced reconstruction pipelines and deliver them as production-ready spatial documents — optimised for web, real-time engines, and presentation contexts.",
+        "3DARK captures real environments in 3D and 4D — from industrial infrastructure and complex architecture to live events and cultural spaces — using advanced reconstruction pipelines to deliver production-ready spatial records optimised for web, real-time engines, and presentation contexts.",
+      intro2: "",
       whoH2: "Who We Are",
       whoPara:
         "We came to this work through subcultures and alternative spaces — places built on DIY ethics, operating outside mainstream channels. That context shapes how we approach documentation. We understand the social function of the spaces we record, and that understanding is present in how we work.",
@@ -60,9 +59,8 @@ export const translations = {
     de: {
       sectionLabel: "Was Wir Tun",
       intro1:
-        "3DARK erfasst reale Umgebungen in drei und vier Dimensionen — von statischer Industrieinfrastruktur bis zu dynamischen Live-Events, von Kulturräumen bis zu komplexer Architektur. Wir erfassen Geometrie, Oberflächendetails, Licht und Zeit und liefern Raum-Dokumente mit der vollen Qualität der physischen Welt.",
-      intro2:
-        "Wir erfassen reale Umgebungen mit fortschrittlichen Rekonstruktions-Pipelines und liefern sie als produktionsreife Raum-Dokumente — optimiert für Web, Echtzeit-Engines und Präsentationsumgebungen.",
+        "3DARK erfasst reale Umgebungen in 3D und 4D — von Industrieinfrastruktur und komplexer Architektur bis zu Live-Events und Kulturräumen — mit fortschrittlichen Rekonstruktions-Pipelines und liefert produktionsreife Raum-Dokumente, optimiert für Web, Echtzeit-Engines und Präsentationsumgebungen.",
+      intro2: "",
       whoH2: "Wer Wir Sind",
       whoPara:
         "Wir kamen durch Subkulturen und alternative Räume zu dieser Arbeit — Orte, die auf DIY-Ethik aufgebaut sind und außerhalb des Mainstreams operieren. Dieser Kontext prägt unsere Herangehensweise. Wir verstehen die soziale Funktion der Räume, die wir dokumentieren, und dieses Verständnis zeigt sich in unserer Arbeit.",
