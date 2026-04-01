@@ -39,16 +39,10 @@ const Impressum = () => (
           <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-foreground mb-3">Kontakt</h2>
           <p>
             Telefon: 0049 (0) 17634584847<br />
-            E-Mail:{" "}
-            <a href="mailto:mark@futurefabrik.com" className="text-primary hover:underline">
-              mark@futurefabrik.com
-            </a>
-          </p>
-          <p className="mt-3">
             Telefon: 0049 (0) 1781345105<br />
             E-Mail:{" "}
-            <a href="mailto:flo@futurefabrik.com" className="text-primary hover:underline">
-              flo@futurefabrik.com
+            <a href="mailto:contact@futurefabrik.com" className="text-primary hover:underline">
+              contact@futurefabrik.com
             </a>
           </p>
         </section>
@@ -64,7 +58,7 @@ const Impressum = () => (
         <section>
           <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-foreground mb-3">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
           <p>
-            Mark Burnett<br />
+            Mark Burnett &amp; Florian Manhardt<br />
             Klingenstraße 22<br />
             04229 Leipzig
           </p>
