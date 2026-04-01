@@ -37,8 +37,21 @@ const UserLandingPage = ({
 
   return (
     <main className="bg-background min-h-screen">
+      {/* Back nav */}
+      <div className="fixed top-0 left-0 right-0 z-50 px-6 h-16 flex items-center bg-background/95 backdrop-blur-sm border-b border-border/50">
+        <a
+          href="/"
+          className="flex items-center gap-2 font-mono text-[11px] tracking-[0.2em] uppercase text-muted-foreground hover:text-primary transition-colors duration-200"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M19 12H5M12 5l-7 7 7 7"/>
+          </svg>
+          3DARK
+        </a>
+      </div>
+
       {/* Hero Section */}
-      <section className="py-24 px-6 bg-gradient-to-b from-surface/30 to-background">
+      <section className="pt-40 pb-24 px-6 bg-gradient-to-b from-surface/30 to-background">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
