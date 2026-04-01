@@ -19,8 +19,12 @@ const Impressum = () => (
           <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-foreground mb-3">Angaben gemäß § 5 TMG</h2>
           <p>
             Burnett &amp; Manhardt GbR<br />
+            (handelnd als Future Fabrik)<br />
             Klingenstraße 22<br />
             04229 Leipzig
+          </p>
+          <p className="mt-3">
+            3DARK ist ein Dienst der Future Fabrik (Burnett &amp; Manhardt GbR).
           </p>
         </section>
 

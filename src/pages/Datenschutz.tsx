@@ -56,6 +56,7 @@ const Datenschutz = () => (
           <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
           <p className="mt-3">
             Burnett &amp; Manhardt GbR<br />
+            (handelnd als Future Fabrik)<br />
             Mark Burnett &amp; Florian Manhardt<br />
             Klingenstraße 22<br />
             04229 Leipzig<br /><br />
@@ -64,6 +65,9 @@ const Datenschutz = () => (
             <a href="mailto:contact@futurefabrik.com" className="text-primary hover:underline">
               contact@futurefabrik.com
             </a>
+          </p>
+          <p className="mt-3">
+            3DARK ist ein Dienst der Future Fabrik (Burnett &amp; Manhardt GbR).
           </p>
         </section>
 
