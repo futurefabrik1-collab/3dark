@@ -42,7 +42,7 @@ const ShowreelSection = () => {
         >
           <div className="neon-border overflow-hidden">
             <iframe
-              src="https://discover.storysplat.com/api/v2-html/43774b28-c045-485a-8117-db88189d727c"
+              src="https://splatpipe-cdn.b-cdn.net/IBUG_2025_v6/index.html"
               width="100%"
               height="500"
               frameBorder="0"
