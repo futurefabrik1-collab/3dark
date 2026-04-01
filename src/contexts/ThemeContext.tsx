@@ -18,7 +18,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
       const stored = localStorage.getItem("3dark-theme");
       if (stored === "light" || stored === "dark") return stored;
     } catch {}
-    return "dark";
+    return "light";
   });
 
   useEffect(() => {

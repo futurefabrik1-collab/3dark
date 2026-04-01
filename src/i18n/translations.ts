@@ -21,15 +21,11 @@ export const translations = {
       h2: "Real environments. Captured in 3D and 4D.",
       h2Highlight: "3D and 4D.",
       body: "We capture real environments at full fidelity — geometry, surface, light, and time. Static spaces, dynamic events, complex infrastructure, ephemeral moments. Delivered as production-ready spatial records for web, real-time engines, and creative pipelines.",
-      cta: "Find your project type",
-      ctaSecondary: "View our work",
     },
     de: {
       h2: "Reale Umgebungen. In 3D und 4D erfasst.",
       h2Highlight: "3D und 4D erfasst.",
       body: "Wir erfassen reale Umgebungen in voller Qualität — Geometrie, Oberfläche, Licht und Zeit. Statische Räume, dynamische Events, komplexe Infrastruktur, ephemere Momente. Als produktionsreife Raum-Dokumente für Web, Echtzeit-Engines und kreative Pipelines.",
-      cta: "Projekttyp finden",
-      ctaSecondary: "Unsere Arbeit ansehen",
     },
   },
 
@@ -38,92 +34,13 @@ export const translations = {
       sectionLabel: "What We Do",
       intro1:
         "3DARK captures real environments in 3D and 4D — from industrial infrastructure and complex architecture to live events and cultural spaces — using advanced reconstruction pipelines to deliver production-ready spatial records optimised for web, real-time engines, and presentation contexts.",
-      intro2: "",
       whoH2: "Who We Are",
-      whoPara:
-        "We came to this work through subcultures and alternative spaces — places built on DIY ethics, operating outside mainstream channels. That context shapes how we approach documentation. We understand the social function of the spaces we record, and that understanding is present in how we work.",
-      whoSub:
-        "Precise in method. Attentive to atmosphere. We record not just what a space looks like, but what it feels like to stand inside it.",
-      methodLabel: "The Method",
-      methodH2: "Light, surface, and texture in their actual state",
-      methodBody:
-        "Gaussian Splatting captures the visual reality of a space with a fidelity that conventional 3D scanning cannot match. The specific quality of light through a dirty skylight. The patina of years of use on a concrete floor. The way a low ceiling changes the acoustic character of a room. These are not decorative details. They are the evidence of a space's social history.",
-      benefits: [
-        { title: "Underground venues with complex lighting", desc: "Clubs, basements, adapted spaces — where the light defines the atmosphere." },
-        { title: "Ephemeral events and installations", desc: "Festivals, pop-ups, guerrilla exhibitions — documented before they dismantle." },
-        { title: "Abandoned industrial spaces", desc: "Factory floors, former warehouses, sites in transition." },
-        { title: "Film and production environments", desc: "Location assets and set extensions for virtual production workflows." },
-        { title: "Subcultural and informal spaces", desc: "Spaces that operate outside institutional documentation frameworks." },
-      ],
     },
     de: {
       sectionLabel: "Was Wir Tun",
       intro1:
         "3DARK erfasst reale Umgebungen in 3D und 4D — von Industrieinfrastruktur und komplexer Architektur bis zu Live-Events und Kulturräumen — mit fortschrittlichen Rekonstruktions-Pipelines und liefert produktionsreife Raum-Dokumente, optimiert für Web, Echtzeit-Engines und Präsentationsumgebungen.",
-      intro2: "",
       whoH2: "Wer Wir Sind",
-      whoPara:
-        "Wir kamen durch Subkulturen und alternative Räume zu dieser Arbeit — Orte, die auf DIY-Ethik aufgebaut sind und außerhalb des Mainstreams operieren. Dieser Kontext prägt unsere Herangehensweise. Wir verstehen die soziale Funktion der Räume, die wir dokumentieren, und dieses Verständnis zeigt sich in unserer Arbeit.",
-      whoSub:
-        "Präzise in der Methode. Aufmerksam für Atmosphäre. Wir erfassen nicht nur, wie ein Raum aussieht — sondern wie es sich anfühlt, darin zu stehen.",
-      methodLabel: "Die Methode",
-      methodH2: "Licht, Oberfläche und Textur im tatsächlichen Zustand",
-      methodBody:
-        "Gaussian Splatting erfasst die visuelle Realität eines Raums mit einer Treue, die konventionelles 3D-Scanning nicht erreicht. Die spezifische Qualität des Lichts durch ein schmutziges Oberlicht. Die Patina jahrelanger Nutzung auf einem Betonboden. Wie eine niedrige Decke den akustischen Charakter eines Raums verändert. Das sind keine dekorativen Details. Es sind die Spuren einer sozialen Geschichte.",
-      benefits: [
-        { title: "Underground-Venues mit komplexer Beleuchtung", desc: "Clubs, Keller, umgenutzte Räume — wo das Licht die Atmosphäre definiert." },
-        { title: "Ephemere Events und Installationen", desc: "Festivals, Pop-ups, Guerrilla-Ausstellungen — dokumentiert, bevor sie abgebaut werden." },
-        { title: "Verlassene Industrieräume", desc: "Fabrikhallen, ehemalige Lager, Orte im Wandel." },
-        { title: "Film- und Produktionsumgebungen", desc: "Location-Assets und Set-Extensions für Virtual-Production-Workflows." },
-        { title: "Subkulturelle und informelle Räume", desc: "Räume, die außerhalb institutioneller Dokumentationsrahmen operieren." },
-      ],
-    },
-  },
-
-  services: {
-    en: {
-      sectionLabel: "What We Deliver",
-      h2: "Digital environments for spaces that resist conventional documentation",
-      cards: [
-        {
-          label: "Spatial Documentation",
-          detail: "We capture environments in detail — their geometry, surface texture, and light. Not a stylised rendering, but a precise spatial record. Useful for spaces that are too complex, too dark, or too temporary for conventional photographic documentation.",
-        },
-        {
-          label: "Accessible Archives",
-          detail: "The result is a navigable environment, accessible from any browser. No specialist hardware. A QR code, a link — and the space exists again, in the form it held at the moment of capture.",
-        },
-        {
-          label: "Production Assets",
-          detail: "Spatial data ready for film and virtual production pipelines. Location scouting for places that no longer exist. Gaussian Splatting environments as VFX plates, set extensions, or game assets — the physical reality of a space, delivered as a production-ready file.",
-        },
-        {
-          label: "Cultural Record",
-          detail: "Industrial ruins. Informal venues. Underground events. We document the spaces that communities build and inhabit — and that institutional archives consistently overlook. A record made for those who were there, and accessible to those who come after.",
-        },
-      ],
-    },
-    de: {
-      sectionLabel: "Leistungen",
-      h2: "Digitale Umgebungen für Räume, die konventioneller Dokumentation widerstehen",
-      cards: [
-        {
-          label: "Räumliche Dokumentation",
-          detail: "Wir erfassen Umgebungen im Detail — ihre Geometrie, Oberflächentextur und Licht. Kein stilisiertes Rendering, sondern ein präzises räumliches Dokument. Geeignet für Räume, die zu komplex, zu dunkel oder zu temporär für konventionelle fotografische Dokumentation sind.",
-        },
-        {
-          label: "Zugängliche Archive",
-          detail: "Das Ergebnis ist eine navigierbare Umgebung, zugänglich aus jedem Browser. Keine Spezialhardware. Ein QR-Code, ein Link — und der Raum existiert wieder, so wie er im Moment der Aufnahme war.",
-        },
-        {
-          label: "Produktions-Assets",
-          detail: "Räumliche Daten für Film- und Virtual-Production-Pipelines. Location-Scouting für Orte, die nicht mehr existieren. Gaussian-Splatting-Environments als VFX-Plates, Set-Extensions oder Game-Assets — die physische Realität eines Raums als produktionsreife Datei.",
-        },
-        {
-          label: "Kulturelles Dokument",
-          detail: "Industrieruinen. Informelle Venues. Underground-Events. Wir dokumentieren die Räume, die Gemeinschaften bauen und bewohnen — und die institutionelle Archive konsequent übersehen. Ein Dokument für die, die dabei waren, und zugänglich für die, die danach kommen.",
-        },
-      ],
     },
   },
 
@@ -150,76 +67,6 @@ export const translations = {
         { title: "Produzenten & Creative Directors", description: "Reale Umgebungen für VFX, Virtual Production und immersives Storytelling. Verlassene Architektur, Industrieruinen, komplexe Innenräume — gescannt und produktionsbereit für Unreal, Unity oder Houdini. Kein Location-Scouting erforderlich." },
         { title: "Kulturinstitutionen & Festivals", description: "Räume bewahren, bevor sie schließen, sich verändern oder verschwinden. Interaktive 3D-Archive, zugänglich aus jedem Browser — ein navigierbares Dokument für Publikum, Forschung und künftige Generationen. Ein QR-Code auf dem Plakat genügt." },
         { title: "Marketing & Kommunikation", description: "Physische Standorte in hochauflösende, interaktive Assets für Kampagnen, Präsentationen und Stakeholder-Kommunikation verwandeln. Per Link teilbar. Keine Spezialhardware erforderlich." },
-      ],
-    },
-  },
-
-  sectors: {
-    en: {
-      sectionLabel: "Sectors",
-      h2: "Across industries",
-      body: "Our documentation practice adapts to the requirements of the sector — not the other way around.",
-      items: [
-        { name: "Film, TV & Games", description: "Photorealistic location assets, set extensions, and virtual production environments. Spatial data delivered directly into post-production pipelines.", roles: "Producers · VFX Supervisors" },
-        { name: "Industry & Infrastructure", description: "Digital twins of facilities, plants, and infrastructure. Integrated with CAD and BIM for planning, maintenance, and communication.", roles: "Project Managers · Planners" },
-        { name: "Marketing & Communications", description: "Interactive 3D experiences, browser-accessible viewers, and cinematic renders for campaigns, exhibitions, and events.", roles: "Marketing Managers · Creative Directors" },
-        { name: "Culture & Events", description: "Festivals, exhibitions, and historical sites preserved as navigable digital records. Immersive archives and spatial installations.", roles: "Curators · Festival Organisers" },
-        { name: "Architecture & Real Estate", description: "Existing buildings, construction sites, and new developments as navigable spatial experiences for clients and collaborators.", roles: "Architects · Developers" },
-        { name: "Education & Research", description: "Interactive learning environments, training scenarios, and research documentation in photorealistic spatial detail.", roles: "Universities · Trainers" },
-      ],
-    },
-    de: {
-      sectionLabel: "Branchen",
-      h2: "Branchenübergreifend",
-      body: "Unsere Dokumentationspraxis passt sich den Anforderungen der Branche an — nicht umgekehrt.",
-      items: [
-        { name: "Film, TV & Games", description: "Fotorealistische Location-Assets, Set-Extensions und Virtual-Production-Environments. Räumliche Daten direkt in Post-Production-Pipelines.", roles: "Produzenten · VFX Supervisors" },
-        { name: "Industrie & Infrastruktur", description: "Digitale Zwillinge von Anlagen, Fabriken und Infrastruktur. Integriert mit CAD und BIM für Planung, Wartung und Kommunikation.", roles: "Projektleiter · Planer" },
-        { name: "Marketing & Kommunikation", description: "Interaktive 3D-Erlebnisse, Browser-zugängliche Viewer und cineastische Renderings für Kampagnen, Ausstellungen und Events.", roles: "Marketing Manager · Creative Directors" },
-        { name: "Kultur & Events", description: "Festivals, Ausstellungen und historische Stätten als navigierbare digitale Dokumente gesichert. Immersive Archive und räumliche Installationen.", roles: "Kuratoren · Festivalorganisatoren" },
-        { name: "Architektur & Immobilien", description: "Bestandsgebäude, Baustellen und Neubauten als navigierbare räumliche Erlebnisse für Kunden und Partner.", roles: "Architekten · Entwickler" },
-        { name: "Bildung & Forschung", description: "Interaktive Lernumgebungen, Trainingsszenarien und Forschungsdokumentation in fotorealistischer räumlicher Qualität.", roles: "Hochschulen · Trainer" },
-      ],
-    },
-  },
-
-  industries: {
-    en: {
-      sectionLabel: "Who We Work With",
-      h2: "For those who need more than stock photography",
-      body: "From underground culture to complex infrastructure — we document what others can't.",
-      items: [
-        {
-          title: "For directors who need real locations",
-          description: "Cyberpunk underpasses. Abandoned architecture. Industrial ruins with character. We scan environments your set designer couldn't build — and deliver them production-ready for Unreal, Unity, or Houdini.",
-        },
-        {
-          title: "For clubs, collectives, and cultural spaces",
-          description: "Your venue is closing. Your festival was a one-off. Your installation is coming down. We create a navigable spatial record. A QR code on a poster — and anyone can experience what you built.",
-        },
-        {
-          title: "For creators who need real environments",
-          description: "Photogrammetry assets. Gaussian Splatting environments. Volumetric scans. Delivered directly into your pipeline. No stock library. The actual physical reality of the space.",
-        },
-      ],
-    },
-    de: {
-      sectionLabel: "Für Wen",
-      h2: "Für alle, die mehr als Stockfotos brauchen",
-      body: "Von Underground-Kultur bis komplexe Infrastruktur — wir dokumentieren, was andere nicht können.",
-      items: [
-        {
-          title: "Für Regisseure, die echte Orte brauchen",
-          description: "Cyberpunk-Unterführungen. Verlassene Architektur. Industrieruinen mit Charakter. Wir scannen, was Ihr Set-Designer nie bauen könnte — und liefern es produktionsbereit für Unreal, Unity oder Houdini.",
-        },
-        {
-          title: "Für Clubs, Kollektive und Kulturräume",
-          description: "Euer Venue schließt. Euer Festival war einmalig. Eure Installation wird abgebaut. Wir schaffen ein navigierbares räumliches Dokument. Ein QR-Code auf dem Plakat — und jeder kann nacherleben, was ihr geschaffen habt.",
-        },
-        {
-          title: "Für Creators, die reale Umgebungen brauchen",
-          description: "Photogrammetrie-Assets. Gaussian-Splatting-Environments. Volumetrische Scans. Direkt in eure Pipeline. Keine Stock-Library. Die tatsächliche physische Realität des Raums.",
-        },
       ],
     },
   },
@@ -259,17 +106,6 @@ export const translations = {
       sectionLabel: "Aktuelles Projekt",
       h2: "iBug Festival — 4 Jahre in 3D",
       body: "Seit 2022 sind wir der offizielle Partner für räumliche Dokumentation des iBug, eines der führenden internationalen Street-Art-Festivals Europas. Jedes Jahr erfassen wir das gesamte Festival-Gelände in fotorealistischem 3D — und bauen ein interaktives Archiv auf, das es jedem ermöglicht, vergangene und aktuelle Ausgaben des Events zu erkunden.",
-    },
-  },
-
-  howWeWork: {
-    en: {
-      sectionLabel: "How We Work",
-      body: "We capture real environments with advanced reconstruction pipelines and deliver them as production-ready spatial documents — optimised for web, real-time engines, and presentation contexts.",
-    },
-    de: {
-      sectionLabel: "Wie Wir Arbeiten",
-      body: "Wir erfassen reale Umgebungen mit fortschrittlichen Rekonstruktions-Pipelines und liefern sie als produktionsreife Raum-Dokumente — optimiert für Web, Echtzeit-Engines und Präsentationsumgebungen.",
     },
   },
 
@@ -324,13 +160,13 @@ export const translations = {
   cookie: {
     en: {
       title: "Cookie Notice",
-      body: "We use cookies to analyse site traffic and optimise your experience. By accepting, you consent to our use of Google Analytics. Your data is processed in accordance with GDPR.",
+      body: "We use essential cookies to remember your preferences (language and display settings). No tracking or analytics cookies are used.",
       accept: "Accept",
       decline: "Decline",
     },
     de: {
       title: "Cookie-Hinweis",
-      body: "Wir verwenden Cookies, um den Website-Traffic zu analysieren und Ihr Erlebnis zu optimieren. Mit der Zustimmung erlauben Sie den Einsatz von Google Analytics. Ihre Daten werden gemäß DSGVO verarbeitet.",
+      body: "Wir verwenden technisch notwendige Cookies, um Ihre Einstellungen (Sprache und Darstellung) zu speichern. Es werden keine Tracking- oder Analyse-Cookies eingesetzt.",
       accept: "Akzeptieren",
       decline: "Ablehnen",
     },
@@ -370,7 +206,7 @@ export const translations = {
       },
     },
     de: {
-      ctaHeading: "Den Raum dokumentieren?",
+      ctaHeading: "Ihr Projekt dokumentieren?",
       ctaButton: "Projekt besprechen",
       industrial: {
         title: "Industrie & Infrastruktur",
@@ -445,7 +281,7 @@ export const translations = {
       h2Highlight: "deinem Projekt",
       body: "Komplexe Geometrie, schwieriges Licht, temporärer Zugang, ungewisse Zukunft — das sind keine Hindernisse. Das sind die Bedingungen, unter denen wir arbeiten.",
       location: "Leipzig, Deutschland",
-      footerTagline: "Ein Dokument von Räumen, die nie dafür gedacht waren zu bleiben.",
+      footerTagline: "Ein Dokument von Räumen, die nicht dafür gemacht waren, zu bleiben.",
     },
   },
 };
