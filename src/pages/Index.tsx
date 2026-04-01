@@ -7,6 +7,7 @@ import ServicesSection from "@/components/ServicesSection";
 import IndustriesSection from "@/components/IndustriesSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ProcessSection from "@/components/ProcessSection";
+import MethodEquipmentSection from "@/components/MethodEquipmentSection";
 import ContactSection from "@/components/ContactSection";
 import CookieConsent from "@/components/CookieConsent";
 
@@ -23,6 +24,7 @@ const Index = () => {
       <ServicesSection />
       <IndustriesSection />
       
+      <MethodEquipmentSection />
       <ProjectsSection />
       <ProcessSection />
       <ContactSection />
