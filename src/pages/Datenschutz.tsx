@@ -44,6 +44,9 @@ const Datenschutz = () => (
             Covina, CA 91723<br />
             USA
           </p>
+          <p className="mt-3">
+            Die Nutzung von Vercel erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Datentransfer in die USA wird auf Grundlage des EU-U.S. Data Privacy Framework (DPF) gemäß Art. 45 DSGVO durchgeführt. Vercel Inc. ist unter dem DPF zertifiziert und bietet damit ein angemessenes Datenschutzniveau.
+          </p>
         </section>
 
         <section>

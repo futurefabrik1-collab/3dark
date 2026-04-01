@@ -16,7 +16,7 @@ const Impressum = () => (
       <div className="space-y-10 text-sm text-muted-foreground leading-relaxed">
 
         <section>
-          <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-foreground mb-3">Angaben gemäß § 5 TMG</h2>
+          <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-foreground mb-3">Angaben gemäß § 5 DDG</h2>
           <p>
             Burnett &amp; Manhardt GbR<br />
             (handelnd als Future Fabrik)<br />
@@ -56,7 +56,7 @@ const Impressum = () => (
         </section>
 
         <section>
-          <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-foreground mb-3">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+          <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-foreground mb-3">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
           <p>
             Mark Burnett &amp; Florian Manhardt<br />
             Klingenstraße 22<br />
