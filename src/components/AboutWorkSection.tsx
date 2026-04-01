@@ -30,21 +30,6 @@ const AboutWorkSection = () => {
 
       <div ref={ref} className="max-w-6xl mx-auto relative z-10">
 
-        {/* Intro */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-20"
-        >
-          <p className="font-mono text-xs tracking-[0.3em] uppercase text-primary mb-6">
-            {t.sectionLabel}
-          </p>
-          <p className="text-lg md:text-xl text-muted-foreground font-light leading-relaxed max-w-3xl mx-auto">
-            {t.intro1}
-          </p>
-        </motion.div>
-
         {/* Who We Are — Team Grid */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
