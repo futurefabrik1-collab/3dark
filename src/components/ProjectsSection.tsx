@@ -108,7 +108,7 @@ const ProjectsSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const { lang } = useLanguage();
   const t = translations.projects[lang];
-  const projects = translations.projectsList[lang];
+  const projects = [...translations.projectsList[lang]].reverse();
 
   return (
     <section id="projects" className="py-32 px-6 relative overflow-hidden">
@@ -137,19 +137,19 @@ const ProjectsSection = () => {
         </motion.div>
 
         <div className="relative">
-          <div className="absolute left-[60px] md:left-[80px] top-0 bottom-0 w-px bg-border hidden md:block" />
+          <div className="absolute left-[52px] top-0 bottom-0 w-px bg-border hidden md:block" />
 
-          <div className="space-y-16">
+          <div className="space-y-14">
             {projects.map((project, i) => (
               <motion.div
                 key={`${project.title}-${i}`}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.1 * Math.min(i, 6) }}
-                className="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-6 md:gap-10"
+                transition={{ duration: 0.5, delay: 0.07 * Math.min(i, 8) }}
+                className="grid grid-cols-1 md:grid-cols-[64px_1fr] gap-6 md:gap-10"
               >
-                <div className="flex items-start">
-                  <span className="font-mono text-xs tracking-[0.15em] text-primary bg-background relative z-10 pr-2">
+                <div className="hidden md:flex items-start justify-end pr-4">
+                  <span className="font-mono text-[10px] tracking-[0.12em] text-primary bg-background relative z-10">
                     {project.year}
                   </span>
                 </div>
@@ -157,6 +157,9 @@ const ProjectsSection = () => {
                 <div className={`grid grid-cols-1 ${project.showMedia ? "lg:grid-cols-2" : ""} gap-8`}>
                   <div>
                     <div className="flex items-center gap-3 mb-3">
+                      <span className="md:hidden font-mono text-[10px] tracking-[0.12em] text-primary mr-1">
+                        {project.year}
+                      </span>
                       <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-primary border border-primary/30 px-3 py-1">
                         {project.tag}
                       </span>
