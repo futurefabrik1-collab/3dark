@@ -434,7 +434,7 @@ export const translations = {
     en: {
       sectionLabel: "Contact",
       h2: "Tell us about",
-      h2Highlight: "the space",
+      h2Highlight: "your project",
       body: "Complex geometry, difficult lighting, temporary access, uncertain future — these are not obstacles. They are the conditions we work in.",
       location: "Leipzig, Germany",
       footerTagline: "A record of spaces that were never meant to last.",
@@ -442,7 +442,7 @@ export const translations = {
     de: {
       sectionLabel: "Kontakt",
       h2: "Erzähl uns von",
-      h2Highlight: "dem Raum",
+      h2Highlight: "deinem Projekt",
       body: "Komplexe Geometrie, schwieriges Licht, temporärer Zugang, ungewisse Zukunft — das sind keine Hindernisse. Das sind die Bedingungen, unter denen wir arbeiten.",
       location: "Leipzig, Deutschland",
       footerTagline: "Ein Dokument von Räumen, die nie dafür gedacht waren zu bleiben.",
