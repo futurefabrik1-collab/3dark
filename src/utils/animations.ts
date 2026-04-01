@@ -5,8 +5,8 @@
  * TOGGLE: Set ENABLE_SCROLL_RIPPLE to false to disable scroll ripple effect
  */
 
-export const ENABLE_RANDOM_ANIMATIONS = true;
-export const ENABLE_SCROLL_RIPPLE = true;
+export const ENABLE_RANDOM_ANIMATIONS = false;
+export const ENABLE_SCROLL_RIPPLE = false;
 
 // Ripple effect configuration
 export const RIPPLE_DIRECTION = 'right'; // 'left' or 'right' - direction of ripple
@@ -61,22 +61,10 @@ const getDirectionOffset = (direction: Direction) => {
  */
 export const getRandomEntranceAnimation = (delay: number = 0) => {
   if (!ENABLE_RANDOM_ANIMATIONS) {
-    // Fallback to simple fade when disabled
     return {
-      initial: { opacity: 0 },
-      animate: { opacity: 1 },
-      transition: { 
-        duration: 0.6,
-        delay,
-        ease: "easeInOut"
-      },
-      whileInView: ENABLE_SCROLL_RIPPLE ? {
-        x: [0, RIPPLE_DIRECTION === 'right' ? RIPPLE_SHIFT_AMOUNT : -RIPPLE_SHIFT_AMOUNT, 0],
-      } : undefined,
-      viewport: ENABLE_SCROLL_RIPPLE ? { 
-        once: false,
-        amount: 0.5
-      } : undefined,
+      initial: { opacity: 0, y: 16 },
+      animate: { opacity: 1, y: 0 },
+      transition: { duration: 0.6, delay, ease: [0.25, 0.1, 0.25, 1] },
     };
   }
 
@@ -120,22 +108,10 @@ export const getRandomEntranceAnimation = (delay: number = 0) => {
  */
 export const getRandomInViewAnimation = (isInView: boolean, delay: number = 0) => {
   if (!ENABLE_RANDOM_ANIMATIONS) {
-    // Fallback to simple fade when disabled
     return {
-      initial: { opacity: 0 },
-      animate: isInView ? { opacity: 1 } : { opacity: 0 },
-      transition: { 
-        duration: 0.6,
-        delay,
-        ease: "easeInOut"
-      },
-      whileInView: ENABLE_SCROLL_RIPPLE ? {
-        x: [0, RIPPLE_DIRECTION === 'right' ? RIPPLE_SHIFT_AMOUNT : -RIPPLE_SHIFT_AMOUNT, 0],
-      } : undefined,
-      viewport: ENABLE_SCROLL_RIPPLE ? { 
-        once: false,
-        amount: 0.5 // Trigger when 50% of element crosses viewport center
-      } : undefined,
+      initial: { opacity: 0, y: 16 },
+      animate: isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 },
+      transition: { duration: 0.6, delay, ease: [0.25, 0.1, 0.25, 1] },
     };
   }
 
