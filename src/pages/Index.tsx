@@ -3,8 +3,6 @@ import HeroSection from "@/components/HeroSection";
 import ShowreelSection from "@/components/ShowreelSection";
 import WhoItsForSection from "@/components/WhoItsForSection";
 import AboutWorkSection from "@/components/AboutWorkSection";
-import ServicesSection from "@/components/ServicesSection";
-import IndustriesSection from "@/components/IndustriesSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ProcessSection from "@/components/ProcessSection";
 import MethodEquipmentSection from "@/components/MethodEquipmentSection";
@@ -19,10 +17,6 @@ const Index = () => {
       <ShowreelSection />
       <WhoItsForSection />
       <AboutWorkSection />
-      
-      {/* OLD SECTIONS - PLACEHOLDERS */}
-      <ServicesSection />
-      <IndustriesSection />
       
       <MethodEquipmentSection />
       <ProjectsSection />
