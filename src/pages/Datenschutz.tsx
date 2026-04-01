@@ -16,53 +16,54 @@ const Datenschutz = () => (
       <div className="space-y-10 text-sm text-muted-foreground leading-relaxed">
 
         <section>
-          <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-foreground mb-3">1. Verantwortlicher</h2>
+          <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-foreground mb-3">1. Datenschutz auf einen Blick</h2>
+          <p className="font-medium text-foreground/70 mb-2">Allgemeine Hinweise</p>
           <p>
-            Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:
+            Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.
+          </p>
+          <p className="font-medium text-foreground/70 mt-4 mb-2">Datenerfassung auf dieser Website</p>
+          <p className="font-medium text-foreground/60 mb-1">Wer ist verantwortlich für die Datenerfassung auf dieser Website?</p>
+          <p>
+            Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Abschnitt „Hinweis zur verantwortlichen Stelle" in dieser Datenschutzerklärung entnehmen.
+          </p>
+          <p className="font-medium text-foreground/60 mt-4 mb-1">Wie erfassen wir Ihre Daten?</p>
+          <p>
+            Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben.
           </p>
           <p className="mt-3">
+            Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs).
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-foreground mb-3">2. Hosting</h2>
+          <p>Wir hosten die Inhalte unserer Website bei folgendem Anbieter:</p>
+          <p className="mt-3">
+            Vercel Inc.<br />
+            440 N Barranca Ave #4133<br />
+            Covina, CA 91723<br />
+            USA
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-foreground mb-3">3. Allgemeine Hinweise und Pflichtinformationen</h2>
+          <p className="font-medium text-foreground/70 mb-2">Datenschutz</p>
+          <p>
+            Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
+          </p>
+          <p className="font-medium text-foreground/70 mt-4 mb-2">Hinweis zur verantwortlichen Stelle</p>
+          <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
+          <p className="mt-3">
             Burnett &amp; Manhardt GbR<br />
-            (handelnd als Future Fabrik / 3DARK)<br />
+            Mark Burnett &amp; Florian Manhardt<br />
             Klingenstraße 22<br />
-            04229 Leipzig<br />
-            Deutschland<br /><br />
+            04229 Leipzig<br /><br />
+            Telefon: 0049 (0) 17634584847<br />
             E-Mail:{" "}
             <a href="mailto:contact@futurefabrik.com" className="text-primary hover:underline">
               contact@futurefabrik.com
             </a>
-          </p>
-        </section>
-
-        <section>
-          <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-foreground mb-3">2. Erhebung und Speicherung personenbezogener Daten</h2>
-          <p>
-            Beim Besuch unserer Website werden durch den Browser automatisch Informationen an den Server unserer Website gesendet. Diese Informationen werden temporär in einem sogenannten Logfile gespeichert. Folgende Informationen werden dabei ohne Ihr Zutun erfasst und bis zur automatisierten Löschung gespeichert:
-          </p>
-          <ul className="list-disc list-inside mt-3 space-y-1">
-            <li>IP-Adresse des anfragenden Rechners</li>
-            <li>Datum und Uhrzeit des Zugriffs</li>
-            <li>Name und URL der abgerufenen Datei</li>
-            <li>Website, von der aus der Zugriff erfolgt (Referrer-URL)</li>
-            <li>Verwendeter Browser und ggf. das Betriebssystem Ihres Rechners</li>
-          </ul>
-          <p className="mt-3">
-            Die genannten Daten werden durch uns zu folgenden Zwecken verarbeitet: Gewährleistung eines reibungslosen Verbindungsaufbaus der Website, Auswertung der Systemsicherheit und -stabilität sowie zu weiteren administrativen Zwecken.
-          </p>
-          <p className="mt-3">
-            Die Rechtsgrundlage für die Datenverarbeitung ist Art. 6 Abs. 1 S. 1 lit. f DSGVO. Unser berechtigtes Interesse folgt aus den oben aufgelisteten Zwecken zur Datenerhebung.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-foreground mb-3">3. Hosting</h2>
-          <p>
-            Diese Website wird bei Vercel Inc., 340 Pine Street, Suite 700, San Francisco, CA 94104, USA, gehostet. Vercel verarbeitet personenbezogene Daten (z. B. IP-Adressen) beim Aufruf unserer Website. Näheres entnehmen Sie der Datenschutzerklärung von Vercel:{" "}
-            <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-              vercel.com/legal/privacy-policy
-            </a>.
-          </p>
-          <p className="mt-3">
-            Die Nutzung von Vercel erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer möglichst zuverlässigen Darstellung unserer Website. Mit Vercel wurde ein Auftragsverarbeitungsvertrag (AVV) geschlossen. Der Datentransfer in die USA erfolgt auf Basis der Standardvertragsklauseln der EU-Kommission.
           </p>
         </section>
 
@@ -72,23 +73,20 @@ const Datenschutz = () => (
             Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
           </p>
           <p className="mt-3">
-            Die Verarbeitung der in das Kontaktformular eingegebenen Daten erfolgt somit ausschließlich auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie können diese Einwilligung jederzeit widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitungsvorgänge bleibt vom Widerruf unberührt.
+            Die Verarbeitung der in das Kontaktformular eingegebenen Daten erfolgt ausschließlich auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie können diese Einwilligung jederzeit widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitungsvorgänge bleibt vom Widerruf unberührt.
           </p>
           <p className="mt-3">
-            Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung Ihrer Anfrage). Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt.
+            Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt. Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt.
           </p>
         </section>
 
         <section>
           <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-foreground mb-3">5. Cookies</h2>
           <p>
-            Unsere Website verwendet Cookies. Dabei handelt es sich um kleine Textdateien, die Ihr Webbrowser auf Ihrem Endgerät speichert. Wir setzen Cookies ein, um unser Angebot nutzerfreundlicher zu gestalten.
+            Unsere Website verwendet Cookies. Dabei handelt es sich um kleine Textdateien, die Ihr Webbrowser auf Ihrem Endgerät speichert. Wir setzen Cookies ein, um unser Angebot nutzerfreundlicher zu gestalten (z. B. Sprachpräferenzen und Theme-Einstellungen).
           </p>
           <p className="mt-3">
-            Einige Cookies bleiben auf Ihrem Endgerät gespeichert, bis Sie diese löschen. Sie ermöglichen es uns, Ihren Browser beim nächsten Besuch wiederzuerkennen (z. B. für Sprachpräferenzen und Theme-Einstellungen).
-          </p>
-          <p className="mt-3">
-            Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben, die Annahme von Cookies für bestimmte Fälle oder generell ausschließen sowie das automatische Löschen der Cookies beim Schließen des Browsers aktivieren. Bei der Deaktivierung von Cookies kann die Funktionalität dieser Website eingeschränkt sein.
+            Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben oder generell ausschließen. Bei der Deaktivierung von Cookies kann die Funktionalität dieser Website eingeschränkt sein.
           </p>
           <p className="mt-3">
             Rechtsgrundlage für den Einsatz technisch notwendiger Cookies ist Art. 6 Abs. 1 lit. f DSGVO. Für alle weiteren Cookies wird Ihre Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO eingeholt.
@@ -98,7 +96,7 @@ const Datenschutz = () => (
         <section>
           <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-foreground mb-3">6. Eingebettete Inhalte</h2>
           <p>
-            Diese Website kann eingebettete Inhalte von Drittanbietern enthalten (z. B. interaktive 3D-Viewer). Eingebettete Inhalte von anderen Websites verhalten sich exakt so, als ob der Besucher die andere Website besucht hätte. Diese Websites können Daten über Sie sammeln, Cookies benutzen, zusätzliche Tracking-Dienste von Dritten einbetten und Ihre Interaktion mit diesem eingebetteten Inhalt aufzeichnen.
+            Diese Website kann eingebettete Inhalte von Drittanbietern enthalten (z. B. interaktive 3D-Viewer). Eingebettete Inhalte von anderen Websites verhalten sich exakt so, als ob der Besucher die andere Website besucht hätte. Diese Websites können Daten über Sie sammeln, Cookies benutzen und Ihre Interaktion mit dem eingebetteten Inhalt aufzeichnen.
           </p>
         </section>
 
@@ -138,9 +136,9 @@ const Datenschutz = () => (
         </section>
 
         <section>
-          <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-foreground mb-3">9. Aktualität und Änderung dieser Datenschutzerklärung</h2>
+          <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-foreground mb-3">9. Aktualität dieser Datenschutzerklärung</h2>
           <p>
-            Diese Datenschutzerklärung ist aktuell gültig. Durch die Weiterentwicklung unserer Website oder aufgrund geänderter gesetzlicher bzw. behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern. Die jeweils aktuelle Datenschutzerklärung kann jederzeit auf dieser Seite abgerufen werden.
+            Diese Datenschutzerklärung ist aktuell gültig. Durch die Weiterentwicklung unserer Website oder aufgrund geänderter gesetzlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern. Die jeweils aktuelle Version kann jederzeit auf dieser Seite abgerufen werden.
           </p>
         </section>
 

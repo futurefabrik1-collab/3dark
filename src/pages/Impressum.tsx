@@ -19,35 +19,39 @@ const Impressum = () => (
           <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-foreground mb-3">Angaben gemäß § 5 TMG</h2>
           <p>
             Burnett &amp; Manhardt GbR<br />
-            (handelnd als Future Fabrik / 3DARK)<br />
             Klingenstraße 22<br />
-            04229 Leipzig<br />
-            Deutschland
+            04229 Leipzig
           </p>
         </section>
 
         <section>
           <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-foreground mb-3">Vertreten durch</h2>
           <p>
-            Mark Burnett<br />
-            Florian Manhardt
+            Mark Burnett &amp; Florian Manhardt
           </p>
         </section>
 
         <section>
           <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-foreground mb-3">Kontakt</h2>
           <p>
-            Telefon: +49 (0) 176 34584847<br />
-            Telefon: +49 (0) 178 1345105<br />
+            Telefon: 0049 (0) 17634584847<br />
             E-Mail:{" "}
-            <a href="mailto:contact@futurefabrik.com" className="text-primary hover:underline">
-              contact@futurefabrik.com
+            <a href="mailto:mark@futurefabrik.com" className="text-primary hover:underline">
+              mark@futurefabrik.com
             </a>
           </p>
         </section>
 
         <section>
-          <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-foreground mb-3">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+          <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-foreground mb-3">Umsatzsteuer-ID</h2>
+          <p>
+            Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
+            DE326430819
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-foreground mb-3">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
           <p>
             Mark Burnett<br />
             Klingenstraße 22<br />
