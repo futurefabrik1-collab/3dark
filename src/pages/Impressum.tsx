@@ -44,6 +44,13 @@ const Impressum = () => (
               mark@futurefabrik.com
             </a>
           </p>
+          <p className="mt-3">
+            Telefon: 0049 (0) 1781345105<br />
+            E-Mail:{" "}
+            <a href="mailto:flo@futurefabrik.com" className="text-primary hover:underline">
+              flo@futurefabrik.com
+            </a>
+          </p>
         </section>
 
         <section>
