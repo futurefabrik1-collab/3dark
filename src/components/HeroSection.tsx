@@ -101,7 +101,7 @@ const HeroSection = () => {
             className="aspect-[4/3] overflow-hidden neon-border bg-surface/50 backdrop-blur-sm relative group"
           >
             <video 
-              src="/images/gen-4-turbo-camera-dolly.mp4" 
+              src="/images/3dark-trailer.mp4" 
               autoPlay
               loop
               muted
