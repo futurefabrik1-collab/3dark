@@ -7,6 +7,17 @@
   "framework": "vite",
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "3dark.de"
+        }
+      ],
+      "destination": "https://www.3dark.de/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
