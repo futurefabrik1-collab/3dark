@@ -1,0 +1,23 @@
+# Keep deploy uploads to what the build actually needs.
+#
+# The CLI uploads the working directory, so local working material that is not
+# part of the app has to be excluded explicitly or the deploy fails
+# ("File size is greater than 2 GiB").
+
+# Raw capture / design material kept alongside the project (multi-GB)
+SaschaWebsiteSelect/
+source/
+
+# Local-only working files (docs, media, data)
+_local/
+
+# Source images — the served copies live in public/images/
+images/
+
+# Built locally; Vercel runs the build itself
+dist/
+node_modules/
+
+# Secrets
+.env
+.env.*
