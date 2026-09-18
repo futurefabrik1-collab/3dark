@@ -5,18 +5,20 @@
 # ("File size is greater than 2 GiB").
 
 # Raw capture / design material kept alongside the project (multi-GB)
-SaschaWebsiteSelect/
-source/
+/SaschaWebsiteSelect/
+/source/
 
 # Local-only working files (docs, media, data)
-_local/
+/_local/
 
-# Source images — the served copies live in public/images/
-images/
+# Source images — the served copies live in public/images/.
+# MUST stay root-anchored: a bare "images/" also matches public/images/ and
+# strips every served image out of the deploy.
+/images/
 
 # Built locally; Vercel runs the build itself
-dist/
-node_modules/
+/dist/
+/node_modules/
 
 # Secrets
 .env
