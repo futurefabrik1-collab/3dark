@@ -16,8 +16,8 @@
     --popover: 220 15% 10%;
     --popover-foreground: 0 0% 92%;
 
-    /* Neon Pink/Red (Berlin techno aesthetic) */
-    --primary: 320 100% 60%;
+    /* Muted pink/red (flattened underground palette) */
+    --primary: 330 55% 58%;
     --primary-foreground: 220 15% 8%;
 
     --secondary: 220 15% 15%;
@@ -26,8 +26,8 @@
     --muted: 220 15% 12%;
     --muted-foreground: 0 0% 55%;
 
-    /* Neon accent */
-    --accent: 140 85% 55%;
+    /* Muted accent */
+    --accent: 150 38% 52%;
     --accent-foreground: 220 15% 8%;
 
     --destructive: 0 75% 55%;
@@ -35,22 +35,22 @@
 
     --border: 220 15% 18%;
     --input: 220 15% 18%;
-    --ring: 140 85% 55%;
+    --ring: 150 38% 52%;
 
     --radius: 0rem;
 
     --sidebar-background: 220 15% 10%;
     --sidebar-foreground: 0 0% 92%;
-    --sidebar-primary: 140 85% 55%;
+    --sidebar-primary: 150 38% 52%;
     --sidebar-primary-foreground: 220 15% 8%;
     --sidebar-accent: 220 15% 15%;
     --sidebar-accent-foreground: 0 0% 85%;
     --sidebar-border: 220 15% 18%;
-    --sidebar-ring: 140 85% 55%;
+    --sidebar-ring: 150 38% 52%;
 
     /* Custom tokens - Underground aesthetic */
-    --glow: 320 100% 60%;
-    --glow-muted: 320 85% 50%;
+    --glow: 330 55% 58%;
+    --glow-muted: 330 45% 48%;
     --surface: 220 15% 10%;
     --surface-elevated: 220 15% 13%;
     --concrete: 220 8% 20%;
@@ -58,10 +58,10 @@
     --ink-light: 0 0% 65%;
     --grid: 220 15% 15%;
     
-    /* Neon accents */
-    --neon-pink: 320 100% 60%;
-    --neon-blue: 200 100% 60%;
-    --neon-purple: 270 100% 65%;
+    /* Flat accents */
+    --neon-pink: 330 55% 58%;
+    --neon-blue: 205 50% 58%;
+    --neon-purple: 270 38% 62%;
   }
 }
 
@@ -75,7 +75,7 @@ html.light {
   --popover: 0 0% 100%;
   --popover-foreground: 220 15% 12%;
 
-  --primary: 320 90% 52%;
+  --primary: 335 52% 45%;
   --primary-foreground: 0 0% 100%;
 
   --secondary: 220 10% 93%;
@@ -84,7 +84,7 @@ html.light {
   --muted: 220 10% 93%;
   --muted-foreground: 220 8% 42%;
 
-  --accent: 140 60% 38%;
+  --accent: 165 32% 34%;
   --accent-foreground: 0 0% 100%;
 
   --destructive: 0 75% 55%;
@@ -92,19 +92,19 @@ html.light {
 
   --border: 220 10% 86%;
   --input: 220 10% 86%;
-  --ring: 140 60% 38%;
+  --ring: 165 32% 34%;
 
   --sidebar-background: 0 0% 100%;
   --sidebar-foreground: 220 15% 12%;
-  --sidebar-primary: 320 90% 52%;
+  --sidebar-primary: 335 52% 45%;
   --sidebar-primary-foreground: 0 0% 100%;
   --sidebar-accent: 220 10% 93%;
   --sidebar-accent-foreground: 220 15% 20%;
   --sidebar-border: 220 10% 86%;
-  --sidebar-ring: 140 60% 38%;
+  --sidebar-ring: 165 32% 34%;
 
-  --glow: 320 90% 52%;
-  --glow-muted: 320 80% 44%;
+  --glow: 335 52% 45%;
+  --glow-muted: 335 42% 38%;
   --surface: 0 0% 97%;
   --surface-elevated: 0 0% 100%;
   --concrete: 220 8% 88%;
@@ -112,9 +112,9 @@ html.light {
   --ink-light: 220 8% 38%;
   --grid: 220 10% 86%;
 
-  --neon-pink: 320 90% 52%;
-  --neon-blue: 200 90% 42%;
-  --neon-purple: 270 90% 52%;
+  --neon-pink: 335 52% 45%;
+  --neon-blue: 205 45% 40%;
+  --neon-purple: 270 35% 48%;
 }
 
 @layer base {
@@ -130,31 +130,30 @@ html.light {
     scroll-behavior: smooth;
   }
 
+  /* Background imagery was authored for the dark ground; screen blending
+     erases it on the light theme, so blend the other way there. */
+  html.light .mix-blend-screen {
+    mix-blend-mode: multiply;
+  }
+
   ::selection {
-    background: hsl(140 85% 55% / 0.3);
-    color: hsl(0 0% 100%);
+    background: hsl(var(--accent) / 0.25);
+    color: hsl(var(--foreground));
   }
 }
 
 @layer utilities {
-  /* Neon glow effects */
+  /* Flat accents (glow removed) */
   .text-glow {
-    text-shadow: 
-      0 0 10px hsl(var(--glow) / 0.5),
-      0 0 20px hsl(var(--glow) / 0.3),
-      0 0 30px hsl(var(--glow) / 0.2);
+    text-shadow: none;
   }
 
   .neon-glow {
-    box-shadow: 
-      0 0 10px hsl(var(--glow) / 0.4),
-      0 0 20px hsl(var(--glow) / 0.2),
-      inset 0 0 10px hsl(var(--glow) / 0.1);
+    box-shadow: none;
   }
 
   .gradient-text {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--glow)), hsl(var(--neon-blue)));
+    color: hsl(var(--primary));
   }
 
   /* Industrial grid */
@@ -203,12 +202,10 @@ html.light {
     opacity: 0.15;
   }
 
-  /* Neon border */
+  /* Flat border */
   .neon-border {
-    border: 1px solid hsl(var(--glow) / 0.3);
-    box-shadow: 
-      0 0 5px hsl(var(--glow) / 0.2),
-      inset 0 0 5px hsl(var(--glow) / 0.1);
+    border: 1px solid hsl(var(--border));
+    box-shadow: none;
   }
 
   .media-placeholder {
@@ -221,8 +218,8 @@ html.light {
     content: '';
     @apply absolute inset-0;
     background:
-      linear-gradient(45deg, transparent 48%, hsl(var(--glow) / 0.1) 49%, hsl(var(--glow) / 0.1) 51%, transparent 52%),
-      linear-gradient(-45deg, transparent 48%, hsl(var(--glow) / 0.1) 49%, hsl(var(--glow) / 0.1) 51%, transparent 52%);
+      linear-gradient(45deg, transparent 48%, hsl(var(--border)) 49%, hsl(var(--border)) 51%, transparent 52%),
+      linear-gradient(-45deg, transparent 48%, hsl(var(--border)) 49%, hsl(var(--border)) 51%, transparent 52%);
     background-size: 30px 30px;
     opacity: 0.2;
   }

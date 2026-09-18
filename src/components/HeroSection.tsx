@@ -12,10 +12,6 @@ const HeroSection = () => {
       {/* Industrial grid background */}
       <div className="absolute inset-0 industrial-grid opacity-20" />
       
-      {/* Neon glow accents */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      
       {/* Background illustration */}
       <div className="absolute inset-0">
         <img
@@ -42,7 +38,7 @@ const HeroSection = () => {
               initial={{ width: 0 }}
               animate={{ width: "100%" }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="absolute -bottom-3 left-0 h-px bg-primary shadow-[0_0_10px_rgba(var(--glow),0.6)]"
+              className="absolute -bottom-3 left-0 h-px bg-primary"
             />
           </motion.h1>
 
@@ -109,8 +105,8 @@ const HeroSection = () => {
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
           </motion.div>
-          <div className="absolute -top-3 -left-3 w-6 h-6 border-t border-l border-primary shadow-[0_0_5px_rgba(var(--glow),0.4)]" />
-          <div className="absolute -bottom-3 -right-3 w-6 h-6 border-b border-r border-primary shadow-[0_0_5px_rgba(var(--glow),0.4)]" />
+          <div className="absolute -top-3 -left-3 w-6 h-6 border-t border-l border-primary" />
+          <div className="absolute -bottom-3 -right-3 w-6 h-6 border-b border-r border-primary" />
         </motion.div>
       </div>
 
