@@ -1,4 +1,5 @@
 import UserLandingPage from "@/components/UserLandingPage";
+import Seo from "@/components/Seo";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/i18n/translations";
 
@@ -6,8 +7,12 @@ const Industrial = () => {
   const { lang } = useLanguage();
   const t = translations.userPages[lang].industrial;
 
+  const seo = translations.seo[lang].industrial;
+
   return (
-    <UserLandingPage
+    <>
+      <Seo title={seo.title} description={seo.description} path="/who-its-for/industrial" />
+      <UserLandingPage
       title={t.title}
       subtitle={t.subtitle}
       challenge={t.challenge}
@@ -19,7 +24,8 @@ const Industrial = () => {
           <path d="M12 18V9h6v9M24 18V12h6v6M36 18V15" stroke="currentColor" strokeWidth="2" />
         </svg>
       }
-    />
+      />
+    </>
   );
 };
 

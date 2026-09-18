@@ -1,4 +1,5 @@
 import UserLandingPage from "@/components/UserLandingPage";
+import Seo from "@/components/Seo";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/i18n/translations";
 
@@ -6,8 +7,12 @@ const Cultural = () => {
   const { lang } = useLanguage();
   const t = translations.userPages[lang].cultural;
 
+  const seo = translations.seo[lang].cultural;
+
   return (
-    <UserLandingPage
+    <>
+      <Seo title={seo.title} description={seo.description} path="/who-its-for/cultural" />
+      <UserLandingPage
       title={t.title}
       subtitle={t.subtitle}
       challenge={t.challenge}
@@ -19,7 +24,8 @@ const Cultural = () => {
           <path d="M9 12L24 6l15 6M18 21h12M18 27h12M18 33h6" stroke="currentColor" strokeWidth="2" />
         </svg>
       }
-    />
+      />
+    </>
   );
 };
 

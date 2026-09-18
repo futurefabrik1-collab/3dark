@@ -1,6 +1,69 @@
 export type Lang = "en" | "de";
 
 export const translations = {
+  seo: {
+    en: {
+      home: {
+        title: "Digital Twin Services | 3DARK — Leipzig",
+        description:
+          "Digital twin services and 3D scanning from Leipzig — industrial digital twins, heritage 3D scans, VFX environment scans. Photorealistic. Web-ready. Serving Germany and Europe.",
+      },
+      industrial: {
+        title: "Industrial Digital Twins & Factory 3D Scanning | 3DARK Leipzig",
+        description:
+          "Photorealistic digital twins of factories, plants and infrastructure. High-fidelity 3D site documentation with CAD integration for planning, maintenance and communication. Leipzig, Germany-wide.",
+      },
+      producers: {
+        title: "VFX Environment Scans & Virtual Production Assets | 3DARK",
+        description:
+          "Location scans for film, TV and virtual production. Unreal Engine-ready environment assets, set extensions and Gaussian Splatting capture. Credits include Babylon Berlin.",
+      },
+      cultural: {
+        title: "Cultural Heritage 3D Scanning & Digital Preservation | 3DARK",
+        description:
+          "3D documentation for museums, monuments and cultural institutions. Photorealistic spatial archives of heritage sites, festivals and threatened spaces. Leipzig-based, working across Europe.",
+      },
+      marketing: {
+        title: "Interactive 3D Content for Web & Marketing | 3DARK",
+        description:
+          "Browser-ready interactive 3D environments for campaigns, showrooms and websites. Real 3D scans of real places — no CGI look, no plugin required.",
+      },
+      impressum: { title: "Impressum | 3DARK", description: "Legal notice for 3DARK, a service by Future Fabrik — Burnett & Manhardt GbR, Leipzig." },
+      datenschutz: { title: "Datenschutz | 3DARK", description: "Privacy policy and GDPR information for 3dark.de." },
+      notFound: { title: "Page not found | 3DARK", description: "This page does not exist." },
+    },
+    de: {
+      home: {
+        title: "Digitaler Zwilling & 3D-Scanning | 3DARK — Leipzig",
+        description:
+          "Digitale Zwillinge und 3D-Scanning aus Leipzig — Industrieanlagen, Kulturerbe, VFX-Umgebungsscans. Fotorealistisch. Web-ready. Deutschlandweit und europaweit.",
+      },
+      industrial: {
+        title: "Digitaler Zwilling für Industrie & Anlagen-3D-Scan | 3DARK Leipzig",
+        description:
+          "Fotorealistische digitale Zwillinge von Fabriken, Anlagen und Infrastruktur. Hochauflösende 3D-Dokumentation mit CAD-Integration für Planung, Wartung und Kommunikation. Leipzig, deutschlandweit.",
+      },
+      producers: {
+        title: "VFX-Umgebungsscans & Virtual-Production-Assets | 3DARK",
+        description:
+          "Location-Scans für Film, TV und Virtual Production. Unreal-Engine-fertige Umgebungs-Assets, Set Extensions und Gaussian-Splatting-Erfassung. Referenz: Babylon Berlin.",
+      },
+      cultural: {
+        title: "Kulturerbe-Digitalisierung & 3D-Scan | 3DARK Leipzig",
+        description:
+          "3D-Dokumentation für Museen, Denkmäler und Kulturinstitutionen. Fotorealistische Raum-Archive von Kulturstätten, Festivals und bedrohten Orten. Aus Leipzig, europaweit tätig.",
+      },
+      marketing: {
+        title: "Interaktive 3D-Inhalte für Web & Marketing | 3DARK",
+        description:
+          "Browserfähige interaktive 3D-Umgebungen für Kampagnen, Showrooms und Websites. Echte 3D-Scans echter Orte — kein CGI-Look, kein Plugin nötig.",
+      },
+      impressum: { title: "Impressum | 3DARK", description: "Impressum von 3DARK, ein Service von Future Fabrik — Burnett & Manhardt GbR, Leipzig." },
+      datenschutz: { title: "Datenschutz | 3DARK", description: "Datenschutzerklärung und DSGVO-Informationen für 3dark.de." },
+      notFound: { title: "Seite nicht gefunden | 3DARK", description: "Diese Seite existiert nicht." },
+    },
+  },
+
   nav: {
     en: {
       work: "Work",

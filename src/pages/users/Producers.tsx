@@ -1,4 +1,5 @@
 import UserLandingPage from "@/components/UserLandingPage";
+import Seo from "@/components/Seo";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/i18n/translations";
 
@@ -6,8 +7,12 @@ const Producers = () => {
   const { lang } = useLanguage();
   const t = translations.userPages[lang].producers;
 
+  const seo = translations.seo[lang].producers;
+
   return (
-    <UserLandingPage
+    <>
+      <Seo title={seo.title} description={seo.description} path="/who-its-for/producers" />
+      <UserLandingPage
       title={t.title}
       subtitle={t.subtitle}
       challenge={t.challenge}
@@ -19,7 +24,8 @@ const Producers = () => {
           <path d="M18 24l9 6V18l-9 6z" fill="currentColor" />
         </svg>
       }
-    />
+      />
+    </>
   );
 };
 

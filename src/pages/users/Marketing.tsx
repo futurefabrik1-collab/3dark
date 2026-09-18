@@ -1,4 +1,5 @@
 import UserLandingPage from "@/components/UserLandingPage";
+import Seo from "@/components/Seo";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/i18n/translations";
 
@@ -6,8 +7,12 @@ const Marketing = () => {
   const { lang } = useLanguage();
   const t = translations.userPages[lang].marketing;
 
+  const seo = translations.seo[lang].marketing;
+
   return (
-    <UserLandingPage
+    <>
+      <Seo title={seo.title} description={seo.description} path="/who-its-for/marketing" />
+      <UserLandingPage
       title={t.title}
       subtitle={t.subtitle}
       challenge={t.challenge}
@@ -19,7 +24,8 @@ const Marketing = () => {
           <path d="M24 12v12l6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
         </svg>
       }
-    />
+      />
+    </>
   );
 };
 

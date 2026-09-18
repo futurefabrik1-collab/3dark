@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="light">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
@@ -12,35 +12,37 @@
     <meta name="description" content="Digital twin services and 3D scanning from Leipzig — industrial digital twins, heritage 3D scans, VFX environment scans. Photorealistic. Web-ready. Serving Germany and Europe." />
     <meta name="author" content="Future Fabrik" />
     <meta name="keywords" content="digital twin services, 3D digital twin, digital twin company, 3D scanning service, reality capture service, 3D site scanning, industrial digital twin, photorealistic 3D model service, interactive 3D model service, digital twin, digitaler Zwilling, digital twin deutschland, 3D scanning firma deutschland, 3D digital twin deutschland, 3D scan service leipzig, industrieller digital twin deutschland, 3D Dokumentation, 3D documentation, fotorealistischer Digitaler Zwilling, Industriedokumentation, cultural heritage digitization, Kulturerbe Digitalisierung, visualize construction project, factory digital visualization, plant digital twin, infrastructure visualization, site documentation 3D, factory 3D scan, factory 3D model service, VFX environment scan, Unreal engine environment scan, interactive 3D website content, festival digital twin, Gaussian Splatting, gaussian splatting service, volumetric capture 3D, photogrammetry 3D scan, real-time 3D reconstruction, create digital twin of factory, 3D scan building for planning, interactive 3D model for website, scan real environment for unreal engine, virtual walkthrough from real scan, 3D scanning Leipzig, 3D Erfassung Leipzig, Future Fabrik" />
-    <link rel="canonical" href="https://3dark.de" />
-
-    <!-- Hreflang for bilingual site -->
-    <link rel="alternate" hreflang="en" href="https://3dark.de" />
-    <link rel="alternate" hreflang="de" href="https://3dark.de" />
-    <link rel="alternate" hreflang="x-default" href="https://3dark.de" />
+    <link rel="canonical" href="https://www.3dark.de/" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://3dark.de" />
+    <meta property="og:url" content="https://www.3dark.de/" />
     <meta property="og:title" content="Digital Twin Services | 3DARK — Leipzig" />
     <meta property="og:description" content="Digital twin services and 3D scanning from Leipzig — industrial digital twins, heritage 3D scans, VFX environment scans. Photorealistic. Web-ready." />
     <meta property="og:locale" content="en_GB" />
     <meta property="og:locale:alternate" content="de_DE" />
     <meta property="og:site_name" content="3DARK" />
+    <meta property="og:image" content="https://www.3dark.de/logo-3dark.png" />
+    <meta property="og:image:alt" content="3DARK — digital twin and 3D scanning services, Leipzig" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Digital Twin Services | 3DARK — Leipzig" />
     <meta name="twitter:description" content="Digital twin services and 3D scanning from Leipzig — industrial digital twins, heritage 3D scans, VFX environment scans. Serving Germany and Europe." />
+    <meta name="twitter:image" content="https://www.3dark.de/logo-3dark.png" />
 
     <!-- Structured data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
+      "@id": "https://www.3dark.de/#organization",
       "name": "3DARK",
       "alternateName": "Future Fabrik",
-      "url": "https://3dark.de",
+      "url": "https://www.3dark.de/",
+      "logo": "https://www.3dark.de/logo-3dark.png",
+      "image": "https://www.3dark.de/logo-3dark.png",
+      "priceRange": "$$$",
       "description": "High-fidelity digital twins, photorealistic 3D documentation, and interactive spatial environments for industrial communication, cultural heritage preservation, and virtual production. A service by Future Fabrik.",
       "address": {
         "@type": "PostalAddress",
@@ -49,9 +51,24 @@
         "postalCode": "04229",
         "addressCountry": "DE"
       },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.3097,
+        "longitude": 12.3479
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Burnett & Manhardt GbR"
+      },
       "email": "contact@futurefabrik.com",
       "telephone": "+4917634584847",
-      "areaServed": ["DE", "EU"],
+      "areaServed": [
+        { "@type": "Country", "name": "Germany" },
+        { "@type": "Country", "name": "Austria" },
+        { "@type": "Country", "name": "Switzerland" },
+        { "@type": "Place", "name": "Europe" }
+      ],
+      "availableLanguage": ["de", "en"],
       "serviceType": [
         "Digital Twin Services",
         "3D Scanning Service",
@@ -82,6 +99,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Theme: light is the default; only opt into dark if the visitor chose it -->
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("3dark-theme") === "dark") {
+            document.documentElement.classList.remove("light");
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
 
   <body>

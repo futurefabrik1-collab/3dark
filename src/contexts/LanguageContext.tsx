@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import type { Lang } from "@/i18n/translations";
 
 interface LanguageContextType {
@@ -23,6 +23,12 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     const browserLang = navigator.language?.toLowerCase();
     return browserLang?.startsWith("de") ? "de" : "en";
   });
+
+  // Keep <html lang> in sync so screen readers and search engines see the
+  // language actually being displayed, not a hardcoded "en".
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
 
   const toggle = () => {
     setLang((prev) => {

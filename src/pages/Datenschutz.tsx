@@ -1,7 +1,15 @@
 import { Link } from "react-router-dom";
+import Seo from "@/components/Seo";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/i18n/translations";
 
-const Datenschutz = () => (
+const Datenschutz = () => {
+  const { lang } = useLanguage();
+  const seo = translations.seo[lang].datenschutz;
+
+  return (
   <div className="min-h-screen bg-background text-foreground">
+    <Seo title={seo.title} description={seo.description} path="/datenschutz" noindex />
     {/* Back bar */}
     <div className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur border-b border-border px-6 py-4 flex items-center gap-4">
       <Link to="/" className="font-mono text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-primary transition-colors">
@@ -159,5 +167,6 @@ const Datenschutz = () => (
     </div>
   </div>
 );
+};
 
 export default Datenschutz;
