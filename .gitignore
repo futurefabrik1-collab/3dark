@@ -24,3 +24,12 @@ dist-ssr
 *.sw?
 .vercel
 Links for 3DARK.txt
+
+# local-only working files (docs, media, data) — not part of the app
+_local/
+
+# secrets (vercel env pull writes .env.local)
+.env
+.env.*
+!.env.example
+.env*.local

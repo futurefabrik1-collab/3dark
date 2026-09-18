@@ -21,6 +21,8 @@ type FormData = {
   name: string;
   email: string;
   message: string;
+  /** Honeypot: hidden from real users, checked server-side in api/contact.js */
+  website: string;
 };
 
 const ContactForm = () => {
@@ -33,6 +35,7 @@ const ContactForm = () => {
     name: z.string().min(2, { message: t.validationName }),
     email: z.string().email({ message: t.validationEmail }),
     message: z.string().min(10, { message: t.validationMessage }),
+    website: z.string().max(0).optional().or(z.literal("")),
   });
 
   const form = useForm<FormData>({
@@ -41,6 +44,7 @@ const ContactForm = () => {
       name: "",
       email: "",
       message: "",
+      website: "",
     },
   });
 
@@ -139,6 +143,16 @@ const ContactForm = () => {
             </FormItem>
           )}
         />
+        {/* Honeypot: invisible to users, bots fill it and get silently dropped */}
+        <input
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          className="absolute left-[-9999px] h-0 w-0 opacity-0"
+          {...form.register("website")}
+        />
+
         <Button
           type="submit"
           disabled={isSubmitting}
