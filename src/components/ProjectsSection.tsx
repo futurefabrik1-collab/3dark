@@ -4,84 +4,87 @@ import illustrationScan from "@/assets/illustration-scan.jpg";
 import { getRandomInViewAnimation } from "@/utils/animations";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/i18n/translations";
+import ConsentEmbed from "./ConsentEmbed";
 
-const youtubeEmbed = (url: string) => {
-  const match = url.match(/(?:youtu\.be\/|v=)([A-Za-z0-9_-]{11})/);
-  const id = match?.[1];
-  return id ? `https://www.youtube.com/embed/${id}?rel=0&modestbranding=1` : url;
+// Third-party players only load after a click (see ConsentEmbed): before that
+// we show a locally hosted poster, so no visitor data reaches YouTube/StorySplat
+// until they ask for it — and the page no longer boots four iframes up front.
+const youtubeEmbed = (id: string) =>
+  `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
+
+type EmbedSpec = { kind: "film" | "scene"; src: string; poster: string };
+
+const EMBEDS: Record<string, EmbedSpec> = {
+  "Klärwerk Leipzig": {
+    kind: "film",
+    src: youtubeEmbed("3ibVve3ViK0"),
+    poster: "/images/webp/posters/klaerwerk-leipzig.webp",
+  },
+  "Alice im Wonderland": {
+    kind: "scene",
+    src: "https://discover.storysplat.com/api/v2-html/43774b28-c045-485a-8117-db88189d727c",
+    poster: "/images/webp/posters/alice-im-wonderland.webp",
+  },
+  "iBug Festival": {
+    kind: "film",
+    src: youtubeEmbed("ump032qGpK4"),
+    poster: "/images/webp/posters/ibug-walkthrough.webp",
+  },
+  "MACHN Festival": {
+    kind: "film",
+    src: youtubeEmbed("SA-d86T98lg"),
+    poster: "/images/webp/posters/machn-festival.webp",
+  },
 };
 
-const renderProjectMedia = (title: string) => {
-  if (title === "GS Social Media Tour") {
+const STATIC_IMAGES: Record<string, string> = {
+  "Babylon Berlin – Drachenburg": "/images/webp/babylon-berlin.webp",
+  "Alfons Zitterbacke": "/images/webp/alfons-zitterbacke.webp",
+  "Abandoned Buildings Leipzig": "/images/webp/abandoned-buildings-leipzig.webp",
+};
+
+const LOCAL_VIDEO_TITLE = "GS Social Media Tour";
+
+const hasRealMedia = (title: string) =>
+  title === LOCAL_VIDEO_TITLE || Boolean(EMBEDS[title]) || Boolean(STATIC_IMAGES[title]);
+
+type EmbedStrings = (typeof translations.embed)["en"];
+
+const renderProjectMedia = (title: string, e: EmbedStrings) => {
+  if (title === LOCAL_VIDEO_TITLE) {
     return (
       <video
         src="/media/sxsw-future-fabrik-transformers-gorilla-small.mp4"
         controls
         playsInline
+        preload="none"
+        poster="/images/webp/posters/gs-social-media-tour.webp"
         className="w-full h-full object-cover bg-black"
       />
     );
   }
 
-  if (title === "Klärwerk Leipzig") {
+  const embed = EMBEDS[title];
+  if (embed) {
     return (
-      <iframe
-        src={youtubeEmbed("https://youtu.be/3ibVve3ViK0")}
-        title="Klärwerk Leipzig"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-        className="w-full h-full border-0"
+      <ConsentEmbed
+        src={embed.src}
+        title={title}
+        poster={embed.poster}
+        cta={embed.kind === "scene" ? e.explore : e.playFilm}
+        note={embed.kind === "scene" ? e.noteScene : e.noteYouTube}
+        className="w-full h-full"
       />
     );
   }
 
-  if (title === "Alice im Wonderland") {
-    return (
-      <iframe
-        src="https://discover.storysplat.com/api/v2-html/43774b28-c045-485a-8117-db88189d727c"
-        title="Alice im Wonderland"
-        allow="accelerometer; gyroscope; xr-spatial-tracking"
-        allowFullScreen
-        className="w-full h-full border-0"
-      />
-    );
-  }
-
-  if (title === "iBug Festival") {
-    return (
-      <iframe
-        src={youtubeEmbed("https://youtu.be/ump032qGpK4")}
-        title="iBug Festival"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-        className="w-full h-full border-0"
-      />
-    );
-  }
-
-  if (title === "MACHN Festival") {
-    return (
-      <iframe
-        src={youtubeEmbed("https://www.youtube.com/watch?v=SA-d86T98lg&t")}
-        title="MACHN Festival"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-        className="w-full h-full border-0"
-      />
-    );
-  }
-
-  const staticImages: Record<string, string> = {
-    "Babylon Berlin – Drachenburg": "/images/webp/babylon-berlin.webp",
-    "Alfons Zitterbacke": "/images/webp/alfons-zitterbacke.webp",
-    "Abandoned Buildings Leipzig": "/images/webp/abandoned-buildings-leipzig.webp",
-  };
-
-  if (staticImages[title]) {
+  if (STATIC_IMAGES[title]) {
     return (
       <img
-        src={staticImages[title]}
+        src={STATIC_IMAGES[title]}
         alt={title}
+        loading="lazy"
+        decoding="async"
         className="w-full h-full object-cover"
       />
     );
@@ -109,6 +112,7 @@ const ProjectsSection = () => {
   const { lang } = useLanguage();
   const t = translations.projects[lang];
   const projects = translations.projectsList[lang];
+  const e = translations.embed[lang];
 
   return (
     <section id="projects" className="py-32 px-6 relative overflow-hidden">
@@ -178,9 +182,11 @@ const ProjectsSection = () => {
                   {project.showMedia && (
                     <motion.div
                       {...getRandomInViewAnimation(isInView, 0.1 * Math.min(i, 6) + 0.2)}
-                      className="aspect-video media-placeholder rounded-sm flex items-center justify-center overflow-hidden bg-black"
+                      className={`aspect-video rounded-sm flex items-center justify-center overflow-hidden bg-black ${
+                        hasRealMedia(project.title) ? "relative" : "media-placeholder"
+                      }`}
                     >
-                      {renderProjectMedia(project.title)}
+                      {renderProjectMedia(project.title, e)}
                     </motion.div>
                   )}
                 </div>

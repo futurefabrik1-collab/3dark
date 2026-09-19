@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { getRandomEntranceAnimation } from "@/utils/animations";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/i18n/translations";
@@ -6,6 +6,8 @@ import { translations } from "@/i18n/translations";
 const HeroSection = () => {
   const { lang } = useLanguage();
   const t = translations.hero[lang];
+  // Visitors who ask for reduced motion get a poster + controls, not autoplay.
+  const reduceMotion = useReducedMotion();
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-background scanlines">
@@ -96,12 +98,18 @@ const HeroSection = () => {
           <motion.div 
             className="aspect-[4/3] overflow-hidden neon-border bg-surface/50 backdrop-blur-sm relative group"
           >
-            <video 
-              src="/images/3dark-trailer.mp4" 
-              autoPlay
+            {/* 960x540, no audio, ~5 MB. The 1080p master (/images/3dark-trailer.mp4,
+                53 MB) used to autoplay here for every visitor, mobile data included. */}
+            <video
+              src="/media/hero-trailer.mp4"
+              poster="/images/webp/posters/hero-trailer.webp"
+              autoPlay={!reduceMotion}
+              controls={Boolean(reduceMotion)}
               loop
               muted
               playsInline
+              preload={reduceMotion ? "none" : "auto"}
+              aria-label={t.videoLabel}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
           </motion.div>

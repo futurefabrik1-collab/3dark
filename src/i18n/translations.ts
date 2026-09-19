@@ -81,6 +81,7 @@ export const translations = {
 
   hero: {
     en: {
+      videoLabel: "Showreel: fly-throughs of environments we have captured in 3D",
       h2: "Digital twins that communicate. Archives that last.",
       h2Highlight: "Archives that last.",
       body: "We turn real environments into high-fidelity digital twins and interactive 3D records — browser-viewable, QR-shareable, engine-ready. For industrial communication, cultural preservation, and virtual production.",
@@ -88,6 +89,7 @@ export const translations = {
       ctaButton: "Discuss your project",
     },
     de: {
+      videoLabel: "Showreel: Kamerafahrten durch Umgebungen, die wir in 3D erfasst haben",
       h2: "Digitale Zwillinge, die kommunizieren. Archive, die bleiben.",
       h2Highlight: "Archive, die bleiben.",
       body: "Wir verwandeln reale Umgebungen in hochauflösende Digitale Zwillinge und interaktive 3D-Dokumente — browser-begehbar, per QR teilbar, engine-ready. Für industrielle Kommunikation, kulturelle Bewahrung und Virtual Production.",
@@ -198,6 +200,30 @@ export const translations = {
         { title: "Optimierung", desc: "Echtzeit-Engine-Optimierung, die visuelle Treue und Performance über Web, Desktop und Präsentationsumgebungen ausbalanciert." },
         { title: "Lieferung", desc: "Produktionsreife Assets für Web-Viewer, Game-Engines, VFX-Pipelines oder individuelle Integrationen. Zugänglich aus einem Browser, ohne Spezialhardware." },
       ],
+    },
+  },
+
+  // Shared strings for click-to-load embeds (see components/ConsentEmbed.tsx)
+  embed: {
+    en: {
+      playFilm: "Play film",
+      explore: "Click to explore",
+      exitViewer: "Exit viewer",
+      hintOrbit: "Drag to orbit",
+      hintZoom: "Scroll to zoom",
+      hintPan: "Right-click to pan",
+      noteYouTube: "Playing loads this video from YouTube, which may set cookies and process your data (see our privacy policy).",
+      noteScene: "Opening loads the interactive 3D scene from an external viewer, which may process your data (see our privacy policy).",
+    },
+    de: {
+      playFilm: "Film abspielen",
+      explore: "Klicken zum Erkunden",
+      exitViewer: "Viewer verlassen",
+      hintOrbit: "Ziehen zum Drehen",
+      hintZoom: "Scrollen zum Zoomen",
+      hintPan: "Rechtsklick zum Verschieben",
+      noteYouTube: "Beim Abspielen wird das Video von YouTube geladen; dabei können Cookies gesetzt und Daten verarbeitet werden (siehe Datenschutzerklärung).",
+      noteScene: "Beim Öffnen wird die interaktive 3D-Szene von einem externen Viewer geladen; dabei können Daten verarbeitet werden (siehe Datenschutzerklärung).",
     },
   },
 

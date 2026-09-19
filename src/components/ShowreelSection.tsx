@@ -3,54 +3,92 @@ import { useRef, useState, useEffect } from "react";
 import { getRandomInViewAnimation } from "@/utils/animations";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/i18n/translations";
+import ConsentEmbed from "./ConsentEmbed";
 
-const NAV_HINTS = [
-  {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M5 9l-3 3 3 3M9 5l3-3 3 3M15 19l-3 3-3-3M19 9l3 3-3 3M2 12h20M12 2v20"/>
-      </svg>
-    ),
-    label: "Drag to orbit",
-  },
-  {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2a4 4 0 00-4 4v6a4 4 0 008 0V6a4 4 0 00-4-4z"/>
-        <path d="M8 12a4 4 0 008 0M12 16v4M8 20h8"/>
-        <path d="M10 8h.01M14 8h.01"/>
-      </svg>
-    ),
-    label: "Scroll to zoom",
-  },
-  {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="3" width="7" height="7" rx="1"/>
-        <rect x="14" y="3" width="7" height="7" rx="1"/>
-        <rect x="3" y="14" width="7" height="7" rx="1"/>
-        <rect x="14" y="14" width="7" height="7" rx="1"/>
-      </svg>
-    ),
-    label: "Right-click to pan",
-  },
-];
+/**
+ * What the showreel slot plays. Swap this one constant to change it.
+ *
+ *  - "scene": an interactive 3D viewer (orbit/zoom/pan hints, ESC to leave)
+ *  - "film":  a video player
+ *
+ * The interactive iBug scene used to live at
+ * https://splatpipe-cdn.b-cdn.net/IBUG_2025_v6/index.html, but that CDN zone now
+ * answers 404, so the slot shows our iBug walkthrough film until the scene is
+ * hosted again. To restore it: set kind to "scene" and src to the new URL.
+ */
+const SHOWREEL: { kind: "scene" | "film"; src: string; poster: string; title: string } = {
+  kind: "film",
+  src: "https://www.youtube-nocookie.com/embed/ump032qGpK4?autoplay=1&rel=0&modestbranding=1",
+  poster: "/images/webp/posters/ibug-walkthrough.webp",
+  title: "iBug Festival — 360° walkthrough",
+};
+
+const HINT_ICONS = {
+  orbit: (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M5 9l-3 3 3 3M9 5l3-3 3 3M15 19l-3 3-3-3M19 9l3 3-3 3M2 12h20M12 2v20"/>
+    </svg>
+  ),
+  zoom: (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 2a4 4 0 00-4 4v6a4 4 0 008 0V6a4 4 0 00-4-4z"/>
+      <path d="M8 12a4 4 0 008 0M12 16v4M8 20h8"/>
+      <path d="M10 8h.01M14 8h.01"/>
+    </svg>
+  ),
+  pan: (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="3" y="3" width="7" height="7" rx="1"/>
+      <rect x="14" y="3" width="7" height="7" rx="1"/>
+      <rect x="3" y="14" width="7" height="7" rx="1"/>
+      <rect x="14" y="14" width="7" height="7" rx="1"/>
+    </svg>
+  ),
+};
 
 const ShowreelSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const { lang } = useLanguage();
   const t = translations.showreel[lang];
+  const e = translations.embed[lang];
   const [active, setActive] = useState(false);
+  // Remounting the embed is how we "leave" a scene: it drops the iframe and
+  // puts the poster back.
+  const [embedKey, setEmbedKey] = useState(0);
+
+  const isScene = SHOWREEL.kind === "scene";
+
+  const exitViewer = () => {
+    setActive(false);
+    setEmbedKey((k) => k + 1);
+  };
 
   useEffect(() => {
-    if (!active) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setActive(false);
+    if (!active || !isScene) return;
+    const onKey = (ev: KeyboardEvent) => {
+      if (ev.key === "Escape") exitViewer();
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [active]);
+  }, [active, isScene]);
+
+  const hints = isScene ? (
+    <span className="flex items-center gap-8 md:gap-12">
+      {([
+        ["orbit", e.hintOrbit],
+        ["zoom", e.hintZoom],
+        ["pan", e.hintPan],
+      ] as const).map(([icon, label]) => (
+        <span key={icon} className="flex flex-col items-center gap-2 text-white/80">
+          <span className="w-10 h-10 flex items-center justify-center border border-white/30 rounded-sm">
+            {HINT_ICONS[icon]}
+          </span>
+          <span className="font-mono text-[10px] tracking-[0.15em] uppercase whitespace-nowrap">{label}</span>
+        </span>
+      ))}
+    </span>
+  ) : undefined;
 
   return (
     <section id="showreel" className="py-32 px-6 relative overflow-hidden bg-background">
@@ -83,72 +121,34 @@ const ShowreelSection = () => {
           className="mt-12"
         >
           <div className="neon-border overflow-hidden relative">
-            {/* iframe — pointer events locked unless active */}
-            <iframe
-              src="https://splatpipe-cdn.b-cdn.net/IBUG_2025_v6/index.html"
-              width="100%"
-              height="500"
-              frameBorder="0"
-              allow="accelerometer; gyroscope; xr-spatial-tracking"
-              allowFullScreen
-              className="block w-full"
-              style={{ pointerEvents: active ? "auto" : "none" }}
+            <ConsentEmbed
+              key={embedKey}
+              src={SHOWREEL.src}
+              title={SHOWREEL.title}
+              poster={SHOWREEL.poster}
+              cta={isScene ? e.explore : e.playFilm}
+              note={isScene ? e.noteScene : e.noteYouTube}
+              hints={hints}
+              onActivate={() => setActive(true)}
+              className="aspect-video w-full"
             />
 
-            {/* Inactive overlay */}
+            {/* Scene mode only: a way back out of the viewer */}
             <AnimatePresence>
-              {!active && (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.25 }}
-                  onClick={() => setActive(true)}
-                  className="absolute inset-0 flex flex-col items-center justify-center cursor-pointer"
-                  style={{ background: "rgba(0,0,0,0.55)", backdropFilter: "blur(2px)" }}
-                >
-                  {/* Nav hints */}
-                  <div className="flex items-center gap-8 md:gap-12 mb-8">
-                    {NAV_HINTS.map((hint) => (
-                      <div key={hint.label} className="flex flex-col items-center gap-2 text-white/70">
-                        <div className="w-10 h-10 flex items-center justify-center border border-white/20 rounded-sm">
-                          {hint.icon}
-                        </div>
-                        <span className="font-mono text-[10px] tracking-[0.15em] uppercase whitespace-nowrap">
-                          {hint.label}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Click to activate CTA */}
-                  <div className="flex items-center gap-3 border border-primary/70 px-6 py-3 text-primary hover:bg-primary/10 transition-colors">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <polygon points="5 3 19 12 5 21 5 3"/>
-                    </svg>
-                    <span className="font-mono text-xs tracking-[0.2em] uppercase">
-                      Click to explore
-                    </span>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-
-            {/* Active: escape button */}
-            <AnimatePresence>
-              {active && (
+              {active && isScene && (
                 <motion.button
+                  type="button"
                   initial={{ opacity: 0, y: -8 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -8 }}
                   transition={{ duration: 0.2 }}
-                  onClick={() => setActive(false)}
+                  onClick={exitViewer}
                   className="absolute top-3 right-3 flex items-center gap-2 bg-background/80 backdrop-blur-sm border border-border px-3 py-1.5 font-mono text-[10px] tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground hover:border-foreground transition-colors z-10"
                 >
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
                     <path d="M18 6L6 18M6 6l12 12"/>
                   </svg>
-                  Exit viewer
+                  {e.exitViewer}
                   <span className="text-muted-foreground/50 ml-1">ESC</span>
                 </motion.button>
               )}
