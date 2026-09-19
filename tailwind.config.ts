@@ -14,16 +14,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["DM Sans", "system-ui", "sans-serif"],
-        serif: ["Rajdhani", "Tahoma", "sans-serif"], // Changed to Rajdhani for headers
-        mono: ["Space Mono", "monospace"],
-        
-        // Urban font variations for testing - color coded
-        'urban-1': ["Anton", "Impact", "sans-serif"],           // Red accent - Bold Impact
-        'urban-2': ["Bebas Neue", "Arial Black", "sans-serif"], // Blue accent - Tall & Condensed
-        'urban-3': ["Oswald", "Arial Narrow", "sans-serif"],    // Green accent - Modern Street
-        'urban-4': ["Rajdhani", "Tahoma", "sans-serif"],        // Purple accent - Tech/Cyberpunk
-        'urban-5': ["Barlow Condensed", "Arial", "sans-serif"], // Orange accent - Industrial
+        // Self-hosted via src/fonts.ts
+        sans: ["DM Sans Variable", "DM Sans", "system-ui", "sans-serif"],
+        serif: ["Rajdhani", "Tahoma", "sans-serif"], // headings
+        mono: ["Space Mono", "ui-monospace", "monospace"],
       },
       fontSize: {
         // Base sizes increased by 2 points (from default Tailwind)

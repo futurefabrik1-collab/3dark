@@ -64,7 +64,7 @@ export const getRandomEntranceAnimation = (delay: number = 0) => {
     return {
       initial: { opacity: 0, y: 16 },
       animate: { opacity: 1, y: 0 },
-      transition: { duration: 0.6, delay, ease: [0.25, 0.1, 0.25, 1] },
+      transition: { duration: 0.6, delay, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] },
     };
   }
 
@@ -85,7 +85,7 @@ export const getRandomEntranceAnimation = (delay: number = 0) => {
     transition: { 
       duration: 0.8,
       delay,
-      ease: "easeInOut"
+      ease: "easeInOut" as const
     },
     whileInView: ENABLE_SCROLL_RIPPLE ? {
       x: [0, RIPPLE_DIRECTION === 'right' ? `${RIPPLE_SHIFT_AMOUNT}%` : `-${RIPPLE_SHIFT_AMOUNT}%`, 0],
@@ -111,7 +111,7 @@ export const getRandomInViewAnimation = (isInView: boolean, delay: number = 0) =
     return {
       initial: { opacity: 0, y: 16 },
       animate: isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 },
-      transition: { duration: 0.6, delay, ease: [0.25, 0.1, 0.25, 1] },
+      transition: { duration: 0.6, delay, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] },
     };
   }
 
@@ -136,7 +136,7 @@ export const getRandomInViewAnimation = (isInView: boolean, delay: number = 0) =
     transition: { 
       duration: 0.8,
       delay,
-      ease: "easeInOut"
+      ease: "easeInOut" as const
     },
     whileInView: ENABLE_SCROLL_RIPPLE ? {
       x: [0, RIPPLE_DIRECTION === 'right' ? `${RIPPLE_SHIFT_AMOUNT}%` : `-${RIPPLE_SHIFT_AMOUNT}%`, 0],
