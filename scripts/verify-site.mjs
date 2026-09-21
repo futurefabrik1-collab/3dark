@@ -117,6 +117,20 @@ console.log('\n[storage blocked]');
   (r.eval?.children > 0 && r.eval?.text > 1000 && !r.exceptions.length) ? ok(`renders with storage blocked (${r.eval.text} chars)`) : bad(`blank or failing with storage blocked: ${JSON.stringify(r.eval)} ${r.exceptions.join(' | ')}`);
 }
 
+console.log('\n[malformed URL hash]');
+// decodeURIComponent on "#%E2%80" once threw and took the whole site down.
+{
+  const r = run(['--url', base + '/#%E2%80', '--out', join(TMP, 'badhash.png'), '--wait', '2500', '--eval', `({sections:document.querySelectorAll('main section').length})`]);
+  (r.eval?.sections > 3 && !r.exceptions.length) ? ok(`/#%E2%80 renders the site (${r.eval.sections} sections)`) : bad(`malformed hash: ${JSON.stringify(r.eval)} ${r.exceptions.join(' | ')}`);
+}
+
+console.log('\n[poster tap]');
+// A tap anywhere on a video poster must start it (not just on the small pill).
+{
+  const r = run(['--url', base + '/', '--out', join(TMP, 'postertap.png'), '--mobile', '--wait', '2500', '--eval', `(async()=>{const box=document.querySelector('#showreel .aspect-video'); box.scrollIntoView({block:'center',behavior:'instant'}); await new Promise(r=>setTimeout(r,800)); const b=box.getBoundingClientRect(); document.elementFromPoint(b.left+b.width*0.2,b.top+b.height*0.8).click(); await new Promise(r=>setTimeout(r,1200)); return !!document.querySelector('#showreel iframe');})()`]);
+  r.eval === true ? ok('tapping the poster away from the button starts the film') : bad('poster tap outside the play pill did nothing');
+}
+
 console.log('\n[raw HTML heads — what crawlers and link previews see]');
 {
   const want = { '/': { canonical: '/' }, '/who-its-for/industrial': { canonical: '/who-its-for/industrial' }, '/who-its-for/cultural': { canonical: '/who-its-for/cultural' }, '/impressum': { canonical: '/impressum', noindex: true }, '/datenschutz': { canonical: '/datenschutz', noindex: true } };

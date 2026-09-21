@@ -90,6 +90,7 @@ export const translations = {
       language: "Language",
       darkMode: "Dark mode",
       menu: "Menu",
+      skip: "Skip to content",
     },
     de: {
       work: "Arbeit",
@@ -101,6 +102,7 @@ export const translations = {
       language: "Sprache",
       darkMode: "Dunkelmodus",
       menu: "Menü",
+      skip: "Zum Inhalt springen",
     },
   },
 
@@ -141,7 +143,7 @@ export const translations = {
       sectionLabel: "Was Wir Tun",
       intro1:
         "3DARK erstellt fotorealistische Digitale Zwillinge und interaktive 3D-Umgebungen für industrielle Kommunikation, kulturelle Bewahrung und Virtual Production — reale Standorte in voller Qualität erfasst und als web-zugängliche, engine-ready Assets geliefert.",
-      whoH2: "Wer Wir Sind",
+      whoH2: "Wer wir sind",
       linkedinLabel: "{name} auf LinkedIn",
     },
   },
@@ -246,7 +248,8 @@ export const translations = {
       hintZoom: "Scroll to zoom",
       hintPan: "Right-click to pan",
       noteYouTube: "Playing loads this video from YouTube, which may set cookies and process your data (see our privacy policy).",
-      noteScene: "Opening loads the interactive 3D scene from an external viewer, which may process your data (see our privacy policy).",
+      noteScene: "Opening loads the 3D scene from StorySplat, with fonts from Google and data via Cloudflare, which may process your data (see our privacy policy).",
+      showreelTitle: "ibug Festival — 360° walkthrough",
     },
     de: {
       playFilm: "Film abspielen",
@@ -256,7 +259,8 @@ export const translations = {
       hintZoom: "Scrollen zum Zoomen",
       hintPan: "Rechtsklick zum Verschieben",
       noteYouTube: "Beim Abspielen wird das Video von YouTube geladen; dabei können Cookies gesetzt und Daten verarbeitet werden (siehe Datenschutzerklärung).",
-      noteScene: "Beim Öffnen wird die interaktive 3D-Szene von einem externen Viewer geladen; dabei können Daten verarbeitet werden (siehe Datenschutzerklärung).",
+      noteScene: "Beim Öffnen wird die 3D-Szene von StorySplat geladen, mit Schriften von Google und Daten über Cloudflare; dabei können Daten verarbeitet werden (siehe Datenschutzerklärung).",
+      showreelTitle: "ibug Festival — 360°-Rundgang",
     },
   },
 
@@ -264,12 +268,12 @@ export const translations = {
     en: {
       sectionLabel: "Long-term project",
       h2: "ibug Festival — in 3D since 2022",
-      body: "Since 2022 we have been the official spatial documentation partner of ibug, one of Europe's leading international street art festivals. Each year we capture the full festival environment in photorealistic 3D — building an interactive archive that lets anyone explore past and present editions of the event.",
+      body: "Since 2022 we have been the official spatial documentation partner of ibug, one of Europe's leading international street art festivals. Each year we capture the full festival environment in photorealistic 3D, building a multi-year spatial record of the festival. Watch the 2023 walkthrough.",
     },
     de: {
       sectionLabel: "Langzeitprojekt",
       h2: "ibug Festival — seit 2022 in 3D",
-      body: "Seit 2022 sind wir der offizielle Partner für räumliche Dokumentation des ibug, eines der führenden internationalen Street-Art-Festivals Europas. Jedes Jahr erfassen wir das gesamte Festival-Gelände in fotorealistischem 3D — und bauen ein interaktives Archiv auf, das es jedem ermöglicht, vergangene und aktuelle Ausgaben des Events zu erkunden.",
+      body: "Seit 2022 sind wir der offizielle Partner für räumliche Dokumentation des ibug, eines der führenden internationalen Street-Art-Festivals Europas. Jedes Jahr erfassen wir das gesamte Festivalgelände in fotorealistischem 3D und bauen so ein mehrjähriges räumliches Archiv des Festivals auf. Sehen Sie den Rundgang von 2023.",
     },
   },
 
@@ -305,6 +309,8 @@ export const translations = {
       validationName: "Name must be at least 2 characters.",
       validationEmail: "Please enter a valid email address.",
       validationMessage: "Message must be at least 10 characters.",
+      validationNameMax: "Please keep your name under 100 characters.",
+      validationMessageMax: "Please keep your message under 5,000 characters, or email us directly.",
     },
     de: {
       namePlaceholder: "Ihr Name",
@@ -326,6 +332,8 @@ export const translations = {
       validationName: "Name muss mindestens 2 Zeichen lang sein.",
       validationEmail: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
       validationMessage: "Nachricht muss mindestens 10 Zeichen lang sein.",
+      validationNameMax: "Bitte geben Sie einen Namen mit weniger als 100 Zeichen ein.",
+      validationMessageMax: "Bitte fassen Sie sich auf unter 5.000 Zeichen – oder schreiben Sie uns direkt per E-Mail.",
     },
   },
 
@@ -402,9 +410,9 @@ export const translations = {
       { id: "abandoned-buildings", year: "Ongoing", title: "Abandoned Buildings Leipzig", subtitle: "Digital Archive · Lost Places", description: "Photorealistic documentation and spatial record construction for sites at risk of decay: Alter Hafen Lindenau, the factory at Bahnbogen Leutzsch, Polygraphenwerk, and Karl Krause Fabrik. High-detail records for exhibitions, research, and VR.", tag: "Cultural", showMedia: true },
       { id: "berlin-club-archive", year: "2025", title: "Digitales Archiv Berliner Clubkultur", subtitle: "TU Berlin · Seminar Series", description: "As part of a seminar series with TU Berlin, we help to digitally preserve threatened club spaces. We teach the fundamentals of GS scanning and build a foundation for audiovisual spatial records of a disappearing club culture — as documentation, historical record, and creative resource.", tag: "Cultural", showMedia: false },
       { id: "machn", year: "2025", title: "MACHN Festival", subtitle: "Interactive Navigation System", description: "Real-time 3D festival navigation integrated with live geo-data. A context-aware wayfinding system helping thousands of visitors navigate the festival grounds through an immersive spatial record.", tag: "Cultural", showMedia: true },
-      { id: "ibug", year: "2022–26", title: "ibug Festival", subtitle: "3D Twin & Time Machine", description: "Multi-year spatial documentation of an international art festival. An interactive time-travel experience allowing visitors to explore current and historical editions of the festival through immersive 3D environments.", tag: "Cultural", showMedia: true },
+      { id: "ibug", year: "2022–26", title: "ibug Festival", subtitle: "3D Twin & Time Machine", description: "Multi-year spatial documentation of an international art festival. An interactive time-travel experience allowing visitors to explore current and historical editions of the festival through immersive 3D environments.", tag: "Cultural", showMedia: false },
       { id: "htwk-4dgs", year: "2024", title: "4D Gaussian Splatting", subtitle: "HTWK · Research Project", description: "In collaboration with HTWK, we are developing a 4D Gaussian Splatting pipeline — focused on sparse datasets and novel view synthesis. In parallel, we are working on a compression format to deploy 4DGS assets efficiently in real-time engines.", tag: "Industry", showMedia: false },
-      { id: "db-learning", year: "2024", title: "Interaktive Lerninhalte", subtitle: "Deutsche Bahn · Gamified Training", description: "Interactive formats for adult learning: operational processes and management simulations extended through 3D models, real process logic, and game mechanics. Complex procedures become more vivid, memorable, and practically relevant.", tag: "Industry", showMedia: false },
+      { id: "db-learning", year: "2024", title: "Interactive Learning Content", subtitle: "Deutsche Bahn · Gamified Training", description: "Interactive formats for adult learning: operational processes and management simulations extended through 3D models, real process logic, and game mechanics. Complex procedures become more vivid, memorable, and practically relevant.", tag: "Industry", showMedia: false },
       { id: "alice", year: "2024", title: "Das Wunderland von Alice", subtitle: "Kunstkraftwerk · Media Production", description: "Gaussian Splatting became the medium itself: exhibition content was abstracted, reframed, and staged through GS — experimental and attuned to the atmosphere of the show. Technically demanding, creatively rewarding.", tag: "Cultural", showMedia: true },
       { id: "klaerwerk", year: "2024", title: "Klärwerk Leipzig", subtitle: "Industrial Digital Twin", description: "Complete spatial record of Leipzig's wastewater treatment facility. High-fidelity data combined with CAD integration for infrastructure planning and communication.", tag: "Industry", showMedia: true },
       { id: "gs-social", year: "2023", title: "GS Social Media Tour", subtitle: "SXSW · Visual Storytelling", description: "Our first real Gaussian Splatting experiment: GS as a visual medium for short, impactful clips — combined with locally produced, hard-hitting music. The moment it became clear: GS is not just technology, but a new storytelling tool at the intersection of photography, film, and 3D.", tag: "Producers", showMedia: true },
@@ -414,11 +422,11 @@ export const translations = {
       { id: "abandoned-buildings", year: "Laufend", title: "Abandoned Buildings Leipzig", subtitle: "Digitale Archivierung · Lost Places", description: "Fotorealistische Dokumentation und Raum-Dokument-Erstellung von Orten, die vom Verfall bedroht sind: Alter Hafen Lindenau, Fabrik am Bahnbogen Leutzsch, Polygraphenwerk und Karl Krause Fabrik. Hochdetaillierte Zeitzeugnisse für Ausstellungen, Forschung und VR.", tag: "Kultur", showMedia: true },
       { id: "berlin-club-archive", year: "2025", title: "Digitales Archiv Berliner Clubkultur", subtitle: "TU Berlin · Seminarreihe", description: "Im Rahmen einer Seminarreihe mit der TU Berlin helfen wir, bedrohte Clubräume digital zu erhalten. Wir vermitteln Grundlagen des GS-Scannings und schaffen eine Basis für audiovisuelle Raum-Dokumente einer verschwindenden Clubkultur — als Dokumentation, Zeitzeugnis und kreativer Rohstoff.", tag: "Kultur", showMedia: false },
       { id: "machn", year: "2025", title: "MACHN Festival", subtitle: "Interaktives Navigationssystem", description: "Echtzeit-3D-Festivalnavigation integriert mit Live-Geo-Daten. Ein kontextsensitives Wegeleitsystem, das Tausenden von Besuchern hilft, das Festivalgelände durch ein immersives Raum-Dokument zu navigieren.", tag: "Kultur", showMedia: true },
-      { id: "ibug", year: "2022–26", title: "ibug Festival", subtitle: "3D Twin & Zeitmaschine", description: "Mehrjährige räumliche Dokumentation eines internationalen Kunstfestivals. Eine interaktive Zeitreise-Erfahrung, die es Besuchern ermöglicht, aktuelle und historische Festivalausgaben durch immersive 3D-Umgebungen zu erkunden.", tag: "Kultur", showMedia: true },
+      { id: "ibug", year: "2022–26", title: "ibug Festival", subtitle: "3D Twin & Zeitmaschine", description: "Mehrjährige räumliche Dokumentation eines internationalen Kunstfestivals. Eine interaktive Zeitreise-Erfahrung, die es Besuchern ermöglicht, aktuelle und historische Festivalausgaben durch immersive 3D-Umgebungen zu erkunden.", tag: "Kultur", showMedia: false },
       { id: "htwk-4dgs", year: "2024", title: "4D Gaussian Splatting", subtitle: "HTWK · Forschungsprojekt", description: "Gemeinsam mit der HTWK entwickeln wir eine 4D-Gaussian-Splatting-Pipeline — Fokus auf sparse Datensets und Novel View Synthesis. Parallel arbeiten wir an einem Kompressionsformat, um 4DGS-Assets effizient in Realtime-Engines einsetzen zu können.", tag: "Industrie", showMedia: false },
       { id: "db-learning", year: "2024", title: "Interaktive Lerninhalte", subtitle: "Deutsche Bahn · Gamified Training", description: "Spielerische, interaktive Formate für Erwachsenenlernen: Abläufe und Planspiele werden durch 3D-Modelle, reale Prozesslogik und Game-Mechaniken erweitert. Komplexe Vorgänge werden anschaulicher, merkbarer und praxisnäher.", tag: "Industrie", showMedia: false },
       { id: "alice", year: "2024", title: "Das Wunderland von Alice", subtitle: "Kunstkraftwerk · Medienproduktion", description: "Gaussian Splatting wurde selbst zum Medium: Inhalte der Ausstellung wurden GS-basiert abstrahiert, neu gerahmt und in Szene gesetzt — aufregend, experimentell und passend zur Atmosphäre. Technisch anspruchsvoll, kreativ maximal dankbar.", tag: "Kultur", showMedia: true },
-      { id: "klaerwerk", year: "2024", title: "Klärwerk Leipzig", subtitle: "Industrial Digital Twin", description: "Vollständiges Raum-Dokument der Kläranlage Leipzig. Hochauflösende Daten kombiniert mit CAD-Integration für Infrastrukturplanung und -kommunikation.", tag: "Industrie", showMedia: true },
+      { id: "klaerwerk", year: "2024", title: "Klärwerk Leipzig", subtitle: "Industrieller digitaler Zwilling", description: "Vollständiges Raum-Dokument der Kläranlage Leipzig. Hochauflösende Daten kombiniert mit CAD-Integration für Infrastrukturplanung und -kommunikation.", tag: "Industrie", showMedia: true },
       { id: "gs-social", year: "2023", title: "GS Social Media Tour", subtitle: "SXSW · Visual Storytelling", description: 'Unser erstes "echtes" Gaussian-Splatting-Experiment: GS als visuelles Medium für kurze, druckvolle Clips — kombiniert mit lokal produzierter Musik. Der Moment, in dem klar wurde: GS ist nicht nur Technik, sondern ein neues Erzählwerkzeug zwischen Fotografie, Film und 3D.', tag: "Produzenten", showMedia: true },
       { id: "babylon-berlin", year: "2022", title: "Babylon Berlin – Drachenburg", subtitle: "Scan für Set Extension", description: "In der Serie Babylon Berlin demonstriert der Industrielle Alfred Nyssen einen ersten Raketenprototypen. Für die Außenshots der Drachenburg lieferten wir den 3D-Scan als VFX-Asset.", tag: "Produzenten", showMedia: true },
     ],

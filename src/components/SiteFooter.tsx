@@ -18,10 +18,13 @@ const SiteFooter = () => {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="space-y-1">
             <p className="font-mono text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
-              © {new Date().getFullYear()} 3DARK — {t.serviceBy}
+              <span className="whitespace-nowrap">© {new Date().getFullYear()} 3DARK</span> —{" "}
+              <span className="whitespace-nowrap">{t.serviceBy}</span>
             </p>
             <p className="font-mono text-[11px] tracking-[0.12em] uppercase text-muted-foreground">
-              Burnett &amp; Manhardt GbR · Klingenstraße 22 · 04229 Leipzig
+              <span className="whitespace-nowrap">Burnett &amp; Manhardt GbR</span> ·{" "}
+              <span className="whitespace-nowrap">Klingenstraße 22</span> ·{" "}
+              <span className="whitespace-nowrap">04229 Leipzig</span>
             </p>
           </div>
           <nav aria-label={t.legalNotice} className="flex items-center gap-6">

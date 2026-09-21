@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations, type Lang } from "@/i18n/translations";
 import { useTheme } from "@/contexts/ThemeContext";
-import { scrollToHash } from "@/lib/scrollToHash";
+import { scrollToHash, scrollBehavior } from "@/lib/scrollToHash";
 
 const SECTIONS = [
   { key: "work", hash: "#projects" },
@@ -61,12 +61,18 @@ const Navbar = () => {
     }
   };
 
+  // Let the browser handle modified clicks (new tab/window, download).
+  const isPlainClick = (e: MouseEvent<HTMLAnchorElement>) =>
+    e.button === 0 && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey;
+
   const onDesktopLink = (e: MouseEvent<HTMLAnchorElement>, hash: string) => {
+    if (!isPlainClick(e)) return;
     e.preventDefault();
     goTo(hash);
   };
 
   const onMobileLink = (e: MouseEvent<HTMLAnchorElement>, hash: string) => {
+    if (!isPlainClick(e)) return;
     e.preventDefault();
     pendingHash.current = hash;
     setMenuOpen(false);
@@ -79,10 +85,12 @@ const Navbar = () => {
   };
 
   const onLogo = (e: MouseEvent<HTMLAnchorElement>) => {
+    if (!isPlainClick(e)) return;
+    setMenuOpen(false);
     if (!onHome) return; // normal <Link> navigation to "/"
     e.preventDefault();
     window.history.pushState(null, "", "/");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: scrollBehavior() });
   };
 
   const langButton = (code: Lang) => {
@@ -112,7 +120,18 @@ const Navbar = () => {
         solid ? "bg-background/95 backdrop-blur-sm border-b border-border/50" : "bg-transparent border-b border-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a
+        href="#main"
+        onClick={(e) => {
+          e.preventDefault();
+          document.getElementById("main")?.focus();
+        }}
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-[60] focus:bg-background focus:px-4 focus:py-2 focus:border focus:border-primary focus:text-primary focus:font-mono focus:text-xs focus:uppercase focus:tracking-[0.15em]"
+      >
+        {t.skip}
+      </a>
+      <div className="px-6">
+      <div className="max-w-6xl mx-auto h-16 flex items-center justify-between">
         <Link
           to="/"
           onClick={onLogo}
@@ -174,6 +193,7 @@ const Navbar = () => {
             <span className={`block w-5 h-px bg-foreground transition-all duration-200 ${menuOpen ? "-rotate-45 -translate-y-[7px]" : ""}`} />
           </button>
         </div>
+      </div>
       </div>
 
       <AnimatePresence onExitComplete={onMenuClosed}>

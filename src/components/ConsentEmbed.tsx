@@ -58,6 +58,8 @@ const ConsentEmbed = ({
   const token = useRef({}).current;
   const frame = useRef<HTMLIFrameElement>(null);
   const noteId = useId();
+  const labelId = useId();
+  const titleId = useId();
 
   useEffect(() => () => releasePlayback(token), [token]);
 
@@ -97,29 +99,34 @@ const ConsentEmbed = ({
       />
       <div className="absolute inset-0 bg-black/55" aria-hidden="true" />
 
-      <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 sm:gap-5 p-2 sm:p-6 text-center">
+      {/* The whole poster is the button (as before the privacy overlay was
+          added): a tap anywhere starts it, not just on the small pill. Name and
+          description are wired explicitly so the privacy note is announced as
+          the description rather than folded into the button's name. */}
+      <button
+        type="button"
+        onClick={activate}
+        aria-labelledby={`${labelId} ${titleId}`}
+        aria-describedby={noteId}
+        className="group absolute inset-0 flex flex-col items-center justify-center gap-2 sm:gap-5 p-2 sm:p-6 text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-white"
+      >
         {hints}
 
-        <button
-          type="button"
-          onClick={activate}
-          aria-describedby={noteId}
-          className="flex items-center gap-3 border border-white/80 bg-black/50 px-4 py-2 sm:px-5 sm:py-3 text-white transition-colors hover:bg-white hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black"
-        >
+        <span className="flex items-center gap-3 border border-white/80 bg-black/50 px-4 py-2 sm:px-5 sm:py-3 text-white transition-colors group-hover:bg-white group-hover:text-black">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <polygon points="5 3 19 12 5 21 5 3" />
           </svg>
-          <span className="font-mono text-xs tracking-[0.2em] uppercase">{cta}</span>
-          <span className="sr-only">: {title}</span>
-        </button>
+          <span id={labelId} className="font-mono text-xs tracking-[0.2em] uppercase">{cta}</span>
+          <span id={titleId} className="sr-only">{title}</span>
+        </span>
 
-        <p
+        <span
           id={noteId}
-          className="max-w-md bg-black/70 px-2 py-1 sm:px-3 sm:py-2 font-sans text-[10px] leading-snug sm:text-xs sm:leading-relaxed text-white/95"
+          className="block max-w-md bg-black/70 px-2 py-1 sm:px-3 sm:py-2 font-sans text-[10px] leading-snug sm:text-xs sm:leading-relaxed text-white/95"
         >
           {note}
-        </p>
-      </div>
+        </span>
+      </button>
     </div>
   );
 };

@@ -22,7 +22,7 @@ const ScrollManager = () => {
     first.current = false;
 
     if (hash) {
-      scrollToHash(hash, isFirst ? "auto" : "smooth");
+      scrollToHash(hash, isFirst ? "auto" : undefined);
       return;
     }
     if (isFirst || navigationType === "POP") return;

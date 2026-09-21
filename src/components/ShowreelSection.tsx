@@ -16,11 +16,10 @@ import ConsentEmbed from "./ConsentEmbed";
  * answers 404, so the slot shows our ibug walkthrough film until the scene is
  * hosted again. To restore it: set kind to "scene" and src to the new URL.
  */
-const SHOWREEL: { kind: "scene" | "film"; src: string; poster: string; title: string } = {
+const SHOWREEL: { kind: "scene" | "film"; src: string; poster: string } = {
   kind: "film",
   src: "https://www.youtube-nocookie.com/embed/ump032qGpK4?autoplay=1&rel=0&modestbranding=1",
   poster: "/images/webp/posters/ibug-walkthrough.webp",
-  title: "ibug Festival — 360° walkthrough",
 };
 
 const HINT_ICONS = {
@@ -124,7 +123,7 @@ const ShowreelSection = () => {
             <ConsentEmbed
               key={embedKey}
               src={SHOWREEL.src}
-              title={SHOWREEL.title}
+              title={e.showreelTitle}
               poster={SHOWREEL.poster}
               cta={isScene ? e.explore : e.playFilm}
               note={isScene ? e.noteScene : e.noteYouTube}

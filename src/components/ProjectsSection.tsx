@@ -157,7 +157,7 @@ const ProjectsSection = () => {
                 className="grid grid-cols-1 md:grid-cols-[64px_1fr] gap-6 md:gap-10"
               >
                 <div className="hidden md:flex items-start justify-end pr-4">
-                  <span className="font-mono text-[10px] tracking-[0.12em] text-primary bg-background relative z-10">
+                  <span className="font-mono text-[10px] tracking-[0.12em] text-primary bg-background relative z-10 whitespace-nowrap">
                     {project.year}
                   </span>
                 </div>

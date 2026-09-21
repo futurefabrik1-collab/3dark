@@ -33,7 +33,7 @@ const HeroSection = () => {
   }, [paused]);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-background scanlines">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-background scanlines px-6">
       {/* Industrial grid background */}
       <div className="absolute inset-0 industrial-grid opacity-20" />
       
@@ -48,7 +48,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-28 md:py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="relative z-10 w-full max-w-6xl mx-auto py-28 md:py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left: Text */}
         <div>
           {/* Brand Title */}
@@ -139,7 +139,19 @@ const HeroSection = () => {
             />
             <button
               type="button"
-              onClick={() => setUserPaused(playing)}
+              onClick={() => {
+                // Act on the element directly: if the browser blocked autoplay,
+                // flipping state alone would change nothing on screen.
+                const el = video.current;
+                if (!el) return;
+                if (playing) {
+                  setUserPaused(true);
+                  el.pause();
+                } else {
+                  setUserPaused(false);
+                  void el.play().catch(() => {});
+                }
+              }}
               aria-label={playing ? t.pauseVideo : t.playVideo}
               className="absolute bottom-3 right-3 z-10 w-10 h-10 flex items-center justify-center bg-black/55 text-white border border-white/40 hover:bg-black/75 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white transition-colors"
             >

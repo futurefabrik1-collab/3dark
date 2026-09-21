@@ -32,7 +32,7 @@
     --accent: 150 38% 52%;
     --accent-foreground: 220 15% 8%;
 
-    --destructive: 0 75% 55%;
+    --destructive: 0 85% 64%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 220 15% 18%;
@@ -138,6 +138,13 @@ html.light {
   /* keep anchored sections clear of the fixed 64px header */
   section[id] {
     scroll-margin-top: 4rem;
+  }
+
+  /* sections and <main> receive focus programmatically after navigation so
+     screen readers continue from there; no outline around whole regions */
+  section[id]:focus,
+  main:focus {
+    outline: none;
   }
 
   /* Background imagery was authored for the dark ground; screen blending

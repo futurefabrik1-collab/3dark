@@ -34,15 +34,20 @@ type Strings = (typeof translations.contactForm)["en"];
 
 const buildSchema = (t: Strings) =>
   z.object({
-    name: z.string().trim().min(2, { message: t.validationName }),
+    // limits mirror api/contact.js, so visitors learn why before submitting
+    name: z.string().trim().min(2, { message: t.validationName }).max(100, { message: t.validationNameMax }),
     email: z.string().trim().email({ message: t.validationEmail }),
-    message: z.string().trim().min(10, { message: t.validationMessage }),
+    message: z
+      .string()
+      .trim()
+      .min(10, { message: t.validationMessage })
+      .max(5000, { message: t.validationMessageMax }),
     // never blocks submission; the server decides what a filled trap means
     hp_x7: z.string().optional().default(""),
   });
 
 const FIELD_CLASS =
-  "bg-background border-muted-foreground/70 focus:border-primary transition-colors";
+  "bg-background border-muted-foreground/80 focus:border-primary transition-colors";
 
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);

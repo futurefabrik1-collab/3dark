@@ -144,7 +144,7 @@ const Datenschutz = () => {
           </p>
           <p className="font-medium text-foreground mt-4 mb-1">StorySplat</p>
           <p>
-            Die 3D-Szene „Das Wunderland von Alice“ wird über die Plattform StorySplat (discover.storysplat.com) bereitgestellt. Nach Ihrem Klick wird eine Verbindung zu deren Servern hergestellt; dabei werden u. a. Ihre IP-Adresse und Informationen zu Ihrem Browser übertragen.
+            Die 3D-Szene „Das Wunderland von Alice“ wird über die Plattform StorySplat (discover.storysplat.com) bereitgestellt. Nach Ihrem Klick wird eine Verbindung zu deren Servern hergestellt; dabei werden u. a. Ihre IP-Adresse und Informationen zu Ihrem Browser übertragen. Der Viewer lädt dabei zusätzlich Schriftarten von Google Fonts (Google Ireland Limited, Irland) sowie die Szenendaten über einen Dienst der Cloudflare, Inc. (USA); auch dabei wird Ihre IP-Adresse übertragen. Eine Übermittlung in die USA ist möglich; Google LLC und Cloudflare, Inc. sind unter dem EU-U.S. Data Privacy Framework zertifiziert (Art. 45 DSGVO).
           </p>
           <p className="mt-3">
             Rechtsgrundlage für das Laden dieser Inhalte ist Ihre Einwilligung, die Sie durch den Klick erteilen (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG). Sie gilt nur für den jeweiligen Inhalt und die aktuelle Seitenansicht; beim nächsten Besuch werden die Inhalte erst nach einem erneuten Klick geladen.
@@ -177,11 +177,11 @@ const Datenschutz = () => {
             Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung Ihrer personenbezogenen Daten durch uns zu beschweren. Die zuständige Aufsichtsbehörde für Sachsen ist:
           </p>
           <p className="mt-3">
-            Sächsischer Datenschutz- und Transparenzbeauftragter<br />
+            Die Sächsische Datenschutz- und Transparenzbeauftragte<br />
             Devrientstraße 5<br />
             01067 Dresden<br />
-            <a href="https://www.saechsdsb.de" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-              www.saechsdsb.de
+            <a href="https://www.datenschutz.sachsen.de" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+              www.datenschutz.sachsen.de
             </a>
           </p>
         </section>
