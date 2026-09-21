@@ -16,7 +16,7 @@ const TEAM: TeamMember[] = [
   { name: "Florian Manhardt", role: "3D Capture Specialist", location: "Leipzig", linkedin: "https://www.linkedin.com/in/florian-manhardt-33617483/" },
   { name: "Samsmeep Singh", role: "Software Engineer", location: "Leipzig", linkedin: "https://www.linkedin.com/in/samsmeep-singh-390024212/" },
   { name: "Sascha Geddert", role: "Creative Director", location: "Leipzig", linkedin: "https://www.linkedin.com/in/geddart/" },
-  { name: "Sebastian Mücke", role: "Project Manager", location: "Leipzig" },
+  { name: "Sebastian Klose", role: "Project Manager", location: "Leipzig", linkedin: "https://www.linkedin.com/in/sebastian-klose-0ba5b4154/" },
   { name: "Christian Rauschenbach", role: "Post-Production Artist", location: "Leipzig", linkedin: "https://www.linkedin.com/in/christian-rauschenbach-4a3b1484/" },
 ];
 
