@@ -44,10 +44,10 @@ const WhoItsForSection = () => {
   const t = translations.whoItsFor[lang];
 
   return (
-    <section id="who-its-for" className="py-32 px-6 relative overflow-hidden bg-background">
-      <div className="absolute inset-0">
-        <img src="/images/webp/warehouse-ruins.webp" alt="" className="w-full h-full object-cover opacity-10 mix-blend-overlay" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/98 to-background" />
+    <section id="who-its-for" className="py-20 md:py-32 px-6 relative overflow-hidden bg-background">
+      <div className="absolute inset-0 dark-only">
+        <img src="/images/webp/warehouse-ruins.webp" alt="" loading="lazy" decoding="async" className="w-full h-full object-cover opacity-10 mix-blend-overlay" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
       </div>
 
       <div ref={ref} className="max-w-6xl mx-auto relative z-10">
@@ -88,7 +88,7 @@ const WhoItsForSection = () => {
                 {user.description}
               </p>
               <div className="mb-6">
-                <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-primary/60 mb-3">
+                <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-primary mb-3">
                   {t.deliversLabel}
                 </p>
                 <ul className="space-y-2">

@@ -66,13 +66,13 @@ const AboutWorkSection = () => {
   const t = translations.about[lang];
 
   return (
-    <section id="about" className="py-32 px-6 relative overflow-hidden parchment-bg">
-      <div className="absolute inset-0">
-        <img src="/images/webp/urban-tunnel.webp" alt="" className="w-full h-full object-cover opacity-10 mix-blend-screen" />
+    <section id="about" className="py-20 md:py-32 px-6 relative overflow-hidden">
+      <div className="absolute inset-0 dark-only">
+        <img src="/images/webp/urban-tunnel.webp" alt="" loading="lazy" decoding="async" className="w-full h-full object-cover opacity-10 mix-blend-screen" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/95 to-background" />
       </div>
-      <div className="absolute inset-0 opacity-5">
-        <img src="/images/webp/pattern-grid.webp" alt="" className="w-full h-full object-cover mix-blend-overlay" />
+      <div className="absolute inset-0 opacity-5 dark-only">
+        <img src="/images/webp/pattern-grid.webp" alt="" loading="lazy" decoding="async" className="w-full h-full object-cover mix-blend-overlay" />
       </div>
 
       <div ref={ref} className="max-w-6xl mx-auto relative z-10">
@@ -121,7 +121,7 @@ const AboutWorkSection = () => {
                 <div className="min-w-0 flex-1">
                   <p className="text-sm font-medium text-foreground leading-snug break-words">{member.name}</p>
                   <p className="text-xs text-muted-foreground leading-snug mt-0.5 break-words hyphens-auto">{member.role[lang]}</p>
-                  <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60 mt-1.5">{member.location}</p>
+                  <p className="font-mono text-[10px] tracking-widest uppercase text-muted-foreground mt-1.5">{member.location}</p>
                 </div>
                 {member.linkedin && (
                   <a

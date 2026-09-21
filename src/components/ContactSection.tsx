@@ -1,6 +1,5 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Link } from "react-router-dom";
 import ContactForm from "./ContactForm";
 import { getRandomInViewAnimation } from "@/utils/animations";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -13,7 +12,7 @@ const ContactSection = () => {
   const t = translations.contact[lang];
 
   return (
-    <section id="contact" className="py-32 px-6">
+    <section id="contact" className="py-20 md:py-32 px-6">
       <div ref={ref} className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Left */}
@@ -42,42 +41,32 @@ const ContactSection = () => {
                 </div>
                 <span className="text-sm text-muted-foreground">{t.location}</span>
               </div>
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 border border-primary/30 flex items-center justify-center">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="text-primary" aria-hidden="true">
+                    <rect x="3" y="5" width="18" height="14" rx="1" stroke="currentColor" strokeWidth="2" />
+                    <path d="M3 7l9 6 9-6" stroke="currentColor" strokeWidth="2" />
+                  </svg>
+                </div>
+                <span className="text-sm text-muted-foreground">
+                  {t.emailLabel}:{" "}
+                  <a href="mailto:contact@futurefabrik.com" className="text-primary underline-offset-4 hover:underline">
+                    contact@futurefabrik.com
+                  </a>
+                </span>
+              </div>
             </div>
           </motion.div>
 
           {/* Right: Contact Form */}
           <motion.div {...getRandomInViewAnimation(isInView, 0.2)}>
             <div className="bg-card border border-border rounded-sm p-8">
-              <ContactForm key={lang} />
+              <ContactForm />
             </div>
           </motion.div>
         </div>
       </div>
 
-      {/* Footer */}
-      <div className="max-w-6xl mx-auto mt-32 pt-8 border-t border-border">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <div className="space-y-1">
-            <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
-              © {new Date().getFullYear()} 3DARK — A service by Future Fabrik
-            </p>
-            <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-muted-foreground/40">
-              Burnett &amp; Manhardt GbR · Klingenstraße 22 · 04229 Leipzig
-            </p>
-          </div>
-          <div className="flex items-center gap-6">
-            <Link to="/impressum" className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground/50 hover:text-primary transition-colors">
-              Impressum
-            </Link>
-            <Link to="/datenschutz" className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground/50 hover:text-primary transition-colors">
-              Datenschutz
-            </Link>
-          </div>
-        </div>
-        <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground/30 mt-4">
-          {t.footerTagline}
-        </p>
-      </div>
     </section>
   );
 };

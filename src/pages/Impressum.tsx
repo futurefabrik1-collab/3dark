@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import Navbar from "@/components/Navbar";
+import SiteFooter from "@/components/SiteFooter";
 import Seo from "@/components/Seo";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/i18n/translations";
@@ -6,19 +7,20 @@ import { translations } from "@/i18n/translations";
 const Impressum = () => {
   const { lang } = useLanguage();
   const seo = translations.seo[lang].impressum;
+  const tc = translations.contact[lang];
 
   return (
-  <div className="min-h-screen bg-background text-foreground">
+  <>
     <Seo title={seo.title} description={seo.description} path="/impressum" noindex />
-    {/* Back bar */}
-    <div className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur border-b border-border px-6 py-4 flex items-center gap-4">
-      <Link to="/" className="font-mono text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-primary transition-colors">
-        ← 3DARK
-      </Link>
-    </div>
-
-    <div className="max-w-2xl mx-auto px-6 pt-28 pb-24">
-      <p className="font-mono text-xs tracking-[0.3em] uppercase text-primary mb-4">Legal</p>
+    <Navbar />
+    <main id="main" tabIndex={-1} className="min-h-screen bg-background text-foreground outline-none">
+    <div lang="de" className="max-w-2xl mx-auto px-6 pt-28 pb-24">
+      {lang === "en" && (
+        <p lang="en" className="mb-8 border border-border bg-muted px-4 py-3 text-sm text-muted-foreground">
+          {tc.germanOnly}
+        </p>
+      )}
+      <p className="font-mono text-xs tracking-[0.3em] uppercase text-primary mb-4">Rechtliches</p>
       <h1 className="text-3xl font-serif text-foreground mb-12">Impressum</h1>
 
       <div className="space-y-10 text-sm text-muted-foreground leading-relaxed">
@@ -95,13 +97,10 @@ const Impressum = () => {
 
       </div>
 
-      <div className="mt-16 pt-8 border-t border-border">
-        <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground/50">
-          © {new Date().getFullYear()} Burnett &amp; Manhardt GbR · Future Fabrik
-        </p>
-      </div>
     </div>
-  </div>
+    </main>
+    <SiteFooter />
+  </>
 );
 };
 

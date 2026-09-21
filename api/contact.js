@@ -84,6 +84,12 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
+  // Browsers always send Origin on cross-site POSTs; refuse other websites.
+  const origin = req.headers.origin;
+  if (origin && !ALLOWED_ORIGINS.includes(origin)) {
+    return res.status(403).json({ error: 'Forbidden' });
+  }
+
   try {
     const clientIp = (req.headers['x-forwarded-for'] || req.headers['x-real-ip'] || 'unknown')
       .toString()
@@ -106,13 +112,17 @@ export default async function handler(req, res) {
       timeline,
       sensitivity,
       message,
-      website, // honeypot
+      hp_x7, // honeypot (current form)
+      website, // honeypot (forms cached before 2026-09-21)
+      lang: rawLang,
     } = parseBody(req.body);
+    const lang = rawLang === 'de' ? 'de' : 'en';
 
     // Honeypot: real users never see this field, so a filled value means a bot.
     // Return success so the bot does not learn the field is a trap.
-    if (typeof website === 'string' && website.length > 0) {
-      console.log(`Bot detected from IP ${clientIp} - honeypot filled`);
+    const trap = [hp_x7, website].find((v) => typeof v === 'string' && v.length > 0);
+    if (trap) {
+      console.log('Contact form: honeypot filled, request dropped');
       return res.status(200).json({
         success: true,
         message: 'Thank you! Your message has been sent successfully.',
@@ -187,18 +197,36 @@ export default async function handler(req, res) {
           </div>
 
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: 12px;">
-            <p>Sent via the contact form on 3dark.de</p>
-            <p>Sender IP: ${escapeHtml(clientIp)}</p>
+            <p>Sent via the contact form on 3dark.de (${lang.toUpperCase()})</p>
             <p>Timestamp: ${new Date(timestamp).toISOString()}</p>
           </div>
         </div>
       `,
     };
 
+    // Confirmation to the visitor. It deliberately does NOT repeat the message:
+    // echoing visitor-supplied text to a visitor-supplied address would let
+    // anyone use this form to send 3DARK-branded mail with their own content.
+    const reply = {
+      en: {
+        subject: 'We received your enquiry — 3DARK',
+        heading: `Thank you for your enquiry, ${safeName}!`,
+        body: 'We have received your message and will get back to you as soon as possible, usually within one working day.',
+        direct: 'You can also reach us directly:',
+      },
+      de: {
+        subject: 'Ihre Anfrage ist bei uns eingegangen — 3DARK',
+        heading: `Vielen Dank für Ihre Anfrage, ${safeName}!`,
+        body: 'Wir haben Ihre Nachricht erhalten und melden uns so schnell wie möglich, in der Regel innerhalb eines Werktags.',
+        direct: 'Sie erreichen uns auch direkt:',
+      },
+    }[lang];
+
     const customerMailOptions = {
       from: `"${SITE_NAME}" <${senderEmail}>`,
       to: email,
-      subject: 'We received your enquiry — 3DARK',
+      replyTo: 'contact@futurefabrik.com',
+      subject: reply.subject,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <div style="background-color: #ae3769; padding: 20px; text-align: center;">
@@ -206,24 +234,12 @@ export default async function handler(req, res) {
           </div>
 
           <div style="padding: 30px; background-color: #fff;">
-            <h2 style="color: #333;">Thank you for your enquiry, ${safeName}!</h2>
-
-            <p style="line-height: 1.6; color: #555;">
-              We have received your message and will get back to you within 24 hours.
-            </p>
-
-            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 5px; margin: 20px 0;">
-              <h3 style="color: #333; margin-top: 0;">Your Message:</h3>
-              <p style="white-space: pre-wrap; line-height: 1.6;">${safeMessage}</p>
-            </div>
-
-            <p style="line-height: 1.6; color: #555;">
-              For urgent questions you can also reach us directly:
-            </p>
-
+            <h2 style="color: #333;">${reply.heading}</h2>
+            <p style="line-height: 1.6; color: #555;">${reply.body}</p>
+            <p style="line-height: 1.6; color: #555;">${reply.direct}</p>
             <div style="margin: 20px 0;">
-              <p><strong>Email:</strong> <a href="mailto:contact@futurefabrik.com">contact@futurefabrik.com</a></p>
-              <p><strong>Website:</strong> <a href="${SITE_URL}">www.3dark.de</a></p>
+              <p><strong>E-Mail:</strong> <a href="mailto:contact@futurefabrik.com">contact@futurefabrik.com</a></p>
+              <p><strong>Web:</strong> <a href="${SITE_URL}">www.3dark.de</a></p>
             </div>
           </div>
 
@@ -254,7 +270,7 @@ export default async function handler(req, res) {
 
     return res.status(200).json({
       success: true,
-      message: 'Thank you! Your message has been sent successfully. We will get back to you within 24 hours.',
+      message: 'Thank you! Your message has been sent successfully.',
     });
   } catch (error) {
     console.error('Contact form error:', error);

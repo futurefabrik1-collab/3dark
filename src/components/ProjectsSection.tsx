@@ -4,7 +4,7 @@ import illustrationScan from "@/assets/illustration-scan.jpg";
 import { getRandomInViewAnimation } from "@/utils/animations";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/i18n/translations";
-import ConsentEmbed from "./ConsentEmbed";
+import ConsentEmbed, { claimPlayback } from "./ConsentEmbed";
 
 // Third-party players only load after a click (see ConsentEmbed): before that
 // we show a locally hosted poster, so no visitor data reaches YouTube/StorySplat
@@ -14,23 +14,25 @@ const youtubeEmbed = (id: string) =>
 
 type EmbedSpec = { kind: "film" | "scene"; src: string; poster: string };
 
+// Keyed by the stable project id in translations.projectsList, never by the
+// display title (renaming a project used to silently drop its media).
 const EMBEDS: Record<string, EmbedSpec> = {
-  "Klärwerk Leipzig": {
+  klaerwerk: {
     kind: "film",
     src: youtubeEmbed("3ibVve3ViK0"),
     poster: "/images/webp/posters/klaerwerk-leipzig.webp",
   },
-  "Alice im Wonderland": {
+  alice: {
     kind: "scene",
     src: "https://discover.storysplat.com/api/v2-html/43774b28-c045-485a-8117-db88189d727c",
     poster: "/images/webp/posters/alice-im-wonderland.webp",
   },
-  "iBug Festival": {
+  ibug: {
     kind: "film",
     src: youtubeEmbed("ump032qGpK4"),
     poster: "/images/webp/posters/ibug-walkthrough.webp",
   },
-  "MACHN Festival": {
+  machn: {
     kind: "film",
     src: youtubeEmbed("SA-d86T98lg"),
     poster: "/images/webp/posters/machn-festival.webp",
@@ -38,20 +40,20 @@ const EMBEDS: Record<string, EmbedSpec> = {
 };
 
 const STATIC_IMAGES: Record<string, string> = {
-  "Babylon Berlin – Drachenburg": "/images/webp/babylon-berlin.webp",
-  "Alfons Zitterbacke": "/images/webp/alfons-zitterbacke.webp",
-  "Abandoned Buildings Leipzig": "/images/webp/abandoned-buildings-leipzig.webp",
+  "babylon-berlin": "/images/webp/babylon-berlin.webp",
+  "alfons-zitterbacke": "/images/webp/alfons-zitterbacke.webp",
+  "abandoned-buildings": "/images/webp/abandoned-buildings-leipzig.webp",
 };
 
-const LOCAL_VIDEO_TITLE = "GS Social Media Tour";
+const LOCAL_VIDEO_ID = "gs-social";
 
-const hasRealMedia = (title: string) =>
-  title === LOCAL_VIDEO_TITLE || Boolean(EMBEDS[title]) || Boolean(STATIC_IMAGES[title]);
+const hasRealMedia = (id: string) =>
+  id === LOCAL_VIDEO_ID || Boolean(EMBEDS[id]) || Boolean(STATIC_IMAGES[id]);
 
 type EmbedStrings = (typeof translations.embed)["en"];
 
-const renderProjectMedia = (title: string, e: EmbedStrings) => {
-  if (title === LOCAL_VIDEO_TITLE) {
+const renderProjectMedia = (id: string, title: string, e: EmbedStrings) => {
+  if (id === LOCAL_VIDEO_ID) {
     return (
       <video
         src="/media/sxsw-future-fabrik-transformers-gorilla-small.mp4"
@@ -59,12 +61,14 @@ const renderProjectMedia = (title: string, e: EmbedStrings) => {
         playsInline
         preload="none"
         poster="/images/webp/posters/gs-social-media-tour.webp"
-        className="w-full h-full object-cover bg-black"
+        aria-label={title}
+        onPlay={(ev) => claimPlayback(ev.currentTarget)}
+        className="w-full h-full object-contain bg-black"
       />
     );
   }
 
-  const embed = EMBEDS[title];
+  const embed = EMBEDS[id];
   if (embed) {
     return (
       <ConsentEmbed
@@ -78,10 +82,10 @@ const renderProjectMedia = (title: string, e: EmbedStrings) => {
     );
   }
 
-  if (STATIC_IMAGES[title]) {
+  if (STATIC_IMAGES[id]) {
     return (
       <img
-        src={STATIC_IMAGES[title]}
+        src={STATIC_IMAGES[id]}
         alt={title}
         loading="lazy"
         decoding="async"
@@ -115,7 +119,7 @@ const ProjectsSection = () => {
   const e = translations.embed[lang];
 
   return (
-    <section id="projects" className="py-32 px-6 relative overflow-hidden">
+    <section id="projects" className="py-20 md:py-32 px-6 relative overflow-hidden">
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
@@ -146,7 +150,7 @@ const ProjectsSection = () => {
           <div className="space-y-14">
             {projects.map((project, i) => (
               <motion.div
-                key={`${project.title}-${i}`}
+                key={project.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.07 * Math.min(i, 8) }}
@@ -171,7 +175,7 @@ const ProjectsSection = () => {
                     <h3 className="text-xl md:text-2xl font-serif text-foreground mb-1">
                       {project.title}
                     </h3>
-                    <p className="text-sm font-medium text-primary/80 mb-3">
+                    <p className="text-sm font-medium text-primary mb-3">
                       {project.subtitle}
                     </p>
                     <p className="text-sm text-muted-foreground font-light leading-relaxed">
@@ -183,10 +187,10 @@ const ProjectsSection = () => {
                     <motion.div
                       {...getRandomInViewAnimation(isInView, 0.1 * Math.min(i, 6) + 0.2)}
                       className={`aspect-video rounded-sm flex items-center justify-center overflow-hidden bg-black ${
-                        hasRealMedia(project.title) ? "relative" : "media-placeholder"
+                        hasRealMedia(project.id) ? "relative" : "media-placeholder"
                       }`}
                     >
-                      {renderProjectMedia(project.title, e)}
+                      {renderProjectMedia(project.id, project.title, e)}
                     </motion.div>
                   )}
                 </div>

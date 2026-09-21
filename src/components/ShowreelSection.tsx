@@ -11,16 +11,16 @@ import ConsentEmbed from "./ConsentEmbed";
  *  - "scene": an interactive 3D viewer (orbit/zoom/pan hints, ESC to leave)
  *  - "film":  a video player
  *
- * The interactive iBug scene used to live at
+ * The interactive ibug scene used to live at
  * https://splatpipe-cdn.b-cdn.net/IBUG_2025_v6/index.html, but that CDN zone now
- * answers 404, so the slot shows our iBug walkthrough film until the scene is
+ * answers 404, so the slot shows our ibug walkthrough film until the scene is
  * hosted again. To restore it: set kind to "scene" and src to the new URL.
  */
 const SHOWREEL: { kind: "scene" | "film"; src: string; poster: string; title: string } = {
   kind: "film",
   src: "https://www.youtube-nocookie.com/embed/ump032qGpK4?autoplay=1&rel=0&modestbranding=1",
   poster: "/images/webp/posters/ibug-walkthrough.webp",
-  title: "iBug Festival — 360° walkthrough",
+  title: "ibug Festival — 360° walkthrough",
 };
 
 const HINT_ICONS = {
@@ -91,9 +91,9 @@ const ShowreelSection = () => {
   ) : undefined;
 
   return (
-    <section id="showreel" className="py-32 px-6 relative overflow-hidden bg-background">
-      <div className="absolute inset-0">
-        <img src="/images/webp/art-installation.webp" alt="" className="w-full h-full object-cover opacity-10 mix-blend-screen" />
+    <section id="showreel" className="py-20 md:py-32 px-6 relative overflow-hidden bg-background">
+      <div className="absolute inset-0 dark-only">
+        <img src="/images/webp/art-installation.webp" alt="" loading="lazy" decoding="async" className="w-full h-full object-cover opacity-10 mix-blend-screen" />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
       </div>
       <div className="absolute inset-0 industrial-grid opacity-10" />
@@ -149,7 +149,7 @@ const ShowreelSection = () => {
                     <path d="M18 6L6 18M6 6l12 12"/>
                   </svg>
                   {e.exitViewer}
-                  <span className="text-muted-foreground/50 ml-1">ESC</span>
+                  <span className="text-muted-foreground ml-1">ESC</span>
                 </motion.button>
               )}
             </AnimatePresence>

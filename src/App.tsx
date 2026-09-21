@@ -1,10 +1,10 @@
 import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { MotionConfig } from "framer-motion";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { ThemeProvider } from "@/contexts/ThemeContext";
+import ErrorBoundary from "@/components/ErrorBoundary";
+import ScrollManager from "@/components/ScrollManager";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Impressum from "./pages/Impressum";
@@ -14,16 +14,15 @@ import Producers from "./pages/users/Producers";
 import Cultural from "./pages/users/Cultural";
 import Marketing from "./pages/users/Marketing";
 
-const queryClient = new QueryClient();
-
 const App = () => (
-  <QueryClientProvider client={queryClient}>
+  <ErrorBoundary>
+    {/* Honour prefers-reduced-motion for every framer-motion animation */}
+    <MotionConfig reducedMotion="user">
     <ThemeProvider>
-    <LanguageProvider>
-      <TooltipProvider>
+      <LanguageProvider>
         <Toaster />
-        <Sonner />
         <BrowserRouter>
+          <ScrollManager />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/impressum" element={<Impressum />} />
@@ -36,10 +35,10 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
-      </TooltipProvider>
-    </LanguageProvider>
+      </LanguageProvider>
     </ThemeProvider>
-  </QueryClientProvider>
+    </MotionConfig>
+  </ErrorBoundary>
 );
 
 export default App;

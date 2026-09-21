@@ -10,10 +10,10 @@ const MethodEquipmentSection = () => {
   const t = translations.process[lang];
 
   return (
-    <section id="process" className="py-32 px-6 relative overflow-hidden">
-      <div className="absolute inset-0">
-        <img src="/images/webp/virtual-production.webp" alt="" className="w-full h-full object-cover opacity-10 mix-blend-screen" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/98 to-background" />
+    <section id="process" className="py-20 md:py-32 px-6 relative overflow-hidden">
+      <div className="absolute inset-0 dark-only">
+        <img src="/images/webp/virtual-production.webp" alt="" loading="lazy" decoding="async" className="w-full h-full object-cover opacity-10 mix-blend-screen" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/95 to-background" />
       </div>
 
       <div ref={ref} className="max-w-6xl mx-auto relative z-10">
@@ -44,7 +44,7 @@ const MethodEquipmentSection = () => {
                 transition={{ duration: 0.5, delay: 0.1 * i }}
                 className="relative"
               >
-                <p className="font-serif text-5xl text-primary/15 mb-4">0{i + 1}</p>
+                <p aria-hidden="true" className="font-serif text-5xl text-primary/15 mb-4">0{i + 1}</p>
                 <h3 className="text-lg font-medium text-foreground mb-2">{item.title}</h3>
                 <p className="text-sm text-muted-foreground font-light leading-relaxed">{item.desc}</p>
                 {i < t.steps.length - 1 && (

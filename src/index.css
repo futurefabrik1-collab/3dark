@@ -4,6 +4,10 @@
 
 @layer base {
   :root {
+    /* Native controls/scrollbars follow the theme (dark mode used to show a
+       bright white scrollbar) */
+    color-scheme: dark;
+
     /* Berlin Underground Dark Theme */
     --background: 220 15% 8%;
     --foreground: 0 0% 92%;
@@ -64,6 +68,7 @@
 }
 
 html.light {
+  color-scheme: light;
   --background: 0 0% 97%;
   --foreground: 220 15% 12%;
 
@@ -85,7 +90,7 @@ html.light {
   --accent: 165 32% 34%;
   --accent-foreground: 0 0% 100%;
 
-  --destructive: 0 75% 55%;
+  --destructive: 0 72% 42%;
   --destructive-foreground: 0 0% 98%;
 
   --border: 220 10% 86%;
@@ -124,14 +129,25 @@ html.light {
     @apply bg-background text-foreground font-sans antialiased;
   }
 
-  html {
-    scroll-behavior: smooth;
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  /* keep anchored sections clear of the fixed 64px header */
+  section[id] {
+    scroll-margin-top: 4rem;
   }
 
   /* Background imagery was authored for the dark ground; screen blending
      erases it on the light theme, so blend the other way there. */
   html.light .mix-blend-screen {
     mix-blend-mode: multiply;
+  }
+
+  html.light .dark-only {
+    display: none;
   }
 
   ::selection {
