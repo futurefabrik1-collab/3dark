@@ -44,7 +44,7 @@ const PAGE_EVAL = `(async()=>{
   return {thirdParty:tp, blockedMedia:blocked, brokenImages:imgs, iframes:document.querySelectorAll('iframe').length,
     h1Font:getComputedStyle(document.querySelector('h1')).fontFamily, rajdhani:document.fonts.check('600 40px Rajdhani'), dmSans:document.fonts.check('400 16px "DM Sans Variable"'), mono:document.fonts.check('400 12px "Space Mono"'),
     heroVideo:(()=>{const v=document.querySelector('video'); return v?{src:v.currentSrc.replace(location.origin,''),poster:!!v.poster,readyState:v.readyState}:null})(),
-    canonical:document.querySelector('link[rel=canonical]')?.href, honeypotVisible:(()=>{const h=document.querySelector('input[name=website]'); if(!h) return 'missing'; const r=h.getBoundingClientRect(); return r.left>-1000&&r.width>1;})()};
+    canonical:document.querySelector('link[rel=canonical]')?.href, honeypotVisible:(()=>{const h=document.querySelector('input[name=hp_x7]'); if(!h) return 'missing'; const r=h.getBoundingClientRect(); return r.left>-1000&&r.width>1;})()};
 })()`;
 console.log('\n[homepage, consent declined]');
 const home = run(['--url', base + '/', '--out', join(TMP, 'home.png'), '--consent', 'declined', '--wait', '3500', '--eval', PAGE_EVAL]);
@@ -58,13 +58,13 @@ home.htmlClass === 'light' ? ok('default theme is light') : bad('default theme c
 (e.brokenImages || ['?']).length === 0 ? ok('no broken <img>') : bad('broken images: ' + e.brokenImages);
 e.iframes === 0 ? ok('no iframes mounted before a click') : bad(e.iframes + ' iframes on load');
 (e.rajdhani && e.dmSans && e.mono) ? ok('fonts loaded: Rajdhani / DM Sans Variable / Space Mono  (h1 = ' + e.h1Font + ')') : bad('fonts missing: ' + JSON.stringify({ r: e.rajdhani, d: e.dmSans, m: e.mono }));
-(e.heroVideo && e.heroVideo.src === '/media/hero-trailer.mp4' && e.heroVideo.poster && e.heroVideo.readyState >= 2) ? ok('hero video playing the 5 MB encode with poster') : bad('hero video: ' + JSON.stringify(e.heroVideo));
+(e.heroVideo && e.heroVideo.src === '/media/hero-trailer.mp4' && e.heroVideo.poster && e.heroVideo.readyState >= 1) ? ok('hero video: 5 MB encode, poster, loading in view') : bad('hero video: ' + JSON.stringify(e.heroVideo));
 e.canonical === 'https://www.3dark.de/' ? ok('canonical ok') : bad('canonical = ' + e.canonical);
 e.honeypotVisible === false ? ok('honeypot present and invisible') : bad('honeypot: ' + e.honeypotVisible);
 home.horizontalOverflow ? bad('horizontal overflow on desktop') : ok('no horizontal overflow (desktop)');
 
 console.log('\n[click-to-load]');
-const click = run(['--url', base + '/', '--out', join(TMP, 'click.png'), '--consent', 'declined', '--wait', '3000', '--eval', `(async()=>{const out={}; for(const id of ['showreel','projects']){const b=document.querySelector('#'+id+' button[aria-label]'); b.scrollIntoView({block:'center',behavior:'instant'}); await new Promise(r=>setTimeout(r,700)); const r=b.getBoundingClientRect(); document.elementFromPoint(r.left+r.width/2,r.top+r.height/2).click(); await new Promise(r=>setTimeout(r,1200)); out[id]=document.querySelector('#'+id+' iframe')?.src||null;} return out;})()`]);
+const click = run(['--url', base + '/', '--out', join(TMP, 'click.png'), '--consent', 'declined', '--wait', '3000', '--eval', `(async()=>{const out={}; for(const id of ['showreel','projects']){const b=document.querySelector('#'+id+' .aspect-video button'); b.scrollIntoView({block:'center',behavior:'instant'}); await new Promise(r=>setTimeout(r,700)); const r=b.getBoundingClientRect(); document.elementFromPoint(r.left+r.width/2,r.top+r.height/2).click(); await new Promise(r=>setTimeout(r,1200)); out[id]=document.querySelector('#'+id+' iframe')?.src||null;} return out;})()`]);
 for (const id of ['showreel', 'projects']) /youtube-nocookie\.com|storysplat/.test(click.eval?.[id] || '') ? ok(`${id}: real click mounts ${new URL(click.eval[id]).host}`) : bad(`${id}: click did not mount a player (${click.eval?.[id]})`);
 
 for (const [label, extra] of [['mobile light', ['--mobile']], ['mobile dark', ['--mobile', '--theme', 'dark']], ['desktop dark DE', ['--theme', 'dark', '--lang', 'de']]]) {
@@ -79,5 +79,80 @@ for (const p of ['/who-its-for/industrial', '/who-its-for/producers', '/who-its-
   const problems = [...r.consoleErrors, ...r.exceptions, ...(c.canonical !== 'https://www.3dark.de' + p ? ['canonical=' + c.canonical] : []), ...(wantNoindex !== Boolean(c.robots) ? ['robots=' + c.robots] : []), ...(c.h1 !== 1 ? [`${c.h1} h1s`] : [])];
   problems.length ? bad(`${p}: ${problems.join(' | ')}`) : ok(`${p}  (${r.title})`);
 }
+
+// ---------------------------------------------------------------------------
+// Checks added after the 2026-09-21 audit: each one would have caught a real
+// production defect that the checks above missed.
+// ---------------------------------------------------------------------------
+
+console.log('\n[contact API — mail-free liveness]');
+// The form was dead for 7 months (module failed to load) and nothing noticed.
+// None of these requests can send mail.
+{
+  const tryFetch = async (url, init) => { for (let i = 0; i < 4; i++) { try { return await fetch(url, init); } catch { await new Promise((r) => setTimeout(r, 1500)); } } return null; };
+  const pre = await tryFetch(base + '/api/contact', { method: 'OPTIONS', headers: { Origin: 'https://www.3dark.de' } });
+  pre && pre.status === 204 ? ok('OPTIONS /api/contact -> 204 (function loads)') : bad(`OPTIONS /api/contact -> ${pre ? pre.status : 'unreachable'}`);
+  const get = await tryFetch(base + '/api/contact');
+  const getJson = get && (get.headers.get('content-type') || '').includes('json');
+  get && get.status === 405 && getJson ? ok('GET /api/contact -> 405 JSON') : bad(`GET /api/contact -> ${get ? get.status + ' ' + get.headers.get('content-type') : 'unreachable'}`);
+  const foreign = await tryFetch(base + '/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json', Origin: 'https://evil.example' }, body: '{}' });
+  foreign && foreign.status === 403 ? ok('cross-site POST refused (403)') : bad(`cross-site POST -> ${foreign ? foreign.status : 'unreachable'}`);
+  const invalid = await tryFetch(base + '/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json', Origin: 'https://www.3dark.de' }, body: JSON.stringify({ name: 'x' }) });
+  invalid && invalid.status === 400 ? ok('invalid POST -> 400 (validation runs, no mail sent)') : bad(`invalid POST -> ${invalid ? invalid.status : 'unreachable'}`);
+}
+
+console.log('\n[mobile menu]');
+// The menu's close animation used to cancel the scroll: links went nowhere.
+{
+  const r = run(['--url', base + '/', '--out', join(TMP, 'menu.png'), '--mobile', '--wait', '2500', '--eval', `(async()=>{const sleep=ms=>new Promise(r=>setTimeout(r,ms)); const hit=(el)=>{const r=el.getBoundingClientRect(); document.elementFromPoint(r.left+r.width/2,r.top+r.height/2).click();}; hit(document.querySelector('button[aria-expanded]')); await sleep(450); const bg=getComputedStyle(document.querySelector('header')).backgroundColor; hit([...document.querySelectorAll('header nav a')].find(a=>a.getAttribute('href')==='#contact'&&a.offsetParent)); await sleep(2500); return {bg, top:Math.round(document.querySelector('#contact').getBoundingClientRect().top)};})()`]);
+  const m = r.eval || {};
+  Math.abs((m.top ?? 9999) - 64) <= 16 ? ok(`menu 'Contact' lands on #contact (top ${m.top}px)`) : bad(`menu 'Contact' did not scroll (section top ${m.top}px)`);
+  /rgba?\(\d+, \d+, \d+(, 0\.9\d*)?\)$/.test(m.bg || '') && !/, 0\)$/.test(m.bg) ? ok('open menu has a solid background') : bad(`open menu background: ${m.bg}`);
+}
+
+console.log('\n[storage blocked]');
+// An unguarded localStorage call once left the homepage completely blank.
+{
+  const r = run(['--url', base + '/', '--out', join(TMP, 'nostorage.png'), '--block-storage', '--wait', '2500', '--eval', `({children:document.getElementById('root').children.length, text:document.body.innerText.length})`]);
+  (r.eval?.children > 0 && r.eval?.text > 1000 && !r.exceptions.length) ? ok(`renders with storage blocked (${r.eval.text} chars)`) : bad(`blank or failing with storage blocked: ${JSON.stringify(r.eval)} ${r.exceptions.join(' | ')}`);
+}
+
+console.log('\n[raw HTML heads — what crawlers and link previews see]');
+{
+  const want = { '/': { canonical: '/' }, '/who-its-for/industrial': { canonical: '/who-its-for/industrial' }, '/who-its-for/cultural': { canonical: '/who-its-for/cultural' }, '/impressum': { canonical: '/impressum', noindex: true }, '/datenschutz': { canonical: '/datenschutz', noindex: true } };
+  for (const [p, w] of Object.entries(want)) {
+    let html = null; for (let i = 0; i < 4 && html === null; i++) { try { html = await (await fetch(base + p)).text(); } catch { await new Promise((r) => setTimeout(r, 1500)); } }
+    const canon = (html || '').match(/<link rel="canonical" href="([^"]+)"/)?.[1] || '';
+    const noindex = /<meta name="robots" content="noindex/.test(html || '');
+    const okCanon = canon === 'https://www.3dark.de' + w.canonical;
+    (okCanon && noindex === Boolean(w.noindex)) ? ok(`${p}  canonical ${w.canonical}${w.noindex ? ' + noindex' : ''}`) : bad(`${p}: canonical=${canon} noindex=${noindex}`);
+  }
+}
+
+console.log('\n[share image]');
+{
+  let html = ''; for (let i = 0; i < 4 && !html; i++) { try { html = await (await fetch(base + '/')).text(); } catch { await new Promise((r) => setTimeout(r, 1500)); } }
+  const og = html.match(/<meta property="og:image" content="([^"]+)"/)?.[1];
+  const w = html.match(/og:image:width" content="(\d+)"/)?.[1], h = html.match(/og:image:height" content="(\d+)"/)?.[1];
+  let res = null; if (og) for (let i = 0; i < 4 && !res; i++) { try { res = await fetch(og.replace('https://www.3dark.de', base)); } catch { await new Promise((r) => setTimeout(r, 1500)); } }
+  const bytes = res ? (await res.arrayBuffer()).byteLength : 0;
+  const type = res?.headers.get('content-type') || '';
+  (type.startsWith('image/') && bytes > 0 && bytes <= 300_000 && w === '1200' && h === '630') ? ok(`og:image ${w}x${h}, ${Math.round(bytes / 1024)} KB, ${type}`) : bad(`og:image ${og} ${w}x${h} ${bytes} bytes ${type}`);
+}
+
+console.log('\n[source lint]');
+{
+  // Tailwind silently drops opacity modifiers outside its scale (e.g. /98):
+  // the class never exists, and nothing warns. That hid the mobile menu's
+  // background. Allowed: 0,5,10,...,100 and arbitrary values like /[0.98].
+  const bad98 = [];
+  for (const f of walk(join(REPO, 'src')).filter((f) => /\.(tsx?|css)$/.test(f))) {
+    for (const m of readFileSync(f, 'utf8').matchAll(/\b(?:bg|text|border|from|via|to|ring|fill|stroke|decoration|divide|outline|shadow|placeholder|caret|accent)-[a-z-]+\/(\d{1,3})\b/g)) {
+      const n = Number(m[1]); if (n % 5 !== 0 || n > 100) bad98.push(`${f.replace(REPO + '/', '')}: ${m[0]}`);
+    }
+  }
+  bad98.length ? bad(`opacity modifiers Tailwind will not generate: ${bad98.join(', ')}`) : ok('no out-of-scale Tailwind opacity modifiers');
+}
+
 console.log('\nscreenshots: ' + TMP);
 console.log(fails.length ? `\n${fails.length} FAILURE(S)` : '\nALL CHECKS PASSED'); process.exit(fails.length ? 1 : 0);

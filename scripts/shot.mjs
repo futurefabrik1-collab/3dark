@@ -11,6 +11,8 @@
 //        [--selector "#contact"]                          clip the shot to one element
 //        [--theme light|dark] [--lang en|de]              pre-seed the site's localStorage keys
 //        [--consent declined|accepted]                    hide the cookie banner
+//        [--block-storage]                                make localStorage throw, like a browser
+//                                                         set to block site data
 //        [--wait 2500]                                    settle time in ms after load
 //        [--eval "js expression"]                         evaluate in page, result -> "eval" field
 //
@@ -31,6 +33,7 @@ const full = opt('full', false) === true;
 const selector = opt('selector', null);
 const theme = opt('theme', null); const lang = opt('lang', null); const consent = opt('consent', null);
 const wait = Number(opt('wait', 2500));
+const blockStorage = opt('block-storage', false) === true;
 const evalExpr = opt('eval', null);
 
 const CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
@@ -86,6 +89,7 @@ if (theme) seed.push(`localStorage.setItem('3dark-theme', ${JSON.stringify(theme
 if (lang) seed.push(`localStorage.setItem('3dark-lang', ${JSON.stringify(lang)})`);
 if (consent) seed.push(`localStorage.setItem('cookieConsent', ${JSON.stringify(consent)})`);
 if (seed.length) await S('Page.addScriptToEvaluateOnNewDocument', { source: `try{${seed.join(';')}}catch(e){}` });
+if (blockStorage) await S('Page.addScriptToEvaluateOnNewDocument', { source: `Object.defineProperty(window,'localStorage',{configurable:true,get(){throw new DOMException('Access is denied for this document.','SecurityError')}})` });
 
 const loaded = new Promise((r) => listeners.push((m) => { if (m.sessionId === sessionId && m.method === 'Page.loadEventFired') r(); }));
 await S('Page.navigate', { url });
