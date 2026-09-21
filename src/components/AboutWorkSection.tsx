@@ -5,19 +5,52 @@ import { translations } from "@/i18n/translations";
 
 type TeamMember = {
   name: string;
-  role: string;
+  role: { en: string; de: string };
   location: string;
   /** Public LinkedIn profile. Leave undefined to show the card without a link. */
   linkedin?: string;
+  /** Square headshot in /images/webp/team/ (192px). Falls back to a silhouette. */
+  photo?: string;
 };
 
 const TEAM: TeamMember[] = [
-  { name: "Mark Burnett", role: "Founder & Lead Developer", location: "Leipzig", linkedin: "https://www.linkedin.com/in/mark-burnett-27274631/" },
-  { name: "Florian Manhardt", role: "3D Capture Specialist", location: "Leipzig", linkedin: "https://www.linkedin.com/in/florian-manhardt-33617483/" },
-  { name: "Samsmeep Singh", role: "Software Engineer", location: "Leipzig", linkedin: "https://www.linkedin.com/in/samsmeep-singh-390024212/" },
-  { name: "Sascha Geddert", role: "Creative Director", location: "Leipzig", linkedin: "https://www.linkedin.com/in/geddart/" },
-  { name: "Sebastian Klose", role: "Project Manager", location: "Leipzig", linkedin: "https://www.linkedin.com/in/sebastian-klose-0ba5b4154/" },
-  { name: "Christian Rauschenbach", role: "Post-Production Artist", location: "Leipzig", linkedin: "https://www.linkedin.com/in/christian-rauschenbach-4a3b1484/" },
+  {
+    name: "Mark Burnett",
+    role: { en: "Creative Director", de: "Creative Director" },
+    location: "Leipzig",
+    linkedin: "https://www.linkedin.com/in/mark-burnett-27274631/",
+    photo: "/images/webp/team/mark-burnett.webp",
+  },
+  {
+    name: "Florian Manhardt",
+    role: { en: "Capture & Post-Production", de: "Capture & Postproduktion" },
+    location: "Leipzig",
+    linkedin: "https://www.linkedin.com/in/florian-manhardt-33617483/",
+  },
+  {
+    name: "Samsmeep Singh",
+    role: { en: "Pipeline & Code", de: "Pipeline & Code" },
+    location: "Leipzig",
+    linkedin: "https://www.linkedin.com/in/samsmeep-singh-390024212/",
+  },
+  {
+    name: "Sascha Geddert",
+    role: { en: "VFX & GS Specialist", de: "VFX- & GS-Spezialist" },
+    location: "Leipzig",
+    linkedin: "https://www.linkedin.com/in/geddart/",
+  },
+  {
+    name: "Sebastian Klose",
+    role: { en: "Web & UX", de: "Web & UX" },
+    location: "Leipzig",
+    linkedin: "https://www.linkedin.com/in/sebastian-klose-0ba5b4154/",
+  },
+  {
+    name: "Christian Rauschenbach",
+    role: { en: "Web & UX", de: "Web & UX" },
+    location: "Leipzig",
+    linkedin: "https://www.linkedin.com/in/christian-rauschenbach-4a3b1484/",
+  },
 ];
 
 const LinkedInIcon = () => (
@@ -55,7 +88,7 @@ const AboutWorkSection = () => {
             {t.whoH2}
           </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-border">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
             {TEAM.map((member, i) => (
               <motion.div
                 key={i}
@@ -64,18 +97,31 @@ const AboutWorkSection = () => {
                 transition={{ duration: 0.4, delay: 0.35 + i * 0.07 }}
                 className="bg-background p-5 flex gap-4 items-start group hover:bg-surface-elevated transition-colors duration-300"
               >
-                {/* Avatar */}
-                <div className="flex-shrink-0 w-10 h-10 bg-muted border border-border flex items-end justify-center overflow-hidden">
-                  <svg viewBox="0 0 40 48" fill="none" className="w-full opacity-25">
-                    <ellipse cx="20" cy="14" rx="8" ry="9" fill="currentColor"/>
-                    <path d="M2 48c0-11 7-18 18-18s18 7 18 18H2z" fill="currentColor"/>
-                  </svg>
+                {/* Avatar — photos sit in greyscale so mixed sources read as one set,
+                    and come into colour on hover */}
+                <div className="flex-shrink-0 w-12 h-12 bg-muted border border-border flex items-end justify-center overflow-hidden">
+                  {member.photo ? (
+                    <img
+                      src={member.photo}
+                      alt=""
+                      width={48}
+                      height={48}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-[filter] duration-300"
+                    />
+                  ) : (
+                    <svg viewBox="0 0 40 48" fill="none" className="w-full opacity-25" aria-hidden="true">
+                      <ellipse cx="20" cy="14" rx="8" ry="9" fill="currentColor"/>
+                      <path d="M2 48c0-11 7-18 18-18s18 7 18 18H2z" fill="currentColor"/>
+                    </svg>
+                  )}
                 </div>
                 {/* Info */}
                 <div className="min-w-0 flex-1">
-                  <p className="text-sm font-medium text-foreground leading-snug truncate">{member.name}</p>
-
-                  <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/50 mt-1">{member.location}</p>
+                  <p className="text-sm font-medium text-foreground leading-snug break-words">{member.name}</p>
+                  <p className="text-xs text-muted-foreground leading-snug mt-0.5 break-words hyphens-auto">{member.role[lang]}</p>
+                  <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60 mt-1.5">{member.location}</p>
                 </div>
                 {member.linkedin && (
                   <a
