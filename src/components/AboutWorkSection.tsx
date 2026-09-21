@@ -3,14 +3,28 @@ import { useRef } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/i18n/translations";
 
-const TEAM = [
-  { name: "Mark Burnett", role: "Founder & Lead Developer", location: "Leipzig" },
-  { name: "Florian Manhardt", role: "3D Capture Specialist", location: "Leipzig" },
-  { name: "Samsmeep Singh", role: "Software Engineer", location: "Leipzig" },
-  { name: "Sascha Geddert", role: "Creative Director", location: "Leipzig" },
+type TeamMember = {
+  name: string;
+  role: string;
+  location: string;
+  /** Public LinkedIn profile. Leave undefined to show the card without a link. */
+  linkedin?: string;
+};
+
+const TEAM: TeamMember[] = [
+  { name: "Mark Burnett", role: "Founder & Lead Developer", location: "Leipzig", linkedin: "https://www.linkedin.com/in/mark-burnett-27274631/" },
+  { name: "Florian Manhardt", role: "3D Capture Specialist", location: "Leipzig", linkedin: "https://www.linkedin.com/in/florian-manhardt-33617483/" },
+  { name: "Samsmeep Singh", role: "Software Engineer", location: "Leipzig", linkedin: "https://www.linkedin.com/in/samsmeep-singh-390024212/" },
+  { name: "Sascha Geddert", role: "Creative Director", location: "Leipzig", linkedin: "https://www.linkedin.com/in/geddart/" },
   { name: "Sebastian Mücke", role: "Project Manager", location: "Leipzig" },
-  { name: "Christian Rauschenbach", role: "Post-Production Artist", location: "Leipzig" },
+  { name: "Christian Rauschenbach", role: "Post-Production Artist", location: "Leipzig", linkedin: "https://www.linkedin.com/in/christian-rauschenbach-4a3b1484/" },
 ];
+
+const LinkedInIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
+  </svg>
+);
 
 const AboutWorkSection = () => {
   const ref = useRef(null);
@@ -58,11 +72,23 @@ const AboutWorkSection = () => {
                   </svg>
                 </div>
                 {/* Info */}
-                <div className="min-w-0">
+                <div className="min-w-0 flex-1">
                   <p className="text-sm font-medium text-foreground leading-snug truncate">{member.name}</p>
 
                   <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/50 mt-1">{member.location}</p>
                 </div>
+                {member.linkedin && (
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={t.linkedinLabel.replace("{name}", member.name)}
+                    title={t.linkedinLabel.replace("{name}", member.name)}
+                    className="flex-shrink-0 -m-2 p-2 text-muted-foreground hover:text-primary focus-visible:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors"
+                  >
+                    <LinkedInIcon />
+                  </a>
+                )}
               </motion.div>
             ))}
           </div>

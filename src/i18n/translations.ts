@@ -104,12 +104,14 @@ export const translations = {
       intro1:
         "3DARK produces photorealistic digital twins and interactive 3D environments for industrial communication, cultural heritage preservation, and virtual production — capturing real sites at full fidelity and delivering them as web-accessible, engine-ready assets.",
       whoH2: "Who We Are",
+      linkedinLabel: "{name} on LinkedIn",
     },
     de: {
       sectionLabel: "Was Wir Tun",
       intro1:
         "3DARK erstellt fotorealistische Digitale Zwillinge und interaktive 3D-Umgebungen für industrielle Kommunikation, kulturelle Bewahrung und Virtual Production — reale Standorte in voller Qualität erfasst und als web-zugängliche, engine-ready Assets geliefert.",
       whoH2: "Wer Wir Sind",
+      linkedinLabel: "{name} auf LinkedIn",
     },
   },
 
