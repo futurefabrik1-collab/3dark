@@ -87,6 +87,16 @@ const HeroSection = () => {
             {t.body}
           </motion.p>
 
+          {/* What we believe about the work — one sentence, before the claim and the call to action. */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="font-serif italic text-base md:text-lg text-foreground/85 max-w-2xl leading-relaxed mb-5"
+          >
+            {t.belief}
+          </motion.p>
+
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

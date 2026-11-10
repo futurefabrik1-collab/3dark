@@ -116,6 +116,7 @@ export const translations = {
       h2Highlight: "Archives that last.",
       body: "We turn real environments into high-fidelity digital twins and interactive 3D records — browser-viewable, QR-shareable, engine-ready. For industrial communication, cultural preservation, and virtual production.",
       differentiator: "Not CGI. Not renders. Captured from reality.",
+      belief: "We think the real thing explains more than any render — and that the places most worth capturing rarely stay the same. So we capture them while they are here.",
       ctaButton: "Discuss your project",
     },
     de: {
@@ -127,6 +128,7 @@ export const translations = {
       h2Highlight: "Archive, die bleiben.",
       body: "Wir verwandeln reale Umgebungen in hochauflösende Digitale Zwillinge und interaktive 3D-Dokumente — browser-begehbar, per QR teilbar, engine-ready. Für industrielle Kommunikation, kulturelle Bewahrung und Virtual Production.",
       differentiator: "Kein CGI. Keine Renderings. Erfasst aus der Realität.",
+      belief: "Wir finden: Das Echte erklärt mehr als jedes Rendering — und gerade die Orte, die es wert sind, bleiben selten, wie sie sind. Darum erfassen wir sie, solange es sie gibt.",
       ctaButton: "Projekt anfragen",
     },
   },
@@ -218,23 +220,43 @@ export const translations = {
       sectionLabel: "The Process",
       h2: "A pipeline built for real environments",
       body: "We work with spaces as they are — not as they should be. Our capture and reconstruction workflow is designed for difficult conditions: low light, complex geometry, inaccessible surfaces.",
+      yourPart: "Your part: access, a date, and what the record is for. Ours: everything from the first image to the link you share.",
       steps: [
         { title: "Capture", desc: "Multi-camera workflows producing hundreds to thousands of source images, adapted to the specific lighting and spatial conditions of each environment." },
         { title: "Reconstruction", desc: "Gaussian Splatting processing transforms raw image data into a navigable, photorealistic environment that preserves the visual character of the original space." },
         { title: "Optimisation", desc: "Real-time engine optimisation balancing visual fidelity with performance across web, desktop, and presentation environments." },
         { title: "Delivery", desc: "Production-ready assets for web viewers, game engines, VFX pipelines, or custom integrations. Accessible from a browser, without specialist hardware." },
       ],
+      advice: {
+        title: "When we’ll tell you not to scan",
+        lede: "A full scan isn’t always the answer. We’d rather say so.",
+        items: [
+          "You only need measurements: a classic survey answers that faster, and for less, than a photoreal twin.",
+          "A VFX shot that sees one wall from one angle: plates and reference photos will do.",
+          "A festival still being painted, a site halfway through clearance: we capture once it’s finished, or before it starts — not in between.",
+        ],
+      },
     },
     de: {
       sectionLabel: "Der Prozess",
       h2: "Eine Pipeline für reale Umgebungen",
       body: "Wir arbeiten mit Räumen, wie sie sind — nicht wie sie sein sollten. Unser Capture- und Rekonstruktions-Workflow ist für schwierige Bedingungen ausgelegt: schlechtes Licht, komplexe Geometrie, schwer zugängliche Oberflächen.",
+      yourPart: "Ihr Teil: Zugang, ein Termin und wofür die Aufnahme gedacht ist. Unser Teil: alles vom ersten Bild bis zum Link, den Sie teilen.",
       steps: [
         { title: "Erfassung", desc: "Multi-Kamera-Workflows produzieren Hunderte bis Tausende von Quellbildern, angepasst an die spezifischen Licht- und Raumbedingungen jeder Umgebung." },
         { title: "Rekonstruktion", desc: "Gaussian-Splatting-Verarbeitung transformiert rohe Bilddaten in eine navigierbare, fotorealistische Umgebung, die den visuellen Charakter des Originalraums bewahrt." },
         { title: "Optimierung", desc: "Echtzeit-Engine-Optimierung, die visuelle Treue und Performance über Web, Desktop und Präsentationsumgebungen ausbalanciert." },
         { title: "Lieferung", desc: "Produktionsreife Assets für Web-Viewer, Game-Engines, VFX-Pipelines oder individuelle Integrationen. Zugänglich aus einem Browser, ohne Spezialhardware." },
       ],
+      advice: {
+        title: "Wann wir Ihnen vom Scan abraten",
+        lede: "Ein vollständiger Scan ist nicht immer die Antwort. Das sagen wir lieber gleich.",
+        items: [
+          "Sie brauchen nur Maße: Ein klassisches Aufmaß liefert das schneller und günstiger als ein fotorealistischer Zwilling.",
+          "Ein VFX-Shot, der eine Wand aus einem Winkel zeigt: Plates und Referenzfotos reichen.",
+          "Ein Festival, an dem noch gemalt wird, ein Gelände mitten in der Räumung: Wir erfassen, wenn es fertig ist, oder bevor es beginnt — nicht dazwischen.",
+        ],
+      },
     },
   },
 

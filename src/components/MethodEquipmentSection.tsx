@@ -31,8 +31,12 @@ const MethodEquipmentSection = () => {
           <h2 className="text-3xl md:text-4xl font-serif text-foreground max-w-xl mb-4">
             {t.h2}
           </h2>
-          <p className="text-muted-foreground font-light max-w-2xl mb-12">
+          <p className="text-muted-foreground font-light max-w-2xl mb-4">
             {t.body}
+          </p>
+          {/* The client's side of the job, in one line */}
+          <p className="text-foreground font-light max-w-2xl mb-12 border-l-2 border-primary/60 pl-4">
+            {t.yourPart}
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -56,6 +60,22 @@ const MethodEquipmentSection = () => {
                 )}
               </motion.div>
             ))}
+          </div>
+
+          {/* When we advise against a scan: the judgment move, until a real client story replaces it */}
+          <div className="mt-16 border border-border/60 bg-background/40 grid gap-6 p-6 md:p-8 lg:grid-cols-[4fr_8fr] lg:gap-12">
+            <div>
+              <h3 className="text-xl md:text-2xl font-serif text-foreground">{t.advice.title}</h3>
+              <p className="text-sm text-muted-foreground font-light mt-3 max-w-xs">{t.advice.lede}</p>
+            </div>
+            <ul className="divide-y divide-border/50">
+              {t.advice.items.map((item) => (
+                <li key={item} className="flex gap-4 py-3 first:pt-0 last:pb-0 text-sm text-muted-foreground font-light leading-relaxed">
+                  <span aria-hidden="true" className="font-mono text-primary/60">×</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </motion.div>
 
