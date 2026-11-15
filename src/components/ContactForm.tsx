@@ -174,6 +174,12 @@ const ContactForm = () => {
           {isSubmitting ? t.submitting : t.submit}
         </Button>
 
+        {/* Was nach dem Absenden passiert (Website Workbook, Lektion 3): wer antwortet,
+            wie schnell, wie lang das erste Gespräch ist, und dass es unverbindlich ist. */}
+        <p className="text-sm text-muted-foreground font-light leading-relaxed">
+          {t.nextStep}
+        </p>
+
         <p className="text-xs text-muted-foreground">
           {t.privacyNote}{" "}
           <Link to="/datenschutz" className="text-primary underline-offset-4 hover:underline">

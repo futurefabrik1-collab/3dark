@@ -101,7 +101,7 @@ const WhoItsForSection = () => {
                 </ul>
               </div>
               <span className="inline-flex items-center gap-2 text-xs text-primary group-hover:gap-3 transition-all duration-300 font-mono tracking-widest uppercase">
-                {t.learnMore}
+                {user.cta}
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                   <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
