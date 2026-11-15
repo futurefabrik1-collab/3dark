@@ -132,8 +132,8 @@ const HeroSection = () => {
           <motion.div 
             className="aspect-[4/3] overflow-hidden neon-border bg-surface/50 backdrop-blur-sm relative group"
           >
-            {/* 960x540, no audio, ~5 MB. The 1080p master (/images/3dark-trailer.mp4,
-                53 MB) used to autoplay here for every visitor, mobile data included. */}
+            {/* 960x540, no audio, ~5 MB. The 1080p master (/media/3DARK_trailer.mp4,
+                9 MB) used to autoplay here for every visitor, mobile data included. */}
             <video
               ref={video}
               src="/media/hero-trailer.mp4"
