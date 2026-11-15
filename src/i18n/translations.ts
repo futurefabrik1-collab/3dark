@@ -129,7 +129,7 @@ export const translations = {
       body: "Wir verwandeln reale Umgebungen in hochauflösende Digitale Zwillinge und interaktive 3D-Dokumente — browser-begehbar, per QR teilbar, engine-ready. Für industrielle Kommunikation, kulturelle Bewahrung und Virtual Production.",
       differentiator: "Kein CGI. Keine Renderings. Erfasst aus der Realität.",
       belief: "Wir finden: Das Echte erklärt mehr als jedes Rendering — und gerade die Orte, die es wert sind, bleiben selten, wie sie sind. Darum erfassen wir sie, solange es sie gibt.",
-      ctaButton: "Projekt anfragen",
+      ctaButton: "Projekt besprechen",
     },
   },
 
