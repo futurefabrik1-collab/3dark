@@ -156,7 +156,7 @@ export const translations = {
       h2: "For teams that need more than photographs",
       body: "Whether you are communicating complex infrastructure, capturing environments for production, preserving cultural space, or building immersive assets — we deliver spatial documentation that carries the specificity of the real thing.",
       deliversLabel: "You receive:",
-      cta: "Not sure where you fit? Talk to us.",
+      cta: "Not sure where you fit? A 15-minute call will tell you — no obligation.",
       ctaButton: "Discuss your project",
       users: [
         {
@@ -190,7 +190,7 @@ export const translations = {
       h2: "Für Teams, die mehr als Fotos brauchen",
       body: "3DARK erstellt fotorealistische Digitale Zwillinge und interaktive 3D-Umgebungen — ob für industrielle Kommunikation, kulturelle Bewahrung oder Virtual Production. Reale Standorte in voller Qualität erfasst und als web-zugängliche, engine-ready Assets geliefert, die die Spezifität des Originals tragen.",
       deliversLabel: "Sie erhalten:",
-      cta: "Nicht sicher, wo Sie passen? Sprechen Sie mit uns.",
+      cta: "Nicht sicher, wo Sie passen? Ein 15-minütiges Gespräch klärt das — unverbindlich.",
       ctaButton: "Projekt besprechen",
       users: [
         {
@@ -371,6 +371,7 @@ export const translations = {
   userPages: {
     en: {
       ctaHeading: "Ready to document the space?",
+      ctaNote: "The first call takes about 15 minutes, and we reply within 24 hours. No obligation.",
       ctaButton: "Discuss your project",
       industrial: {
         title: "Industry & Infrastructure",
@@ -403,6 +404,7 @@ export const translations = {
     },
     de: {
       ctaHeading: "Ihr Projekt dokumentieren?",
+      ctaNote: "Das erste Gespräch dauert etwa 15 Minuten, wir antworten innerhalb von 24 Stunden. Unverbindlich.",
       ctaButton: "Projekt besprechen",
       industrial: {
         title: "Industrie & Infrastruktur",

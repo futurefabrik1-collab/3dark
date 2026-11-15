@@ -211,13 +211,13 @@ export default async function handler(req, res) {
       en: {
         subject: 'We received your enquiry — 3DARK',
         heading: 'Thank you for your enquiry!',
-        body: 'We have received your message and will get back to you as soon as possible, usually within one working day.',
+        body: 'We have received your message and will reply within 24 hours.',
         direct: 'You can also reach us directly:',
       },
       de: {
         subject: 'Ihre Anfrage ist bei uns eingegangen — 3DARK',
         heading: 'Vielen Dank für Ihre Anfrage!',
-        body: 'Wir haben Ihre Nachricht erhalten und melden uns so schnell wie möglich, in der Regel innerhalb eines Werktags.',
+        body: 'Wir haben Ihre Nachricht erhalten und antworten innerhalb von 24 Stunden.',
         direct: 'Sie erreichen uns auch direkt:',
       },
     }[lang];

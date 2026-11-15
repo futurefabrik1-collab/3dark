@@ -140,9 +140,13 @@ const UserLandingPage = ({
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-serif text-foreground mb-6">
+            <h2 className="text-3xl md:text-4xl font-serif text-foreground mb-4">
               {tCta.ctaHeading}
             </h2>
+            {/* Was den Besucher erwartet, bevor er klickt (Website Workbook, Lektion 3) */}
+            <p className="text-sm text-muted-foreground font-light leading-relaxed mb-8 max-w-xl mx-auto">
+              {tCta.ctaNote}
+            </p>
             <a
               href="#contact"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 text-sm font-medium tracking-wide hover:bg-primary/90 transition-colors"
