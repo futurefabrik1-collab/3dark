@@ -157,7 +157,7 @@ export const translations = {
       body: "Whether you are communicating complex infrastructure, capturing environments for production, preserving cultural space, or building immersive assets — we deliver spatial documentation that carries the specificity of the real thing.",
       deliversLabel: "You receive:",
       cta: "Not sure where you fit? Talk to us.",
-      ctaButton: "Start a conversation",
+      ctaButton: "Discuss your project",
       users: [
         {
           title: "Industry & Infrastructure",
@@ -191,7 +191,7 @@ export const translations = {
       body: "3DARK erstellt fotorealistische Digitale Zwillinge und interaktive 3D-Umgebungen — ob für industrielle Kommunikation, kulturelle Bewahrung oder Virtual Production. Reale Standorte in voller Qualität erfasst und als web-zugängliche, engine-ready Assets geliefert, die die Spezifität des Originals tragen.",
       deliversLabel: "Sie erhalten:",
       cta: "Nicht sicher, wo Sie passen? Sprechen Sie mit uns.",
-      ctaButton: "Gespräch starten",
+      ctaButton: "Projekt besprechen",
       users: [
         {
           title: "Industrie & Infrastruktur",
